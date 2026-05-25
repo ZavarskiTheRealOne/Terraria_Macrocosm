@@ -20,4 +20,11 @@ public class Silicon : ModItem
         Item.rare = ItemRarityID.White;
 
     }
+
+    public override void AddRecipes()
+    {
+        CreateRecipe()
+            .AddIngredient<QuartzFragment>(3)
+            .Register();
+    }
 }

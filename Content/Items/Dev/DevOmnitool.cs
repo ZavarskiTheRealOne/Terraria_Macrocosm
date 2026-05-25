@@ -62,7 +62,7 @@ class DevOmnitool : ModItem
 
         //Main.drunkWorld = !Main.drunkWorld;
 
-        //WorldGen.TryGrowingTreeByType(ModContent.TileType<RubberTree>(), Player.tileTargetX, Player.tileTargetY);
+        //WorldGen.TryGrowingTreeByType(ModContent.TileType<HeveaTree>(), Player.tileTargetX, Player.tileTargetY);
 
         //var data = TileObjectData.GetTileData(type, 0);
 

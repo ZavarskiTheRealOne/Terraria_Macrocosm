@@ -1,10 +1,8 @@
 ﻿using Macrocosm.Common.Subworlds;
 using Macrocosm.Common.Systems;
 using Macrocosm.Common.Utils;
-using Macrocosm.Content.Tiles.Trees;
 using SubworldLibrary;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Macrocosm.Common.Global.Tiles;
@@ -19,20 +17,6 @@ public class RandomUpdateGlobalTile : GlobalTile
     public override void Unload()
     {
         On_WorldGen.PlaceAlch -= On_WorldGen_PlaceAlch;
-    }
-
-    public override void RandomUpdate(int i, int j, int type)
-    {
-        if (type == TileID.JungleGrass)
-        {
-            bool aboveGround = j < Main.worldSurface + 10;
-            if (aboveGround)
-            {
-                Tile tileAbove = Main.tile[i, j - 1];
-                if (WorldGen.genRand.NextBool(700) && (!tileAbove.HasTile || (tileAbove.TileType is TileID.JunglePlants or TileID.JunglePlants2 or TileID.JungleThorns)))
-                    WorldGen.TryGrowingTreeByType(ModContent.TileType<HeveaTree>(), i, j);
-            }
-        }
     }
 
     private bool On_WorldGen_PlaceAlch(On_WorldGen.orig_PlaceAlch orig, int x, int y, int style)

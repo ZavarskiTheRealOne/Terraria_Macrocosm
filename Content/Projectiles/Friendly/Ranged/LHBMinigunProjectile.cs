@@ -158,6 +158,8 @@ public class LHBMinigunProjectile : ChargedHeldProjectile
             SoundEngine.PlaySound(SFX.MinigunWindup with
             {
                 Volume = 0.15f,
+                PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 MaxInstances = 1,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
@@ -165,7 +167,7 @@ public class LHBMinigunProjectile : ChargedHeldProjectile
             {
                 sound.Position = Projectile.position;
                 if (AI_Windup >= windupTime) return false;
-                return tracker.IsActiveAndInGame();
+                return Main.hasFocus && tracker.IsActiveAndInGame();
             });
         }
 
@@ -174,13 +176,15 @@ public class LHBMinigunProjectile : ChargedHeldProjectile
             SoundEngine.PlaySound(SFX.MinigunFire with
             {
                 Volume = 0.2f,
+                PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 MaxInstances = 1,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
             Projectile.position, updateCallback: (sound) =>
             {
                 sound.Position = Projectile.position;
-                return tracker.IsActiveAndInGame();
+                return Main.hasFocus && tracker.IsActiveAndInGame();
             });
         }
     }

@@ -100,7 +100,20 @@ public abstract class MachineUI : UIDragablePanel
                 powerOffIcon.SetVisibility(1f);
             }
         }
-        else if (MachineTE is GeneratorTE or BatteryTE)
+        else if (MachineTE is GeneratorTE generator)
+        {
+            if (generator.GeneratedPower > 0)
+            {
+                powerOnIcon.SetVisibility(1f);
+                powerOffIcon.SetVisibility(0f);
+            }
+            else
+            {
+                powerOnIcon.SetVisibility(0f);
+                powerOffIcon.SetVisibility(1f);
+            }
+        }
+        else if (MachineTE is BatteryTE)
         {
             if (MachineTE.IsOnFrame)
             {

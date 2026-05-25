@@ -1,4 +1,5 @@
 ﻿using Macrocosm.Common.Sets;
+using Macrocosm.Common.Subworlds;
 using Macrocosm.Content.Tiles.Blocks.Terrain;
 using Macrocosm.Content.Tiles.Misc;
 using Microsoft.Xna.Framework;
@@ -38,7 +39,7 @@ public class TileCounts : ModSystem
 
     public float PollutionLevel
     {
-        get => pollutionLevel;
+        get => MathHelper.Clamp(pollutionLevel * MathHelper.Clamp(MacrocosmSubworld.GetAtmosphericDensity(Main.LocalPlayer.Center), 0f, 1f), 0f, PollutionLevelMax);
         set => pollutionLevel = MathHelper.Clamp(value, 0f, PollutionLevelMax);
     }
     public float Pollution01 => PollutionLevelMax <= 0f ? 0f : PollutionLevel / PollutionLevelMax;

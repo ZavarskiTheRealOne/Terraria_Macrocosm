@@ -2918,21 +2918,6 @@ HaemonovaWorkbench: {
 	Tooltip: ""
 }
 
-RubberTreeSapling: {
-	DisplayName: Rubber Tree Sapling
-	Tooltip: ""
-}
-
-RubberTreeSap: {
-	DisplayName: Rubber Tree Sap
-	Tooltip: ""
-}
-
-RubberTreeWood: {
-	DisplayName: Rubber Tree Wood
-	Tooltip: ""
-}
-
 Rubber: {
 	DisplayName: Rubber
 	Tooltip: ""
@@ -2941,21 +2926,6 @@ Rubber: {
 PhantasmalSkullTome: {
 	DisplayName: Phantasmal Skull
 	Tooltip: Fires phantasmal skulls around you
-}
-
-RubberWoodHammer: {
-	DisplayName: Rubber Wood Hammer
-	Tooltip: ""
-}
-
-RubberWoodSword: {
-	DisplayName: Rubber Wood Sword
-	Tooltip: ""
-}
-
-RubberWoodBow: {
-	DisplayName: Rubber Wood Bow
-	Tooltip: ""
 }
 
 ConveyorInlet: {
@@ -3575,6 +3545,11 @@ HeveaSapling: {
 	Tooltip: ""
 }
 
+RubberSap: {
+	DisplayName: Rubber Sap
+	Tooltip: ""
+}
+
 HeveaWood: {
 	DisplayName: Hevea Wood
 	Tooltip: ""
@@ -3650,5 +3625,15 @@ WindTurbineTiny: {
 
 RegolithPlatform: {
 	DisplayName: Regolith Platform
+	Tooltip: ""
+}
+
+CrudeWireWrenchBlue: {
+	DisplayName: Crude Wire Wrench Blue
+	Tooltip: ""
+}
+
+CrudeWireWrenchRed: {
+	DisplayName: Crude Wire Wrench Red
 	Tooltip: ""
 }

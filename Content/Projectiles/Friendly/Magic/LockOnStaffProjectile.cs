@@ -132,13 +132,15 @@ public class LockOnStaffProjectile : ChargedHeldProjectile
         SoundEngine.PlaySound(SFX.HandheldThrusterFlame with
         {
             Volume = 0.3f,
+            PlayOnlyIfFocused = true,
+            PauseBehavior = PauseBehavior.StopWhenGamePaused,
             MaxInstances = 1,
             SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
         },
         Projectile.position, updateCallback: (sound) =>
         {
             sound.Position = Projectile.position;
-            return tracker.IsActiveAndInGame();
+            return Main.hasFocus && tracker.IsActiveAndInGame();
         });
 
         if (!OwnerHasMana)
@@ -146,13 +148,15 @@ public class LockOnStaffProjectile : ChargedHeldProjectile
             SoundEngine.PlaySound(SFX.HandheldThrusterOverheat with
             {
                 Volume = 0.3f,
+                PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 MaxInstances = 1,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
             Projectile.position, updateCallback: (sound) =>
             {
                 sound.Position = Projectile.position;
-                return tracker.IsActiveAndInGame();
+                return Main.hasFocus && tracker.IsActiveAndInGame();
             });
         }
     }

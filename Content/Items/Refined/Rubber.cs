@@ -25,7 +25,7 @@ public class Rubber : ModItem
     public override void AddRecipes()
     {
         CreateRecipe()
-            .AddIngredient<RubberTreeSap>(3)
+            .AddIngredient<RubberSap>(3)
             .AddIngredient<Coal>()
             .AddTile(TileID.AlchemyTable)
             .Register();

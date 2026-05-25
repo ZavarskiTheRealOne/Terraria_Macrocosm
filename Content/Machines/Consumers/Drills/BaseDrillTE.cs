@@ -68,6 +68,12 @@ public abstract class BaseDrillTE : ConsumerTE
 
     public override float PowerDemand => IsEnabledByPlayer && HasAvailableLoot() ? MaxPower : 0f;
 
+    public override void OnFirstUpdate()
+    {
+        SampleTilesUnderMachine();
+        sampleTimer = 0;
+    }
+
     public override void MachineUpdate()
     {
         UpdateActiveSounds();
@@ -208,7 +214,7 @@ public abstract class BaseDrillTE : ConsumerTE
 
     protected float ActiveSoundPowerProgress => RatedPowerProgress > 0f ? RatedPowerProgress : 1f;
 
-    protected bool ShouldPlayActiveSound => !Main.dedServ && IsRunning;
+    protected bool ShouldPlayActiveSound => !Main.dedServ && Main.hasFocus && IsRunning;
 
     protected virtual void UpdateActiveSounds()
     {
@@ -238,6 +244,8 @@ public abstract class BaseDrillTE : ConsumerTE
             Volume = 1f,
             Pitch = getPitch(),
             MaxInstances = 1,
+            PlayOnlyIfFocused = true,
+            PauseBehavior = PauseBehavior.StopWhenGamePaused,
             Identifier = $"Macrocosm/{identifier}/{GetType().FullName}/{ID}"
         },
         ActiveSoundPosition, updateCallback: (sound) =>

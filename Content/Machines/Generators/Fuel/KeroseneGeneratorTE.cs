@@ -74,6 +74,8 @@ public class KeroseneGeneratorTE : GeneratorTE
 
         if (ConsumedItem.type == ItemID.None)
         {
+            bool fuelFound = false;
+
             if (IsOnFrame)
             {
                 burnTimer = 0;
@@ -85,6 +87,7 @@ public class KeroseneGeneratorTE : GeneratorTE
                     var fuelData = ItemSets.FuelData[item.type];
                     if (fuelData.Potency > 0 && item.type == ModContent.ItemType<RocketFuelCanister>())
                     {
+                        fuelFound = true;
                         ConsumedItem = new Item(item.type, 1);
                         RPMProgress += RPMRate * (float)fuelData.Potency;
                         item.stack--;
@@ -95,12 +98,12 @@ public class KeroseneGeneratorTE : GeneratorTE
                         break;
                     }
                 }
-
-                if (ConsumedItem.type == ItemID.None)
-                {
-                    RPMProgress -= RPMRate * 10;
-                }
             }
+
+            // RPM winds down whenever nothing is burning — regardless of whether the machine is on or off.
+            // (Mirrors BurnerGeneratorTE's heat-decay pattern.)
+            if (!fuelFound)
+                RPMProgress -= RPMRate * 10;
         }
         else
         {

@@ -1,5 +1,4 @@
-﻿using Macrocosm.Content.Liquids;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
 using Terraria;
@@ -8,74 +7,57 @@ using Terraria.UI;
 
 namespace Macrocosm.Common.UI;
 
-/// <summary> Panel wrapper for <see cref="UILiquid"/> with automatic hiding of overflow and (TODO) gradations </summary>
+/// <summary>
+/// Liquid-tank piston cell for engine UIs.
+/// The owner sets <see cref="Phase"/> (0–1) and <see cref="Running"/> each frame;
+/// the piston advances through its 9-frame sprite strip accordingly.
+/// </summary>
 public class UILiquidTankPiston : UILiquidTank
 {
-    private static Asset<Texture2D> piston;
+    private static Asset<Texture2D> pistonTex;
 
-    private int animationTimer;
-    private int animationSpeed;
+    private const int FrameCount = 9;
     private int pistonFrame = 0;
-    private const int pistonFrameMax = 9;
 
-        public UILiquidTankPiston(int liquidType) : base(liquidType) { }
+    /// <summary>Normalized engine phase [0, 1) </summary>
+    public float Phase { get; set; } = 0f;
+    public bool Running { get; set; } = false;
+
+    public UILiquidTankPiston(int liquidType) : base(liquidType) { }
 
     public override void OnInitialize()
     {
         base.OnInitialize();
         Width = new(62, 0);
         Height = new(60, 0);
-        Bubbles = true;
+        Bubbles = false;
     }
 
     public override void Update(GameTime gameTime)
     {
         base.Update(gameTime);
 
-        if (pistonFrame > 0)
-        {
-            if (animationTimer++ >= animationSpeed)
-            {
-                if (pistonFrame++ >= pistonFrameMax - 1)
-                    pistonFrame = 0;
+        pistonFrame = Running ? (int)(Phase * FrameCount) % FrameCount : 0;
 
-                animationTimer = 0;
-            }
-
-            LiquidLevel = pistonFrame switch
-            {
-                0 => 0.85f,
-                1 or 6 => 0.2f,
-                2 or 3 or 4 or 5 => 0.1f,
-                7 => 0.45f,
-                8 => 0.55f,
-                _ => 0f
-            };
-        }
-        else
+        LiquidLevel = pistonFrame switch
         {
-            animationTimer = 0;
-        }
-    }
-
-    public void StartAnimation(int speed)
-    {
-        if (pistonFrame <= 0)
-        {
-            pistonFrame = 1;
-            animationSpeed = speed;
-        }
+            0 => 0.85f,
+            1 or 6 => 0.20f,
+            2 or 3 or 4 or 5 => 0.10f,
+            7 => 0.45f,
+            8 => 0.55f,
+            _ => 0f
+        };
     }
 
     public override void Draw(SpriteBatch spriteBatch)
     {
         base.Draw(spriteBatch);
 
-        piston ??= ModContent.Request<Texture2D>(Macrocosm.TexturesPath + "UI/Piston");
+        pistonTex ??= ModContent.Request<Texture2D>(Macrocosm.TexturesPath + "UI/Piston");
 
-        CalculatedStyle dimensions = GetDimensions();
-        Vector2 position = dimensions.Position();
-
-        spriteBatch.Draw(piston.Value, position + new Vector2(2, 2), piston.Frame(pistonFrameMax, frameX: pistonFrame), Color.White);
+        CalculatedStyle dim = GetDimensions();
+        spriteBatch.Draw(pistonTex.Value, dim.Position() + new Vector2(2, 2),
+            pistonTex.Value.Frame(FrameCount, frameX: pistonFrame), Color.White);
     }
 }

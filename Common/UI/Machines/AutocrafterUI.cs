@@ -17,13 +17,12 @@ public class AutocrafterUI : MachineUI
     public AutocrafterTEBase AutocrafterTE => MachineTE as AutocrafterTEBase;
 
     private UIPanel topPanel;
-    private UIScrollableListPanel craftingSlotsPanel;
     private UIPanel bottomPanel;
     private UIPanel recipeBrowserPanel;
     private UIAutocrafterRecipeBrowser recipeBrowser;
     private UIPanel infoPanel;
 
-    List<UIPanel> outputSlotPanels = new();
+    private readonly Dictionary<int, UIPanel> outputSlotPanels = new();
     private int selectedOutputSlot = -1;
 
     public override void OnInitialize()
@@ -41,7 +40,7 @@ public class AutocrafterUI : MachineUI
             1 => 0.16f,
             2 => 0.2585f,
             3 => 0.44f,
-            4 => 0.442f,
+            4 => 0.48f,
             _ => 0.42f
         };
         float bottomHeightPercent = 1f - topHeightPercent;
@@ -55,9 +54,6 @@ public class AutocrafterUI : MachineUI
             BorderColor = UITheme.Current.PanelStyle.BorderColor
         };
         Append(topPanel);
-
-        craftingSlotsPanel = CreateSlotsPanel();
-        topPanel.Append(craftingSlotsPanel);
 
         bottomPanel = new UIPanel()
         {
@@ -104,31 +100,11 @@ public class AutocrafterUI : MachineUI
     {
         if (!AutocrafterTE.SelectRecipeInFreeSlot(recipe))
         {
-            if (selectedOutputSlot != -1 && selectedOutputSlot < outputSlotPanels.Count)
+            if (selectedOutputSlot != -1 && outputSlotPanels.ContainsKey(selectedOutputSlot))
                 AutocrafterTE.SelectRecipeInSlot(selectedOutputSlot, recipe);
         }
 
         PopulateSlots();
-    }
-
-    private UIScrollableListPanel CreateSlotsPanel()
-    {
-        craftingSlotsPanel = new UIScrollableListPanel()
-        {
-            Width = new(0f, 1f),
-            Height = new(0f, 1f),
-            ListPadding = 4f,
-            ListOuterPadding = 0f,
-            ListWidthWithScrollbar = new(0, 0.96f),
-            ListWidthWithoutScrollbar = new(0, 1f),
-            ScrollbarHeight = new(0f, 0.9f),
-            ScrollbarHAlign = 1f,
-            HideScrollbarIfNotScrollable = true,
-            BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor,
-            BorderColor = UITheme.Current.PanelStyle.BorderColor
-        };
-        PopulateSlots();
-        return craftingSlotsPanel;
     }
 
     private void PopulateSlots()
@@ -136,10 +112,11 @@ public class AutocrafterUI : MachineUI
         if (AutocrafterTE?.Inventory is null)
             return;
 
-        outputSlotPanels = new();
-        craftingSlotsPanel.ClearList();
+        outputSlotPanels.Clear();
+        topPanel.RemoveAllChildren();
 
         int outputs = AutocrafterTE.OutputSlots;
+        int rowIndex = 0;
         for (int outputIndex = 0; outputIndex < outputs; outputIndex++)
         {
             var recipe = AutocrafterTE.SelectedRecipes?[outputIndex];
@@ -150,27 +127,34 @@ public class AutocrafterUI : MachineUI
                 continue;
 
             int inputs = inputSlots.Count;
-            int totalSlots = inputs + 1;
-            float slotSize = 42f;
+            float slotSize = 48f;
             float slotSpacing = 6f;
+            float arrowWidth = 56f;
+            float arrowSpacing = 10f;
+            float rowHeight = slotSize + 14f;
+            float rowSpacing = 8f;
 
             UIPanel rowPanel = new()
             {
-                Width = new(0f, 1f),
+                Width = new(-20f, 1f),
                 HAlign = 0.5f,
-                Height = new(slotSize + 14f, 0f),
+                Top = new(8f + rowIndex * (rowHeight + rowSpacing), 0f),
+                Height = new(rowHeight, 0f),
                 BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor,
                 BorderColor = UITheme.Current.PanelStyle.BorderColor * 0.5f
             };
             rowPanel.OnMouseOut += (_, element) => (element as UIPanel).BorderColor = UITheme.Current.PanelButtonStyle.BorderColorHighlight;
             rowPanel.OnMouseOver += (_, element) => (element as UIPanel).BorderColor = UITheme.Current.PanelStyle.BorderColor * 0.5f;
-            rowPanel.OnLeftClick += (_, element) => selectedOutputSlot = outputSlotPanels.IndexOf(element as UIPanel);
+            int capturedOutputIndex = outputIndex;
+            rowPanel.OnLeftClick += (_, _) => selectedOutputSlot = capturedOutputIndex;
             rowPanel.SetPadding(2f);
             rowPanel.PaddingTop = 4f;
-            outputSlotPanels.Add(rowPanel);
+            outputSlotPanels[outputIndex] = rowPanel;
 
-            float totalRowWidth = (slotSize + slotSpacing) * totalSlots - slotSpacing;
-            float startX = (Width.Pixels - totalRowWidth) / 2f;
+            float inputSlotsWidth = inputs * slotSize + (inputs - 1) * slotSpacing;
+            float totalRowWidth = inputSlotsWidth + arrowSpacing + arrowWidth + arrowSpacing + slotSize;
+            float rowContentWidth = Width.Pixels - 20f - rowPanel.PaddingLeft - rowPanel.PaddingRight;
+            float startX = (rowContentWidth - totalRowWidth) / 2f;
             for (int inputIndex = 0; inputIndex < inputs; inputIndex++)
             {
                 int inventoryIndex = inputSlots[inputIndex];
@@ -192,7 +176,7 @@ public class AutocrafterUI : MachineUI
                 BorderColor = UITheme.Current.PanelStyle.BorderColor,
                 BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor,
                 FillColors = [Color.Black],
-                Left = new(startX + (slotSize + slotSpacing) * inputs, 0f),
+                Left = new(startX + inputSlotsWidth + arrowSpacing, 0f),
                 VAlign = 0.52f
             };
 
@@ -201,11 +185,12 @@ public class AutocrafterUI : MachineUI
             var outputSlot = AutocrafterTE.Inventory.ProvideItemSlot(outputIndex);
             outputSlot.SetPadding(0f);
             outputSlot.Top.Set(0f, 0f);
-            outputSlot.Left.Set(startX + 60 + (slotSize + slotSpacing) * inputs, 0f);
+            outputSlot.Left.Set(startX + inputSlotsWidth + arrowSpacing + arrowWidth + arrowSpacing, 0f);
 
             rowPanel.Append(outputSlot);
 
-            craftingSlotsPanel.Add(rowPanel);
+            topPanel.Append(rowPanel);
+            rowIndex++;
         }
     }
 
@@ -213,9 +198,8 @@ public class AutocrafterUI : MachineUI
     {
         base.Update(gameTime);
 
-        for (int outputIndex = 0; outputIndex < (outputSlotPanels?.Count ?? 0); outputIndex++)
+        foreach (var (outputIndex, panel) in outputSlotPanels)
         {
-            UIPanel panel = outputSlotPanels[outputIndex];
             if (outputIndex == selectedOutputSlot)
                 panel.BorderColor = UITheme.Current.PanelButtonStyle.BorderColorHighlight;
             else if (panel.IsMouseHovering)

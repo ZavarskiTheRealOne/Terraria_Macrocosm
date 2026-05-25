@@ -133,13 +133,15 @@ public class MetalCutterProjectile : ModProjectile
             SoundEngine.PlaySound(SFX.HandheldThrusterFlame with
             {
                 Volume = 0.3f,
+                PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 MaxInstances = 1,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
             Projectile.position, updateCallback: (sound) =>
             {
                 sound.Position = Projectile.position;
-                return tracker.IsActiveAndInGame();
+                return Main.hasFocus && tracker.IsActiveAndInGame();
             });
         }
     }

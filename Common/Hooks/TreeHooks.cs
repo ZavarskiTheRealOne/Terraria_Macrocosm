@@ -1,18 +1,23 @@
 ﻿using Macrocosm.Common.Bases.Tiles;
 using Macrocosm.Common.Sets;
 using Macrocosm.Common.Systems;
+using Macrocosm.Content.Tiles.Trees;
 using SubworldLibrary;
 using Terraria;
 using Terraria.Enums;
+using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace Macrocosm.Common.Hooks;
 
 public class TreeHooks : ILoadable
 {
+    private const int HeveaTreeChance = 5;
+
     public void Load(Mod mod)
     {
         On_WorldGen.GetTreeType += On_WorldGen_GetTreeType;
+        On_WorldGen.GrowTree += On_WorldGen_GrowTree;
         On_WorldGen.AttemptToGrowTreeFromSapling += On_WorldGen_AttemptToGrowTreeFromSapling;
         On_WorldGen.TryGrowingTreeByType += On_WorldGen_TryGrowingTreeByType;
     }
@@ -20,6 +25,7 @@ public class TreeHooks : ILoadable
     public void Unload()
     {
         On_WorldGen.GetTreeType -= On_WorldGen_GetTreeType;
+        On_WorldGen.GrowTree -= On_WorldGen_GrowTree;
         On_WorldGen.AttemptToGrowTreeFromSapling -= On_WorldGen_AttemptToGrowTreeFromSapling;
         On_WorldGen.TryGrowingTreeByType -= On_WorldGen_TryGrowingTreeByType;
     }
@@ -30,6 +36,17 @@ public class TreeHooks : ILoadable
             return customTree.CountsAsTreeType;
 
         return orig(tileType);
+    }
+
+    private bool On_WorldGen_GrowTree(On_WorldGen.orig_GrowTree orig, int i, int y)
+    {
+        if (Main.tile[i, y].TileType == TileID.JungleGrass && WorldGen.genRand.NextBool(HeveaTreeChance))
+        {
+            if (WorldGen.TryGrowingTreeByType(ModContent.TileType<HeveaTree>(), i, y))
+                return true;
+        }
+
+        return orig(i, y);
     }
 
     private bool On_WorldGen_AttemptToGrowTreeFromSapling(On_WorldGen.orig_AttemptToGrowTreeFromSapling orig, int x, int y, bool underground)

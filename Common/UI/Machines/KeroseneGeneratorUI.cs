@@ -1,6 +1,5 @@
 ﻿using Macrocosm.Common.Storage;
 using Macrocosm.Common.Systems.Power;
-using Macrocosm.Common.UI;
 using Macrocosm.Common.UI.Themes;
 using Macrocosm.Content.Liquids;
 using Macrocosm.Content.Machines.Generators.Fuel;
@@ -27,7 +26,13 @@ public class KeroseneGeneratorUI : MachineUI
 
     private List<UILiquidTankPiston> pistons = new();
 
-    private int timer;
+    private float enginePhase = 0f;
+
+    private static readonly float[] V8CrankPhaseOffsets =
+    {
+        0f / 4f, 3f / 4f, 1f / 4f, 2f / 4f,
+        3f / 4f, 2f / 4f, 0f / 4f, 1f / 4f,
+    };
 
     public KeroseneGeneratorUI()
     {
@@ -38,7 +43,7 @@ public class KeroseneGeneratorUI : MachineUI
         base.OnInitialize();
 
         Width.Set(495f, 0f);
-        Height.Set(250f, 0f);
+        Height.Set(330f, 0f);
 
         title.Top.Set(-36, 0);
 
@@ -94,32 +99,62 @@ public class KeroseneGeneratorUI : MachineUI
             BorderColor = UITheme.Current.PanelStyle.BorderColor,
             BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor
         };
+        fuelPanel.SetPadding(0f);
         backgroundPanel.Append(fuelPanel);
 
-        pistons = new();
-        for (int i = 0; i < 6; i++)
+        const float slotSize = 48f;
+        const float slotLeft = 28f;
+        const float slotRailWidth = 92f;
+        const float pistonWidth = 62f;
+        const float pistonHeight = 60f;
+        const float pistonColumnGap = 18f;
+        const float pistonRowGap = 18f;
+
+        float pistonGridWidth = 4f * pistonWidth + 3f * pistonColumnGap;
+        float pistonGridHeight = 2f * pistonHeight + pistonRowGap;
+
+        UIElement pistonGrid = new()
         {
-            var piston = new UILiquidTankPiston(LiquidLoader.LiquidType<RocketFuel>())
+            Left = new(slotRailWidth, 0f),
+            Width = new(-slotRailWidth, 1f),
+            Height = new(pistonGridHeight, 0f),
+            VAlign = 0.5f
+        };
+        pistonGrid.SetPadding(0f);
+        fuelPanel.Append(pistonGrid);
+
+        float pistonStartX = (495f - slotRailWidth - pistonGridWidth) / 2f;
+
+        pistons = new();
+        for (int row = 0; row < 2; row++)
+        {
+            for (int col = 0; col < 4; col++)
             {
-                Left = new(42 + i * 66, 0),
-                Top = new(-6, 0.5f),
-                Width = new(60, 0f),
-                Height = new(0, 0.4f),
-                BorderColor = UITheme.Current.PanelStyle.BorderColor,
-                BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor
-            };
-            pistons.Add(piston);
-            fuelPanel.Append(piston);
+                var piston = new UILiquidTankPiston(LiquidLoader.LiquidType<RocketFuel>())
+                {
+                    Left = new(pistonStartX + col * (pistonWidth + pistonColumnGap), 0),
+                    Top = new(row * (pistonHeight + pistonRowGap), 0),
+                    Width = new(62, 0f),
+                    Height = new(60, 0f),
+                    BorderColor = UITheme.Current.PanelStyle.BorderColor,
+                    BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor
+                };
+                pistons.Add(piston);
+                pistonGrid.Append(piston);
+            }
         }
 
         if (KeroseneGenerator.Inventory is not null)
         {
-            for (int i = 0; i < KeroseneGenerator.Inventory.Size; i++)
+            int slotCount = KeroseneGenerator.Inventory.Size;
+
+            for (int i = 0; i < slotCount; i++)
             {
                 var inputSlot = KeroseneGenerator.Inventory.ProvideItemSlot(i, ItemSlot.Context.ChestItem);
 
-                inputSlot.Left = new(i * 48, 0f);
-                inputSlot.Top = new(-6, 0f);
+                inputSlot.Left = new(slotLeft + i * slotSize, 0f);
+                inputSlot.Top = new(0f, 0f);
+                inputSlot.VAlign = 0.5f;
                 inputSlot.SetPadding(0f);
                 fuelPanel.Append(inputSlot);
             }
@@ -134,33 +169,20 @@ public class KeroseneGeneratorUI : MachineUI
         string power = $"{KeroseneGenerator.GeneratedPower:F2}";
         powerStatusText.SetText(Language.GetText("Mods.Macrocosm.Machines.Common.GeneratedPower").Format(power));
 
-        timer++;
-
         float rpmProgress = KeroseneGenerator.RPMProgress;
         rpmProgressBar.Progress = rpmProgress;
 
         float rpm = KeroseneGenerator.RPM;
-        rpmText.SetText(Language.GetText("Mods.Macrocosm.Machines.KeroseneGenerator.RPM").Format((int)rpm));
         rpmText.SetText($"{(int)rpm} RPM");
 
-        if (rpmProgress > 0)
+        bool running = rpmProgress > 0.01f;
+        if (running)
+            enginePhase = (enginePhase + MathHelper.Lerp(0.008f, 0.033f, rpmProgress)) % 1f;
+
+        for (int i = 0; i < pistons.Count; i++)
         {
-            // how do I animate this shit
-            int interval = (int)MathHelper.Lerp(120, 30, rpmProgress);
-            for (int i = 0; i < pistons.Count; i++)
-            {
-                UILiquidTankPiston piston = pistons[i];
-                if (timer % (interval * 2) < interval)
-                {
-                    if (i % 2 == 0)
-                        piston.StartAnimation(2);
-                }
-                else
-                {
-                    if (i % 2 == 1)
-                        piston.StartAnimation(2);
-                }
-            }
+            pistons[i].Running = running;
+            pistons[i].Phase = (enginePhase + V8CrankPhaseOffsets[i]) % 1f;
         }
     }
 

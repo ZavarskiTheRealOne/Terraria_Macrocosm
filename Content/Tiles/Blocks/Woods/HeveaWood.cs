@@ -1,3 +1,4 @@
+using Macrocosm.Content.Dusts;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -26,6 +27,6 @@ public class HeveaWood : ModTile
         AddMapEntry(new Color(90, 44, 30));
 
         HitSound = SoundID.Dig;
-        DustType = DustID.WoodFurniture;
+        DustType = ModContent.DustType<HeveaDust>();
     }
 }

@@ -57,6 +57,9 @@ public abstract partial class CustomTree : ModTile
     /// <summary> Tree leaf gore type </summary>
     public virtual int TreeLeaf => -1;
 
+    /// <summary> Color used for this tree on the map. </summary>
+    public virtual Color MapColor => new(151, 107, 75);
+
     /// <summary> Random paint on the CelebrationMK10 seed </summary>
     public virtual bool TenthAniversaryRandomColor => false;
 
@@ -119,6 +122,8 @@ public abstract partial class CustomTree : ModTile
         TileID.Sets.PreventsTileRemovalIfOnTopOfIt[Type] = true;
         TileID.Sets.PreventsTileReplaceIfOnTopOfIt[Type] = true;
         TileID.Sets.PreventsTileHammeringIfOnTopOfIt[Type] = true;
+
+        AddMapEntry(MapColor);
 
         TileSets.PaintingSettings[Type] = PaintingSettings;
     }

@@ -186,6 +186,7 @@ public partial class Rocket : IInventoryOwner
 
     private bool ranFirstUpdate;
     private bool canAnimate = true;
+    private bool landingSoundPlayed;
 
     private bool forcedStationaryAppearance;
     /// <summary> Whether this rocket is forced in a stationary (i.e. landed) state, visually </summary>
@@ -326,7 +327,12 @@ public partial class Rocket : IInventoryOwner
                         }
 
                         ResetAnimation();
-                        SoundEngine.PlaySound(SFX.RocketLaunch with { Volume = 1f, PlayOnlyIfFocused = true });
+                        SoundEngine.PlaySound(SFX.RocketLaunch with
+                        {
+                            Volume = 1f,
+                            PlayOnlyIfFocused = true,
+                            PauseBehavior = PauseBehavior.StopWhenGamePaused
+                        });
                     }
 
                     break;
@@ -961,13 +967,14 @@ public partial class Rocket : IInventoryOwner
             {
                 Volume = 1f,
                 PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 MaxInstances = 1,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
             Center, updateCallback: (sound) =>
             {
                 sound.Position = Center;
-                return ActiveInCurrentWorld;
+                return Main.hasFocus && ActiveInCurrentWorld;
             });
         }
 
@@ -993,7 +1000,13 @@ public partial class Rocket : IInventoryOwner
     private void Effects()
     {
         if (State == ActionState.Idle)
+        {
+            landingSoundPlayed = false;
             return;
+        }
+
+        if (State is not ActionState.Landing and not ActionState.UnmannedLanding)
+            landingSoundPlayed = false;
 
         float gravityFactor = 0.7f + 0.3f * MacrocosmSubworld.GetGravityMultiplier(Center);
         float atmoDesityFactor = 0.5f + 0.5f * MacrocosmSubworld.GetAtmosphericDensity(Center);
@@ -1048,6 +1061,7 @@ public partial class Rocket : IInventoryOwner
                     {
                         SpawnTileDust(closestTile, 15);
                         SpawnHitTileDust(closestTile);
+                        PlayLandingSound();
                         screenshakeIntensity = 20f * gravityFactor;
                     }
 
@@ -1121,6 +1135,7 @@ public partial class Rocket : IInventoryOwner
                     {
                         SpawnTileDust(closestTile, 15);
                         SpawnHitTileDust(closestTile);
+                        PlayLandingSound();
                         screenshakeIntensity = 20f * gravityFactor;
                     }
 
@@ -1141,13 +1156,27 @@ public partial class Rocket : IInventoryOwner
                 Lighting.AddLight(new Vector2(i * 16, j * 16), new Vector3(0.01f));
     }
 
+    private void PlayLandingSound()
+    {
+        if (landingSoundPlayed || Main.dedServ)
+            return;
+
+        landingSoundPlayed = true;
+        SoundEngine.PlaySound(SFX.RocketLanding with
+        {
+            Volume = 1f,
+            PlayOnlyIfFocused = true,
+            PauseBehavior = PauseBehavior.StopWhenGamePaused
+        }, Center);
+    }
+
     private void SpawnSmokeExhaustTrail(int countPerTick, float speed = 1f)
     {
         for (int i = 0; i < countPerTick; i++)
         {
-            Vector2 position = new Vector2(Center.X, Position.Y + Height - 28);
+            Vector2 position = new(Center.X, Position.Y + Height - 28);
 
-            Vector2 velocity = new Vector2(Main.rand.NextFloat(-0.6f, 0.6f), Main.rand.NextFloat(2, 10));
+            Vector2 velocity = new(Main.rand.NextFloat(-0.6f, 0.6f), Main.rand.NextFloat(2, 10));
             if (State is ActionState.Landing or ActionState.Docking)
                 velocity = new(Main.rand.NextFloat(-0.4f, 0.4f), Main.rand.NextFloat(8, 16));
 
@@ -1244,6 +1273,8 @@ public partial class Rocket : IInventoryOwner
             SoundEngine.PlaySound(SFX.RocketLoop with
             {
                 Volume = intensity,
+                PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 MaxInstances = 1,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
@@ -1252,22 +1283,7 @@ public partial class Rocket : IInventoryOwner
                 sound.Pitch = MathHelper.Lerp(-1f, 0, StaticFireProgress);
                 sound.Volume = intensity;
                 sound.Position = Center;
-                return FlightTime < StaticFireDuration && ActiveInCurrentWorld;
-            });
-        }
-
-        if (FlightTime == StaticFireDuration)
-        {
-            SoundEngine.PlaySound(SFX.RocketLaunch with
-            {
-                Volume = 1f,
-                MaxInstances = 1,
-                SoundLimitBehavior = SoundLimitBehavior.IgnoreNew,
-            },
-            Center, updateCallback: (sound) =>
-            {
-                sound.Position = Center;
-                return State == ActionState.Flight && ActiveInCurrentWorld;
+                return Main.hasFocus && FlightTime < StaticFireDuration && ActiveInCurrentWorld;
             });
         }
 
@@ -1277,6 +1293,8 @@ public partial class Rocket : IInventoryOwner
             {
                 Volume = 1f,
                 IsLooped = true,
+                PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 MaxInstances = 1,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
@@ -1284,7 +1302,7 @@ public partial class Rocket : IInventoryOwner
             {
                 sound.Pitch = Main.rand.NextFloat(-0.1f, 0.1f);
                 sound.Position = Center;
-                return State == ActionState.Flight && ActiveInCurrentWorld;
+                return Main.hasFocus && State == ActionState.Flight && ActiveInCurrentWorld;
             });
         }
 
@@ -1295,6 +1313,8 @@ public partial class Rocket : IInventoryOwner
                 MaxInstances = 1,
                 IsLooped = true,
                 Volume = 1f,
+                PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
             Center, updateCallback: (sound) =>
@@ -1302,7 +1322,7 @@ public partial class Rocket : IInventoryOwner
                 sound.Pitch = Main.rand.NextFloat(-0.1f, 0.1f);
                 sound.Volume = LandingProgress < 0.8f ? 1f : (1f - LandingProgress) * 5f;
                 sound.Position = Center;
-                return State == ActionState.Landing && ActiveInCurrentWorld;
+                return Main.hasFocus && State == ActionState.Landing && ActiveInCurrentWorld;
             });
         }
 
@@ -1313,6 +1333,8 @@ public partial class Rocket : IInventoryOwner
                 MaxInstances = 1,
                 IsLooped = true,
                 Volume = 1f,
+                PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
             Center, updateCallback: (sound) =>
@@ -1320,7 +1342,7 @@ public partial class Rocket : IInventoryOwner
                 sound.Pitch = Main.rand.NextFloat(-0.1f, 0.1f);
                 sound.Volume = DockingProgress < 0.8f ? 1f : (DockingProgress) * 5f;
                 sound.Position = Center;
-                return State == ActionState.Landing && ActiveInCurrentWorld;
+                return Main.hasFocus && State == ActionState.Docking && ActiveInCurrentWorld;
             });
         }
 
@@ -1331,6 +1353,8 @@ public partial class Rocket : IInventoryOwner
                 MaxInstances = 1,
                 IsLooped = true,
                 Volume = 1f,
+                PlayOnlyIfFocused = true,
+                PauseBehavior = PauseBehavior.StopWhenGamePaused,
                 SoundLimitBehavior = SoundLimitBehavior.IgnoreNew
             },
             Center, updateCallback: (sound) =>
@@ -1338,7 +1362,7 @@ public partial class Rocket : IInventoryOwner
                 sound.Pitch = Main.rand.NextFloat(-0.1f, 0.1f);
                 sound.Volume = UndockingProgress < 0.8f ? 1f : (1f - UndockingProgress) * 5f;
                 sound.Position = Center;
-                return State == ActionState.Landing && ActiveInCurrentWorld;
+                return Main.hasFocus && State == ActionState.Undocking && ActiveInCurrentWorld;
             });
         }
     }

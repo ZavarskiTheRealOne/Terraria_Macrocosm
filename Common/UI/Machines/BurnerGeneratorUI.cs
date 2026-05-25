@@ -28,7 +28,7 @@ public class BurnerGeneratorUI : MachineUI
     private UIInventoryItemIcon itemIcon;
     private UITextPanel<string> hullHeatText;
     private UITextPanel<string> powerStatusText;
-    private UIHoverImageButton arrow;
+    private UIImage arrow;
 
     public BurnerGeneratorUI()
     {
@@ -114,16 +114,12 @@ public class BurnerGeneratorUI : MachineUI
             }
         }
 
-        arrow = new(
-            ModContent.Request<Texture2D>(Macrocosm.UIButtonsPath + "LongArrow", AssetRequestMode.ImmediateLoad),
-            ModContent.Request<Texture2D>(Macrocosm.UIButtonsPath + "LongArrowBorder"),
-            useThemeColors: true
-        )
+        arrow = new(ModContent.Request<Texture2D>(Macrocosm.UIButtonsPath + "LongArrow", AssetRequestMode.ImmediateLoad))
         {
             Left = new(0, 0.71f),
-            VAlign = 0.5f
+            VAlign = 0.5f,
+            Color = UITheme.Current.IconButtonStyle.BackgroundColor
         };
-        arrow.SetVisibility(1f);
         inventoryPanel.Append(arrow);
 
         burnItemIconProgressBar = new()

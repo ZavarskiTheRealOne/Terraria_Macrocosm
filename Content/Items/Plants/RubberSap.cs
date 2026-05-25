@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 
 namespace Macrocosm.Content.Items.Plants;
 
-public class RubberTreeSap : ModItem
+public class RubberSap : ModItem
 {
     public override void SetStaticDefaults()
     {

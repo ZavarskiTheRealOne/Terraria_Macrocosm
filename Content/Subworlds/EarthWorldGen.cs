@@ -2,7 +2,6 @@
 using Macrocosm.Common.Utils;
 using Macrocosm.Content.Tiles.Blocks.Sands;
 using Macrocosm.Content.Tiles.Ores;
-using Macrocosm.Content.Tiles.Trees;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.Generation;
@@ -26,9 +25,6 @@ class EarthWorldGen : ModSystem
         if (oceanIndex != -1)
             tasks.Insert(oceanIndex + 1, new PassLegacy("Macrocosm: Silica", GenerateSilicaSand_Ocean));
 
-        int flowerIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Sunflowers"));
-        if (oceanIndex != -1)
-            tasks.Insert(flowerIndex + 1, new PassLegacy("Macrocosm: Rubber", GenerateRubberTrees));
     }
 
     private void GenerateOres(GenerationProgress progress, GameConfiguration configuration)
@@ -120,21 +116,6 @@ class EarthWorldGen : ModSystem
                     TileID.Sets.Dirt[Main.tile[i, j].TileType] ||
                     TileID.Sets.Stone[Main.tile[i, j].TileType])
             );
-        }
-    }
-    private void GenerateRubberTrees(GenerationProgress progress, GameConfiguration configuration)
-    {
-        for (int X = 10; X <= Main.maxTilesX - 10; X++)
-        {
-            for (int Y = 0; Y < (int)Main.worldSurface; Y++)
-            {
-                if (Main.tile[X, Y].TileType == TileID.JungleGrass)
-                {
-                    if (WorldGen.genRand.NextBool(20))
-                        WorldGen.TryGrowingTreeByType(TileType<HeveaTree>(), X, Y);
-                }
-            }
-
         }
     }
 }

@@ -30,6 +30,7 @@ public abstract class AutocrafterTEBase : ConsumerTE
 
     private float craftTimer;
     private float CraftRate => 60f;
+    private bool suppressRecipeSync;
 
     public override float PowerDemand => IsEnabledByPlayer && HasCraftingWork() ? MaxPower : 0f;
 
@@ -143,7 +144,14 @@ public abstract class AutocrafterTEBase : ConsumerTE
         }
 
         InputSlotAllocation[outputSlot] = allocatedInputs;
+        SyncRecipeSelection();
         return true;
+    }
+
+    private void SyncRecipeSelection()
+    {
+        if (!suppressRecipeSync && Main.netMode != NetmodeID.SinglePlayer)
+            NetSync();
     }
 
     public override void MachineUpdate()
@@ -299,11 +307,141 @@ public abstract class AutocrafterTEBase : ConsumerTE
                 });
 
                 if (matchingRecipe != null && RecipeAllowed(matchingRecipe))
-                    SelectRecipeInSlot(i, matchingRecipe);
+                    SelectRecipeInSlotWithoutSync(i, matchingRecipe);
             }
         }
     }
 
-    protected override void ConsumerNetSend(BinaryWriter writer) => base.ConsumerNetSend(writer);
-    protected override void ConsumerNetReceive(BinaryReader reader) => base.ConsumerNetReceive(reader);
+    protected override void ConsumerNetSend(BinaryWriter writer)
+    {
+        base.ConsumerNetSend(writer);
+
+        writer.Write((byte)OutputSlots);
+        for (int i = 0; i < OutputSlots; i++)
+            WriteRecipe(writer, SelectedRecipes is not null && i < SelectedRecipes.Length ? SelectedRecipes[i] : null);
+    }
+
+    protected override void ConsumerNetReceive(BinaryReader reader)
+    {
+        base.ConsumerNetReceive(reader);
+
+        int recipeCount = reader.ReadByte();
+        Recipe[] receivedRecipes = new Recipe[OutputSlots];
+        for (int i = 0; i < recipeCount; i++)
+        {
+            Recipe recipe = ReadRecipe(reader);
+            if (i < OutputSlots)
+                receivedRecipes[i] = recipe;
+        }
+
+        RebuildSelectedRecipes(receivedRecipes);
+    }
+
+    private static void WriteRecipe(BinaryWriter writer, Recipe recipe)
+    {
+        writer.Write(recipe is not null);
+        if (recipe is null)
+            return;
+
+        writer.Write(recipe.createItem.type);
+        writer.Write(recipe.createItem.stack);
+
+        Item[] requiredItems = recipe.requiredItem.Where(item => item.type > ItemID.None && item.stack > 0).ToArray();
+        writer.Write(requiredItems.Length);
+        foreach (Item item in requiredItems)
+        {
+            writer.Write(item.type);
+            writer.Write(item.stack);
+        }
+
+        int[] requiredTiles = recipe.requiredTile.Where(tile => tile != -1).ToArray();
+        writer.Write(requiredTiles.Length);
+        foreach (int tile in requiredTiles)
+            writer.Write(tile);
+    }
+
+    private Recipe ReadRecipe(BinaryReader reader)
+    {
+        bool hasRecipe = reader.ReadBoolean();
+        if (!hasRecipe)
+            return null;
+
+        int createItemType = reader.ReadInt32();
+        int createItemStack = reader.ReadInt32();
+
+        int requiredItemCount = reader.ReadInt32();
+        (int type, int stack)[] requiredItems = new (int, int)[requiredItemCount];
+        for (int i = 0; i < requiredItemCount; i++)
+            requiredItems[i] = (reader.ReadInt32(), reader.ReadInt32());
+
+        int requiredTileCount = reader.ReadInt32();
+        int[] requiredTiles = new int[requiredTileCount];
+        for (int i = 0; i < requiredTileCount; i++)
+            requiredTiles[i] = reader.ReadInt32();
+
+        return Main.recipe.FirstOrDefault(recipe =>
+            recipe is not null &&
+            RecipeAllowed(recipe) &&
+            recipe.createItem.type == createItemType &&
+            recipe.createItem.stack == createItemStack &&
+            RecipeRequirementsMatch(recipe, requiredItems, requiredTiles)
+        );
+    }
+
+    private static bool RecipeRequirementsMatch(Recipe recipe, (int type, int stack)[] requiredItems, int[] requiredTiles)
+    {
+        var recipeItems = recipe.requiredItem
+            .Where(item => item.type > ItemID.None && item.stack > 0)
+            .Select(item => (item.type, item.stack))
+            .OrderBy(item => item.type)
+            .ThenBy(item => item.stack);
+
+        var receivedItems = requiredItems
+            .OrderBy(item => item.type)
+            .ThenBy(item => item.stack);
+
+        if (!recipeItems.SequenceEqual(receivedItems))
+            return false;
+
+        var recipeTiles = recipe.requiredTile
+            .Where(tile => tile != -1)
+            .OrderBy(tile => tile);
+
+        return recipeTiles.SequenceEqual(requiredTiles.OrderBy(tile => tile));
+    }
+
+    private void RebuildSelectedRecipes(Recipe[] recipes)
+    {
+        SelectedRecipes = new Recipe[OutputSlots];
+        InputSlotAllocation.Clear();
+        for (int i = 0; i < Inventory.Size; i++)
+            Inventory.ClearReserved(i);
+
+        suppressRecipeSync = true;
+        try
+        {
+            for (int i = 0; i < Math.Min(recipes.Length, OutputSlots); i++)
+            {
+                if (recipes[i] is not null)
+                    SelectRecipeInSlot(i, recipes[i]);
+            }
+        }
+        finally
+        {
+            suppressRecipeSync = false;
+        }
+    }
+
+    private bool SelectRecipeInSlotWithoutSync(int outputSlot, Recipe recipe)
+    {
+        suppressRecipeSync = true;
+        try
+        {
+            return SelectRecipeInSlot(outputSlot, recipe);
+        }
+        finally
+        {
+            suppressRecipeSync = false;
+        }
+    }
 }

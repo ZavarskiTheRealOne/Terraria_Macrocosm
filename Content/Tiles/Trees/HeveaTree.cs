@@ -37,13 +37,14 @@ public class HeveaTree : CustomTree
     public override int WoodType => ModContent.ItemType<HeveaWood>();
     public override int AcornType => ModContent.ItemType<Items.Plants.HeveaSapling>();
     public override TileTypeStylePair Sapling => new(ModContent.TileType<HeveaSapling>(), 0);
+    public override Color MapColor => new(90, 44, 30);
 
     public override TreeTypes CountsAsTreeType => TreeTypes.Jungle;
     public override bool Shake(int x, int y, IEntitySource source, ref bool createLeaves)
     {
         if (WorldGen.genRand.NextBool(8))
         {
-            Item.NewItem(source, new Vector2(x, y) * 16, ModContent.ItemType<RubberTreeSap>());
+            Item.NewItem(source, new Vector2(x, y) * 16, ModContent.ItemType<RubberSap>());
             return false;
         }
 
@@ -53,7 +54,7 @@ public class HeveaTree : CustomTree
     public override IEnumerable<Item> GetExtraItemDrops(int i, int j)
     {
         if (WorldGen.genRand.NextBool(10))
-            yield return new Item(ModContent.ItemType<RubberTreeSap>());
+            yield return new Item(ModContent.ItemType<RubberSap>());
     }
 
     
