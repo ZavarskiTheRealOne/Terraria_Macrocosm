@@ -117,13 +117,16 @@ public class UIInventorySlot : UIElement
 
     protected virtual void HandleItemSlotLogic()
     {
-        if (IsMouseHovering && CanInteractWithItem)
+        if (IsMouseHovering)
         {
             Item inv = inventory[itemIndex];
-            HandleCursor(ref inv);
-            HandleLeftClick(ref inv);
-            HandleRightClick(ref inv);
             HandleHover(ref inv);
+            if (CanInteractWithItem)
+            {
+                HandleCursor(ref inv);
+                HandleLeftClick(ref inv);
+                HandleRightClick(ref inv);
+            }
             inventory[itemIndex] = inv;
         }
 
@@ -132,7 +135,6 @@ public class UIInventorySlot : UIElement
             inventory.SyncItem(itemIndex);
             shouldNetsync = false;
         }
-
         if (IsMouseHovering)
             Main.LocalPlayer.mouseInterface = true;
     }
@@ -396,7 +398,21 @@ public class UIInventorySlot : UIElement
         Asset<Texture2D> reservedTexture = inventory.GetReservedTexture(itemIndex);
         Color color = inventory.GetReservedColor(itemIndex) ?? slotBorderColor;
         if (reservedTexture is not null && item.type == ItemID.None)
-            spriteBatch.Draw(reservedTexture.Value, position + (slotTexture.Size() / 2f * Main.inventoryScale), null, color, 0f, reservedTexture.Size() / 2f, Main.inventoryScale, SpriteEffects.None, 0f);
+        {
+            if (inventory.TryGetReservedItemClone(itemIndex, out Item reservedItem))
+            {
+                Vector2 vector = slotTexture.Size() * Main.inventoryScale;
+                DrawItemIcon(reservedItem, itemSlotContext, spriteBatch, position + vector / 2f, Main.inventoryScale, SizeLimit, color);
+            }
+            else
+            {
+                spriteBatch.Draw(reservedTexture.Value, position + (slotTexture.Size() / 2f * Main.inventoryScale), null, color, 0f, reservedTexture.Size() / 2f, Main.inventoryScale, SpriteEffects.None, 0f);
+            }
+
+            int reservedStack = inventory.GetReservedStack(itemIndex);
+            if (reservedStack > 1)
+                ChatManager.DrawColorCodedStringWithShadow(spriteBatch, FontAssets.ItemStack.Value, reservedStack.ToString(), position + new Vector2(10f, 26f) * Main.inventoryScale, Color.White, 0f, Vector2.Zero, new Vector2(Main.inventoryScale), -1f, Main.inventoryScale);
+        }
 
         if (item.favorited)
             spriteBatch.Draw(slotFavoritedTexture.Value, position, null, slotFavoritedColor, 0f, default, Main.inventoryScale, SpriteEffects.None, 0f);

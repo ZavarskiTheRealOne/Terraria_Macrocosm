@@ -36,6 +36,7 @@ public partial class Inventory : IEnumerable<Item>
 
     private bool[] reservedSlots;
     private int[] reservedTypes;
+    private int[] reservedStacks;
     private Func<Item, bool>[] reservedChecks;
     private LocalizedText[] reservedTooltips;
     private Asset<Texture2D>[] reservedTextures;
@@ -102,6 +103,7 @@ public partial class Inventory : IEnumerable<Item>
 
         reservedSlots = new bool[clampedSize];
         reservedTypes = new int[clampedSize];
+        reservedStacks = new int[clampedSize];
         reservedChecks = new Func<Item, bool>[clampedSize];
         reservedTooltips = new LocalizedText[clampedSize];
         reservedTextures = new Asset<Texture2D>[clampedSize];
@@ -183,6 +185,7 @@ public partial class Inventory : IEnumerable<Item>
 
             Array.Resize(ref reservedSlots, newSize);
             Array.Resize(ref reservedTypes, newSize);
+            Array.Resize(ref reservedStacks, newSize);
             Array.Resize(ref reservedChecks, newSize);
             Array.Resize(ref reservedTooltips, newSize);
             Array.Resize(ref reservedTextures, newSize);
@@ -221,19 +224,21 @@ public partial class Inventory : IEnumerable<Item>
 
         reservedSlots[index] = true;
         reservedTypes[index] = ItemID.None;
+        reservedStacks[index] = 1;
         reservedChecks[index] = checkReserved;
         reservedTooltips[index] = tooltip;
         reservedTextures[index] = texture;
         reservedColors[index] = color;
     }
 
-    public void SetReserved(int index, int itemType, LocalizedText tooltip = null, Asset<Texture2D> texture = null, Color? color = null)
+    public void SetReserved(int index, int itemType, LocalizedText tooltip = null, Asset<Texture2D> texture = null, Color? color = null, int stack = 1)
     {
         if (index < 0 || index >= Size)
             return;
 
         reservedSlots[index] = true;
         reservedTypes[index] = itemType;
+        reservedStacks[index] = Math.Max(1, stack);
         reservedChecks[index] = (item) => item.type == itemType;
         reservedTooltips[index] = tooltip;
         reservedTextures[index] = texture;
@@ -246,6 +251,7 @@ public partial class Inventory : IEnumerable<Item>
         {
             reservedSlots[i] = true;
             reservedTypes[i] = ItemID.None;
+            reservedStacks[i] = 1;
             reservedChecks[i] = checkReserved;
             reservedTooltips[i] = tooltip;
             reservedTextures[i] = texture;
@@ -253,12 +259,13 @@ public partial class Inventory : IEnumerable<Item>
         }
     }
 
-    public void SetReserved(int itemType, LocalizedText tooltip = null, Asset<Texture2D> texture = null, Color? color = null)
+    public void SetReserved(int itemType, LocalizedText tooltip = null, Asset<Texture2D> texture = null, Color? color = null, int stack = 1)
     {
         for (int i = 0; i < Size; i++)
         {
             reservedSlots[i] = true;
             reservedTypes[i] = itemType;
+            reservedStacks[i] = Math.Max(1, stack);
             reservedChecks[i] = (item) => item.type == itemType;
             reservedTooltips[i] = tooltip;
             reservedTextures[i] = texture;
@@ -273,6 +280,7 @@ public partial class Inventory : IEnumerable<Item>
 
         reservedSlots[index] = false;
         reservedTypes[index] = ItemID.None;
+        reservedStacks[index] = 1;
         reservedChecks[index] = null;
         reservedTooltips[index] = null;
         reservedTextures[index] = null;
@@ -291,7 +299,7 @@ public partial class Inventory : IEnumerable<Item>
     {
         if (index >= 0 && index < reservedTooltips.Length && reservedTypes[index] > 0)
         {
-            item = new Item(reservedTypes[index]);
+            item = new Item(reservedTypes[index], reservedStacks[index]);
             return true;
         }
 
@@ -317,6 +325,7 @@ public partial class Inventory : IEnumerable<Item>
     public LocalizedText GetReservedTooltip(int index) => index >= 0 && index < reservedTooltips.Length ? reservedTooltips[index] : null;
     public Asset<Texture2D> GetReservedTexture(int index) => index >= 0 && index < reservedTextures.Length ? reservedTextures[index] : null;
     public Color? GetReservedColor(int index) => index >= 0 && index < reservedColors.Length ? reservedColors[index] : null;
+    public int GetReservedStack(int index) => index >= 0 && index < reservedStacks.Length ? reservedStacks[index] : 1;
 
     public bool TryPlacingItem(ref Item item, bool justCheck = false, bool fromPlayer = false, bool sound = true, bool serverSync = true, int startIndex = 0, int? endIndex = null)
     {

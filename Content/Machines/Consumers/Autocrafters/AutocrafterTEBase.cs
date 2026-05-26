@@ -115,7 +115,8 @@ public abstract class AutocrafterTEBase : ConsumerTE
             recipe.createItem.type,
             tooltip: null,
             texture: TextureAssets.Item[recipe.createItem.type],
-            color: Color.White * 0.8f
+            color: Color.White * 0.8f,
+            stack: recipe.createItem.stack
         );
 
         List<int> allocatedInputs = new();
@@ -137,7 +138,8 @@ public abstract class AutocrafterTEBase : ConsumerTE
                 requiredItem.type,
                 tooltip: null,
                 texture: TextureAssets.Item[requiredItem.type],
-                color: Color.White * 0.5f
+                color: Color.White * 0.5f,
+                stack: requiredItem.stack
             );
 
             inputIndex++;

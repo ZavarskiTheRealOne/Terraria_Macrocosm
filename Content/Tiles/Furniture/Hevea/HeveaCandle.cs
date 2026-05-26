@@ -26,7 +26,7 @@ public class HeveaCandle : ModTile, IToggleableTile
         Main.tileLavaDeath[Type] = true;
 
         TileObjectData.newTile.CopyFrom(TileObjectData.GetTileData(TileID.Candles, 0));
-        TileObjectData.newTile.CoordinateHeights = [18];
+        TileObjectData.newTile.CoordinateHeights = [20];
 
         TileObjectData.addTile(Type);
 

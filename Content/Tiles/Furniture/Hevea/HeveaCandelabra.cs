@@ -30,7 +30,7 @@ public class HeveaCandelabra : ModTile, IToggleableTile
         TileObjectData.newTile.CopyFrom(TileObjectData.Style2x2);
         TileObjectData.newTile.StyleHorizontal = true;
         TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.Table, 2, 0);
-        TileObjectData.newTile.CoordinateHeights = [16, 18];
+        TileObjectData.newTile.CoordinateHeights = [16, 16];
 
         TileObjectData.addTile(Type);
 
