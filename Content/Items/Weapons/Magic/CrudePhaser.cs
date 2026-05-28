@@ -12,7 +12,7 @@ public class CrudePhaser : ModItem
 {
     public override void SetDefaults()
     {
-        Item.damage = 85;
+        Item.damage = 105;
         Item.DamageType = DamageClass.Magic;
         Item.mana = 8;
         Item.width = 48;
