@@ -1,5 +1,7 @@
 OilRefinery.DisplayName: Oil Refinery
+OreDrill.DisplayName: Ore Excavator
 OreExcavator.DisplayName: Ore Excavator
+Pumpjack.DisplayName: Pumpjack
 SteamEngine.DisplayName: Steam Engine
 AutocrafterT1.DisplayName: Tier 1 Assembler
 AutocrafterT2.DisplayName: Tier 2 Assembler
@@ -33,7 +35,7 @@ Common: {
 	PowerInfo: {
 		Simple: "{0}kW"
 		Energy: "{0}kJ"
-		Common: "{0}kW / {1}kW"
+		Common: "{0} / {1}kW"
 		Consumer: Supplied: {0}kW / Demand: {1}kW / Max: {2}kW
 		ConsumerIdle: Idle / Max: {0}kW
 		Generator: Generated: {0}kW / Max: {1}kW

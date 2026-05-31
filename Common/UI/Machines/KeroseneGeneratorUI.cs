@@ -209,7 +209,7 @@ public class KeroseneGeneratorUI : MachineUI
         inputArrowProgressBar.Progress = KeroseneGenerator.ConsumedItem.IsAir ? 0f : 1f - KeroseneGenerator.BurnProgress;
 
         float rpm = KeroseneGenerator.RPM;
-        rpmText.SetText($"{(int)rpm} RPM");
+        rpmText.SetText(Language.GetText("Mods.Macrocosm.Machines.KeroseneGenerator.RPM").Format((int)rpm));
 
         bool running = rpmProgress > 0.01f;
         if (running)

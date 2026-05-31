@@ -3003,16 +3003,6 @@ PipeCutter: {
 	Tooltip: Removes conveyor pipes and attachments
 }
 
-CrudeWireRed: {
-	DisplayName: Crude Red Wrench
-	Tooltip: Places red wire
-}
-
-CrudeWireBlue: {
-	DisplayName: Crude Blue Wrench
-	Tooltip: Places blue wire
-}
-
 CrudeWireCutter: {
 	DisplayName: Crude Wire Cutter
 	Tooltip: Cuts wires
@@ -3659,13 +3649,13 @@ RegolithPlatform: {
 }
 
 CrudeWireWrenchBlue: {
-	DisplayName: Crude Wire Wrench Blue
-	Tooltip: ""
+	DisplayName: Crude Blue Wrench
+	Tooltip: Places blue wire
 }
 
 CrudeWireWrenchRed: {
-	DisplayName: Crude Wire Wrench Red
-	Tooltip: ""
+	DisplayName: Crude Red Wrench
+	Tooltip: Places red wire
 }
 
 HeveaBathtub: {

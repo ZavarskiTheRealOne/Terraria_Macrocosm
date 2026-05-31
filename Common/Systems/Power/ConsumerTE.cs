@@ -1,4 +1,4 @@
-﻿using Macrocosm.Common.Utils;
+using Macrocosm.Common.Utils;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System;
@@ -44,7 +44,7 @@ public abstract class ConsumerTE : MachineTE
 
     public override void DrawMachinePowerInfo(SpriteBatch spriteBatch, Vector2 basePosition, Color lightColor)
     {
-        string power = $"{InputPower:F2} / {PowerDemand:F2}kW";
+        string power = Language.GetText("Mods.Macrocosm.Machines.Common.PowerInfo.Common").Format($"{InputPower:F2}", $"{PowerDemand:F2}");
 
         Vector2 textSize = FontAssets.MouseText.Value.MeasureString(power);
         Vector2 position = new Vector2(basePosition.X + (MachineTile.Width * 16f / 2f) - (textSize.X / 2f) + 8f, basePosition.Y - 22f) - Main.screenPosition;
