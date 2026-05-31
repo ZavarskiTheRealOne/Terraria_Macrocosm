@@ -25,6 +25,7 @@ Feldy - Moderator, Programmer
 Lincolnennis - Composer \
 Sc0p3r - Composer \
 TYESKI - Composer \
+Super (SMZ) - Composer \
 Zetry - Soundsmith
 
 Dandy - Spriter \
@@ -33,7 +34,6 @@ dontkickmychick - Scholar \
 Dovahkick - Spriter \
 Goat - Artist, Spriter \
 OmegA-Vinier - Spriter, Programmer \
-pil - Spriter \
 Rocket - Spriter \
 SpicySpaceSnake - Spriter \
 Uncon_Arts - Artist \
@@ -50,6 +50,7 @@ Yttrium - Tester
 Dominick - Spriter \
 Ebonfly - Programmer \
 EduaRRdo - Spriter \
+Hatrednotfound - Programmer \
 IamPolaaris - Spriter \
 Jamiscus - Spriter \
 Lion8cake - Programmer \
