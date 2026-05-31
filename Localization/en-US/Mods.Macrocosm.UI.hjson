@@ -47,11 +47,15 @@ Rocket: {
 		CommandPod.DisplayName: Command Pod
 		PayloadPod.DisplayName: Payload
 		ServiceModule.DisplayName: Service Module
+		StructureModule.DisplayName: Structure Module
 		UnmannedTug.DisplayName: Unmanned Tug
 		ReactorModule.DisplayName: Reactor Module
-		EngineModule.DisplayName: Engine Module
+		EngineModuleMk1.DisplayName: Engine Module
+		EngineModuleMk2.DisplayName: Engine Module MK2
 		BoosterLeft.DisplayName: Left Booster
 		BoosterRight.DisplayName: Right Booster
+		LegModuleLeft.DisplayName: Left Leg Module
+		LegModuleRight.DisplayName: Right Leg Module
 	}
 
 	Customization: {
@@ -64,6 +68,17 @@ Rocket: {
 		ResetModule: Reset module to default appearance
 		ResetRocket: Reset rocket to default appearance
 		ResetPattern: Reset pattern to default appearance
+
+		Patterns: {
+			Astra: Astra
+			Basic: Basic
+			Binary: Binary
+			Delta: Delta
+			Hazard: Hazard
+			Helix: Helix
+			Redstone: Redstone
+			Saturn: Saturn
+		}
 	}
 
 	Cargo.DumpFuel: Dump
