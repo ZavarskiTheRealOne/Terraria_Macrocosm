@@ -1279,7 +1279,7 @@ public partial class Moon
         }
     }
 
-    //[Task(weight: 20.0)]
+    [Task(weight: 20.0)]
     private void AmbientTask(GenerationProgress progress)
     {
         progress.Message = Language.GetTextValue("Mods.Macrocosm.WorldGen.Moon.AmbientTask");

@@ -17,6 +17,7 @@ namespace Macrocosm.Content.NPCs.Enemies.Moon.Dweller;
 
 public class Dweller : ModNPC
 {
+    public override bool IsLoadingEnabled(Mod mod) => false;
 
     private const int LegCount = 6;
     private readonly Leg[] Legs = new Leg[LegCount];
