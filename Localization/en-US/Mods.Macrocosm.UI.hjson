@@ -50,7 +50,7 @@ Rocket: {
 		StructureModule.DisplayName: Structure Module
 		UnmannedTug.DisplayName: Unmanned Tug
 		ReactorModule.DisplayName: Reactor Module
-		EngineModuleMk1.DisplayName: Engine Module
+		EngineModuleMk1.DisplayName: Engine Module MK1
 		EngineModuleMk2.DisplayName: Engine Module MK2
 		BoosterLeft.DisplayName: Left Booster
 		BoosterRight.DisplayName: Right Booster
