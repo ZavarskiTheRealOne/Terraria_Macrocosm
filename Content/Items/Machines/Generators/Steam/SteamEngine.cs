@@ -1,3 +1,4 @@
+using Macrocosm.Common.Sets;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -6,6 +7,11 @@ namespace Macrocosm.Content.Items.Machines.Generators.Steam;
 
 public class SteamEngine : ModItem
 {
+    public override void SetStaticDefaults()
+    {
+        ItemSets.UnobtainableItem[Type] = true;
+    }
+
     public override void SetDefaults()
     {
         Item.DefaultToPlaceableTile(ModContent.TileType<Content.Machines.Generators.Steam.SteamEngine>());

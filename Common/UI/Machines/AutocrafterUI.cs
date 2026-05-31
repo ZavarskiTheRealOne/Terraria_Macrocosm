@@ -5,10 +5,14 @@ using Macrocosm.Content.Machines.Consumers.Autocrafters;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
 using Terraria.GameContent.UI.Elements;
+using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace Macrocosm.Common.UI.Machines;
 
@@ -23,11 +27,21 @@ public class AutocrafterUI : MachineUI
     private UIPanel infoPanel;
 
     private readonly Dictionary<int, UIPanel> outputSlotPanels = new();
+    private readonly List<Recipe> selectedRecipeOptions = new();
+    private Item selectedRecipeResult;
     private int selectedOutputSlot = -1;
+
+    private Asset<Texture2D> applyRecipeIcon;
+    private Asset<Texture2D> clearRecipeIcon;
+    private Asset<Texture2D> clearRecipeDisabledIcon;
 
     public override void OnInitialize()
     {
         base.OnInitialize();
+
+        applyRecipeIcon = ModContent.Request<Texture2D>(Macrocosm.UISymbolsPath + "CheckmarkGreen", AssetRequestMode.ImmediateLoad);
+        clearRecipeIcon = ModContent.Request<Texture2D>(Macrocosm.UISymbolsPath + "CrossmarkRed", AssetRequestMode.ImmediateLoad);
+        clearRecipeDisabledIcon = ModContent.Request<Texture2D>(Macrocosm.UISymbolsPath + "CrossmarkGray", AssetRequestMode.ImmediateLoad);
 
         Width.Set(850f, 0f);
         Height.Set(700f, 0f);
@@ -79,7 +93,7 @@ public class AutocrafterUI : MachineUI
         {
             Width = new(0f, 1f),
             Height = new(0f, 1f),
-            OnRecipeClicked = OnRecipeClicked
+            OnResultClicked = OnResultClicked
         };
         recipeBrowserPanel.Append(recipeBrowser);
 
@@ -94,17 +108,18 @@ public class AutocrafterUI : MachineUI
         infoPanel.SetPadding(8f);
         bottomPanel.Append(infoPanel);
         PopulateSlots();
+        PopulateInfoPanel();
     }
 
-    private void OnRecipeClicked(Recipe recipe)
+    private void OnResultClicked(Item result, IReadOnlyList<Recipe> recipes)
     {
-        if (!AutocrafterTE.SelectRecipeInFreeSlot(recipe))
-        {
-            if (selectedOutputSlot != -1 && outputSlotPanels.ContainsKey(selectedOutputSlot))
-                AutocrafterTE.SelectRecipeInSlot(selectedOutputSlot, recipe);
-        }
+        selectedRecipeResult = result?.Clone();
+        selectedRecipeOptions.Clear();
 
-        PopulateSlots();
+        if (recipes is not null)
+            selectedRecipeOptions.AddRange(recipes.Where(recipe => recipe is not null));
+
+        PopulateInfoPanel();
     }
 
     private void PopulateSlots()
@@ -115,22 +130,26 @@ public class AutocrafterUI : MachineUI
         outputSlotPanels.Clear();
         topPanel.RemoveAllChildren();
 
+        if (selectedOutputSlot >= AutocrafterTE.OutputSlots)
+            selectedOutputSlot = -1;
+
         int outputs = AutocrafterTE.OutputSlots;
-        int rowIndex = 0;
         for (int outputIndex = 0; outputIndex < outputs; outputIndex++)
         {
             var recipe = AutocrafterTE.SelectedRecipes?[outputIndex];
-            if (recipe is null)
-                continue;
 
-            if (!AutocrafterTE.InputSlotAllocation.TryGetValue(outputIndex, out var inputSlots))
-                continue;
+            List<int> inputSlots = null;
+            if (recipe is not null)
+                AutocrafterTE.InputSlotAllocation.TryGetValue(outputIndex, out inputSlots);
+
+            inputSlots ??= new();
 
             int inputs = inputSlots.Count;
             float slotSize = 48f;
             float slotSpacing = 6f;
             float arrowWidth = 56f;
             float arrowSpacing = 10f;
+            float clearButtonArea = 42f;
             float rowHeight = slotSize + 14f;
             float rowSpacing = 8f;
 
@@ -138,22 +157,28 @@ public class AutocrafterUI : MachineUI
             {
                 Width = new(-20f, 1f),
                 HAlign = 0.5f,
-                Top = new(8f + rowIndex * (rowHeight + rowSpacing), 0f),
+                Top = new(8f + outputIndex * (rowHeight + rowSpacing), 0f),
                 Height = new(rowHeight, 0f),
                 BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor,
                 BorderColor = UITheme.Current.PanelStyle.BorderColor * 0.5f
             };
-            rowPanel.OnMouseOut += (_, element) => (element as UIPanel).BorderColor = UITheme.Current.PanelButtonStyle.BorderColorHighlight;
-            rowPanel.OnMouseOver += (_, element) => (element as UIPanel).BorderColor = UITheme.Current.PanelStyle.BorderColor * 0.5f;
+            rowPanel.OnMouseOut += (_, element) => (element as UIPanel).BorderColor = UITheme.Current.PanelStyle.BorderColor * 0.5f;
+            rowPanel.OnMouseOver += (_, element) => (element as UIPanel).BorderColor = UITheme.Current.PanelButtonStyle.BorderColorHighlight * 0.8f;
             int capturedOutputIndex = outputIndex;
-            rowPanel.OnLeftClick += (_, _) => selectedOutputSlot = capturedOutputIndex;
+            rowPanel.OnLeftClick += (_, _) =>
+            {
+                selectedOutputSlot = capturedOutputIndex;
+                PopulateInfoPanel();
+            };
             rowPanel.SetPadding(2f);
             rowPanel.PaddingTop = 4f;
             outputSlotPanels[outputIndex] = rowPanel;
 
-            float inputSlotsWidth = inputs * slotSize + (inputs - 1) * slotSpacing;
-            float totalRowWidth = inputSlotsWidth + arrowSpacing + arrowWidth + arrowSpacing + slotSize;
-            float rowContentWidth = Width.Pixels - 20f - rowPanel.PaddingLeft - rowPanel.PaddingRight;
+            float inputSlotsWidth = inputs > 0 ? inputs * slotSize + (inputs - 1) * slotSpacing : 0f;
+            float totalRowWidth = recipe is null
+                ? slotSize
+                : inputSlotsWidth + (inputs > 0 ? arrowSpacing : 0f) + arrowWidth + arrowSpacing + slotSize;
+            float rowContentWidth = Width.Pixels - 20f - rowPanel.PaddingLeft - rowPanel.PaddingRight - clearButtonArea;
             float startX = (rowContentWidth - totalRowWidth) / 2f;
             for (int inputIndex = 0; inputIndex < inputs; inputIndex++)
             {
@@ -167,30 +192,260 @@ public class AutocrafterUI : MachineUI
                 rowPanel.Append(inputSlot);
             }
 
-            UITextureProgressBar extractArrowProgressBar = new(
-               ModContent.Request<Texture2D>(Macrocosm.UIButtonsPath + "LongArrowBorder", AssetRequestMode.ImmediateLoad),
-               ModContent.Request<Texture2D>(Macrocosm.UIButtonsPath + "LongArrowPlain", AssetRequestMode.ImmediateLoad),
-               ModContent.Request<Texture2D>(Macrocosm.UIButtonsPath + "LongArrowPlain", AssetRequestMode.ImmediateLoad)
-            )
+            float outputLeft = startX;
+            if (recipe is not null)
             {
-                BorderColor = UITheme.Current.PanelStyle.BorderColor,
-                BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor,
-                FillColors = [Color.Black],
-                Left = new(startX + inputSlotsWidth + arrowSpacing, 0f),
-                VAlign = 0.52f
-            };
+                float arrowLeft = startX + inputSlotsWidth + (inputs > 0 ? arrowSpacing : 0f);
+                UITextureProgressBar extractArrowProgressBar = new(
+                   ModContent.Request<Texture2D>(Macrocosm.UIButtonsPath + "LongArrowBorder", AssetRequestMode.ImmediateLoad),
+                   ModContent.Request<Texture2D>(Macrocosm.UIButtonsPath + "LongArrowPlain", AssetRequestMode.ImmediateLoad),
+                   ModContent.Request<Texture2D>(Macrocosm.UIButtonsPath + "LongArrowPlain", AssetRequestMode.ImmediateLoad)
+                )
+                {
+                    BorderColor = UITheme.Current.PanelStyle.BorderColor,
+                    BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor,
+                    FillColors = [Color.Black],
+                    Left = new(arrowLeft, 0f),
+                    VAlign = 0.52f
+                };
 
-            rowPanel.Append(extractArrowProgressBar);
+                rowPanel.Append(extractArrowProgressBar);
+                outputLeft = arrowLeft + arrowWidth + arrowSpacing;
+            }
 
             var outputSlot = AutocrafterTE.Inventory.ProvideItemSlot(outputIndex);
             outputSlot.SetPadding(0f);
             outputSlot.Top.Set(0f, 0f);
-            outputSlot.Left.Set(startX + inputSlotsWidth + arrowSpacing + arrowWidth + arrowSpacing, 0f);
+            outputSlot.Left.Set(outputLeft, 0f);
 
             rowPanel.Append(outputSlot);
+            rowPanel.Append(CreateClearRecipeButton(outputIndex));
 
             topPanel.Append(rowPanel);
-            rowIndex++;
+        }
+    }
+
+    private UIPanelIconButton CreateClearRecipeButton(int outputIndex)
+    {
+        var clearButton = new UIPanelIconButton(clearRecipeIcon)
+        {
+            HAlign = 1f,
+            VAlign = 0.5f,
+            Left = new(-4f, 0f),
+            CheckInteractible = () => CanClearRecipeSlot(outputIndex)
+        };
+
+        clearButton.OnUpdate += element =>
+        {
+            var button = (UIPanelIconButton)element;
+            button.SetImage(CanClearRecipeSlot(outputIndex) ? clearRecipeIcon : clearRecipeDisabledIcon);
+        };
+        clearButton.OnLeftClick += (_, _) => ClearRecipeSlot(outputIndex);
+
+        return clearButton;
+    }
+
+    private bool CanClearRecipeSlot(int outputSlot)
+        => AutocrafterTE.SelectedRecipes is not null
+        && outputSlot >= 0
+        && outputSlot < AutocrafterTE.SelectedRecipes.Length
+        && AutocrafterTE.SelectedRecipes[outputSlot] is not null
+        && AutocrafterTE.CanOverwriteRecipeAt(outputSlot);
+
+    private void ClearRecipeSlot(int outputSlot)
+    {
+        if (!AutocrafterTE.ClearRecipeSlot(outputSlot))
+            return;
+
+        PopulateSlots();
+        PopulateInfoPanel();
+    }
+
+    private void PopulateInfoPanel()
+    {
+        infoPanel.RemoveAllChildren();
+
+        if (selectedRecipeResult is null || selectedRecipeOptions.Count <= 0)
+            return;
+
+        Item resultItem = selectedRecipeResult.Clone();
+        UIText resultNameText = new(resultItem.Name, 0.8f)
+        {
+            Width = new(0f, 1f),
+            Height = new(22f, 0f),
+            TextColor = GetItemNameColor(resultItem),
+            DynamicallyScaleDownToWidth = true
+        };
+        resultNameText.OnUpdate += element =>
+        {
+            if (selectedRecipeResult is not null)
+                ((UIText)element).TextColor = GetItemNameColor(selectedRecipeResult);
+        };
+        infoPanel.Append(resultNameText);
+
+        UIInventorySlot resultSlot = CreateDisplayOnlySlot(ref resultItem);
+        resultSlot.HAlign = 0.5f;
+        resultSlot.Top = new(30f, 0f);
+        infoPanel.Append(resultSlot);
+
+        UIScrollableListPanel recipeList = new()
+        {
+            Width = new(0f, 1f),
+            Height = new(-88f, 1f),
+            Top = new(88f, 0f),
+            BackgroundColor = Color.Transparent,
+            BorderColor = Color.Transparent,
+            ListPadding = 4f,
+            ListOuterPadding = 0f,
+            HideScrollbarIfNotScrollable = true,
+            ScrollbarHAlign = 1f,
+            PaddingLeft = 0f,
+            PaddingRight = 0f,
+            PaddingTop = 0f,
+            PaddingBottom = 0f
+        };
+        recipeList.SetPadding(0f);
+
+        foreach (Recipe recipe in selectedRecipeOptions)
+            recipeList.Add(CreateRecipeOptionRow(recipe));
+
+        infoPanel.Append(recipeList);
+        recipeList.Activate();
+    }
+
+    private static UIInventorySlot CreateDisplayOnlySlot(ref Item item)
+        => new(ref item)
+        {
+            CanInteractWithItem = false,
+            IgnoresMouseInteraction = true
+        };
+
+    private static Color GetItemNameColor(Item item)
+    {
+        float pulse = Main.mouseTextColor / 255f;
+        int alpha = Main.mouseTextColor;
+        int rarity = item?.rare ?? ItemRarityID.White;
+        Color color = new((byte)(255f * pulse), (byte)(255f * pulse), (byte)(255f * pulse), alpha);
+
+        switch (rarity)
+        {
+            case ItemRarityID.Quest:
+                color = new((byte)(255f * pulse), (byte)(175f * pulse), 0, alpha);
+                break;
+            case ItemRarityID.Gray:
+                color = new((byte)(130f * pulse), (byte)(130f * pulse), (byte)(130f * pulse), alpha);
+                break;
+            case ItemRarityID.Blue:
+                color = new((byte)(150f * pulse), (byte)(150f * pulse), (byte)(255f * pulse), alpha);
+                break;
+            case ItemRarityID.Green:
+                color = new((byte)(150f * pulse), (byte)(255f * pulse), (byte)(150f * pulse), alpha);
+                break;
+            case ItemRarityID.Orange:
+                color = new((byte)(255f * pulse), (byte)(200f * pulse), (byte)(150f * pulse), alpha);
+                break;
+            case ItemRarityID.LightRed:
+                color = new((byte)(255f * pulse), (byte)(150f * pulse), (byte)(150f * pulse), alpha);
+                break;
+            case ItemRarityID.Pink:
+                color = new((byte)(255f * pulse), (byte)(150f * pulse), (byte)(255f * pulse), alpha);
+                break;
+            case ItemRarityID.LightPurple:
+                color = new((byte)(210f * pulse), (byte)(160f * pulse), (byte)(255f * pulse), alpha);
+                break;
+            case ItemRarityID.Lime:
+                color = new((byte)(150f * pulse), (byte)(255f * pulse), (byte)(10f * pulse), alpha);
+                break;
+            case ItemRarityID.Yellow:
+                color = new((byte)(255f * pulse), (byte)(255f * pulse), (byte)(10f * pulse), alpha);
+                break;
+            case ItemRarityID.Cyan:
+                color = new((byte)(5f * pulse), (byte)(200f * pulse), (byte)(255f * pulse), alpha);
+                break;
+            case ItemRarityID.Red:
+                color = new((byte)(255f * pulse), (byte)(40f * pulse), (byte)(100f * pulse), alpha);
+                break;
+            case ItemRarityID.Purple:
+                color = new((byte)(180f * pulse), (byte)(40f * pulse), (byte)(255f * pulse), alpha);
+                break;
+        }
+
+        if (rarity > ItemRarityID.Purple && RarityLoader.GetRarity(rarity) is ModRarity modRarity)
+            color = modRarity.RarityColor * pulse;
+
+        if (item is not null && (item.expert || rarity == ItemRarityID.Expert))
+            color = new((byte)(Main.DiscoR * pulse), (byte)(Main.DiscoG * pulse), (byte)(Main.DiscoB * pulse), alpha);
+
+        if (item is not null && (item.master || rarity == ItemRarityID.Master))
+            color = new((byte)(255f * pulse), (byte)(Main.masterColor * 200f * pulse), 0, alpha);
+
+        return color;
+    }
+
+    private UIElement CreateRecipeOptionRow(Recipe recipe)
+    {
+        List<Item> requiredItems = recipe.requiredItem
+            .Where(item => item.type > ItemID.None && item.stack > 0)
+            .Select(item => item.Clone())
+            .ToList();
+
+        const float slotSize = 42f;
+        const float slotSpacing = 4f;
+        const float rowPadding = 6f;
+        const int slotsPerRow = 3;
+
+        int slotRows = Math.Max(1, (requiredItems.Count + slotsPerRow - 1) / slotsPerRow);
+        float rowHeight = rowPadding * 2f + slotRows * slotSize + (slotRows - 1) * slotSpacing;
+
+        UIPanel rowPanel = new()
+        {
+            Width = new(-6f, 1f),
+            Height = new(rowHeight, 0f),
+            BackgroundColor = UITheme.Current.PanelStyle.BackgroundColor,
+            BorderColor = UITheme.Current.PanelStyle.BorderColor * 0.5f
+        };
+        rowPanel.SetPadding(0f);
+
+        for (int i = 0; i < requiredItems.Count; i++)
+        {
+            Item displayItem = requiredItems[i];
+            UIInventorySlot slot = CreateDisplayOnlySlot(ref displayItem);
+            slot.Width = new(slotSize, 0f);
+            slot.Height = new(slotSize, 0f);
+            slot.Left = new(rowPadding + (i % slotsPerRow) * (slotSize + slotSpacing), 0f);
+            slot.Top = new(rowPadding + (i / slotsPerRow) * (slotSize + slotSpacing), 0f);
+
+            rowPanel.Append(slot);
+        }
+
+        var applyButton = new UIPanelIconButton(applyRecipeIcon)
+        {
+            HAlign = 1f,
+            VAlign = 0.5f,
+            Left = new(-rowPadding, 0f),
+            CheckInteractible = () => CanApplyRecipe(recipe)
+        };
+        applyButton.OnLeftClick += (_, _) => ApplyRecipe(recipe);
+        rowPanel.Append(applyButton);
+
+        return rowPanel;
+    }
+
+    private bool CanApplyRecipe(Recipe recipe)
+        => recipe is not null
+        && selectedOutputSlot >= 0
+        && outputSlotPanels.ContainsKey(selectedOutputSlot)
+        && AutocrafterTE.CanOverwriteRecipeAt(selectedOutputSlot);
+
+    private void ApplyRecipe(Recipe recipe)
+    {
+        if (!CanApplyRecipe(recipe))
+            return;
+
+        if (AutocrafterTE.SelectRecipeInSlot(selectedOutputSlot, recipe))
+        {
+            PopulateSlots();
+            PopulateInfoPanel();
         }
     }
 

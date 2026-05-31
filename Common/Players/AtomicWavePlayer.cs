@@ -19,6 +19,9 @@ public class AtomicWavePlayer : ModPlayer
 
     public override void PostUpdate()
     {
+        if (Player.whoAmI != Main.myPlayer)
+            return;
+
         if (AtomicWave)
         {
             if (cooldown >= 1)
@@ -34,7 +37,7 @@ public class AtomicWavePlayer : ModPlayer
 
             if (close && cooldown < 1)
             {
-                Projectile.NewProjectile(new EntitySource_Misc("AtomicWave"), Player.Center, Vector2.Zero, ModContent.ProjectileType<AtomicWaveProjectile>(), 700, 10f, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Misc("AtomicWave"), Player.Center, Vector2.Zero, ModContent.ProjectileType<AtomicWaveProjectile>(), 700, 10f, Player.whoAmI);
                 cooldown = 300;
             }
         }

@@ -17,9 +17,12 @@ public class BoosterPlayer : ModPlayer
 
     public override void ModifyHitNPCWithProj(Projectile proj, NPC target, ref NPC.HitModifiers modifiers)
     {
+        if (Player.whoAmI != Main.myPlayer)
+            return;
+
         if (Main.rand.NextBool(5) && Booster && proj.DamageType == DamageClass.Magic)
         {
-            Projectile.NewProjectile(new EntitySource_Misc("Booster"), target.Center, Vector2.Zero, ModContent.ProjectileType<MageBoosterProjectile>(), 0, 0, Main.myPlayer);
+            Projectile.NewProjectile(new EntitySource_Misc("Booster"), target.Center, Vector2.Zero, ModContent.ProjectileType<MageBoosterProjectile>(), 0, 0, Player.whoAmI);
         }
     }
 

@@ -65,23 +65,23 @@ public class UIItemBrowser : UIElement
     /// Category filters to show as tabs. If null, uses the full set from the Creative menu
     /// (Weapon, Armor, Vanity, BuildingBlock, Furniture, Accessories, MiscAccessories,
     /// Consumables, Tools, Materials, Misc).
-    /// A <see cref="ItemFilters.MiscFallback"/> is appended automatically.
+    /// A <see cref="ItemFilters.MiscFallback"/> is appended automatically unless <paramref name="addMiscFallback"/> is false.
     /// </param>
-    public UIItemBrowser(List<IItemEntryFilter> filters = null)
+    /// <param name="addMiscFallback">Whether to append the Creative menu's Misc fallback tab.</param>
+    public UIItemBrowser(List<IItemEntryFilter> filters = null, bool addMiscFallback = true)
     {
         filterer = new EntryFilterer<Item, IItemEntryFilter>();
 
         var baseFilters = filters ?? DefaultFilters();
-        var allFilters = new List<IItemEntryFilter>(baseFilters)
-        {
-            new ItemFilters.MiscFallback(baseFilters)
-        };
+        var allFilters = new List<IItemEntryFilter>(baseFilters);
+        if (addMiscFallback)
+            allFilters.Add(new ItemFilters.MiscFallback(baseFilters));
 
         filterer.AddFilters(allFilters);
         filterer.SetSearchFilterObject(new ItemFilters.BySearch());
     }
 
-    private static List<IItemEntryFilter> DefaultFilters() =>
+    public static List<IItemEntryFilter> DefaultFilters() =>
     [
         new ItemFilters.Weapon(),
         new ItemFilters.Armor(),
@@ -139,8 +139,8 @@ public class UIItemBrowser : UIElement
         Height.Set(0f, 1f);
         SetPadding(0f);
 
-        // Height reserved at the top for filter tabs (they overlap the panel's top edge)
-        const float filterTabHeight = 38f;
+        bool showFilterTabs = filterer.AvailableFilters.Count > 0;
+        float filterTabHeight = showFilterTabs ? 38f : 0f;
 
         // Content panel: contains search bar + item grid
         contentPanel = new UIPanel()
@@ -154,15 +154,18 @@ public class UIItemBrowser : UIElement
         contentPanel.SetPadding(6f);
         Append(contentPanel);
 
-        // Filter tabs: sit at the top, touching the content panel
-        filterTabs = new UICreativeItemsInfiniteFilteringOptions(filterer, "ItemBrowserFilter");
-        filterTabs.OnClickingOption += RefreshGrid;
-        filterTabs.Top = new(2f, 0f);
-        filterTabs.HAlign = 0.5f;
-        Append(filterTabs);
+        if (showFilterTabs)
+        {
+            // Filter tabs: sit at the top, touching the content panel
+            filterTabs = new UICreativeItemsInfiniteFilteringOptions(filterer, "ItemBrowserFilter");
+            filterTabs.OnClickingOption += RefreshGrid;
+            filterTabs.Top = new(2f, 0f);
+            filterTabs.HAlign = 0.5f;
+            Append(filterTabs);
+        }
 
         // Search bar (inside content panel, pushed down for tab overhang)
-        const float searchAreaTop = 10f;
+        float searchAreaTop = showFilterTabs ? 10f : 0f;
         const float searchAreaHeight = 28f;
         UIElement searchArea = new()
         {

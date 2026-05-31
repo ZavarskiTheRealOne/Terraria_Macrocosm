@@ -1,4 +1,5 @@
 ﻿using Macrocosm.Content.Dusts;
+using Macrocosm.Content.Items.Bars;
 using Macrocosm.Content.Rarities;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -50,5 +51,12 @@ public class ChandriumAxe : ModItem
         #region Lighting
         Lighting.AddLight(player.position, 0.61f * lightMultiplier, 0.26f * lightMultiplier, 0.85f * lightMultiplier);
         #endregion
+    }
+    public override void AddRecipes()
+    {
+        CreateRecipe()
+        .AddIngredient<ChandriumBar>(12)
+        .AddTile(TileID.LunarCraftingStation)
+        .Register();
     }
 }

@@ -1,6 +1,9 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
+using Terraria.DataStructures;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.UI;
 using Macrocosm.Content.Machines.Consumers.Autocrafters;
@@ -11,10 +14,11 @@ public class UIAutocrafterRecipeBrowser : UIElement
 {
     private UIItemBrowser itemBrowser;
 
-    private readonly List<Recipe> availableRecipes = new();
+    private readonly List<Item> availableResults = new();
+    private readonly Dictionary<int, List<Recipe>> recipesByResultType = new();
     private readonly AutocrafterTEBase autocrafter;
 
-    public Action<Recipe> OnRecipeClicked { get; set; }
+    public Action<Item, IReadOnlyList<Recipe>> OnResultClicked { get; set; }
 
     public UIAutocrafterRecipeBrowser(AutocrafterTEBase machine)
     {
@@ -27,7 +31,9 @@ public class UIAutocrafterRecipeBrowser : UIElement
         Height.Set(0f, 1f);
         SetPadding(0f);
 
-        itemBrowser = new UIItemBrowser()
+        PopulateAvailableRecipes();
+
+        itemBrowser = new UIItemBrowser(CreateNonEmptyFilters(availableResults), addMiscFallback: false)
         {
             Width = new(0f, 1f),
             Height = new(0f, 1f),
@@ -35,28 +41,47 @@ public class UIAutocrafterRecipeBrowser : UIElement
         itemBrowser.OnEntrySelected += OnItemSelected;
         Append(itemBrowser);
 
-        PopulateAvailableRecipes();
+        itemBrowser.SetEntries(availableResults);
     }
 
     private void PopulateAvailableRecipes()
     {
-        availableRecipes.Clear();
+        availableResults.Clear();
+        recipesByResultType.Clear();
+
         foreach (var recipe in Main.recipe)
         {
             if (recipe?.createItem is Item item && item.type > ItemID.None && autocrafter.RecipeAllowed(recipe))
-                availableRecipes.Add(recipe);
+            {
+                if (!recipesByResultType.TryGetValue(item.type, out var recipes))
+                {
+                    recipes = new();
+                    recipesByResultType[item.type] = recipes;
+                    availableResults.Add(item.Clone());
+                }
+
+                recipes.Add(recipe);
+            }
         }
+    }
 
-        var items = new List<Item>(availableRecipes.Count);
-        foreach (var recipe in availableRecipes)
-            items.Add(recipe.createItem);
+    private static List<IItemEntryFilter> CreateNonEmptyFilters(IReadOnlyList<Item> items)
+    {
+        List<IItemEntryFilter> baseFilters = UIItemBrowser.DefaultFilters();
+        List<IItemEntryFilter> filters = baseFilters
+            .Where(filter => items.Any(filter.FitsFilter))
+            .ToList();
 
-        itemBrowser.SetEntries(items);
+        var miscFallback = new ItemFilters.MiscFallback(baseFilters);
+        if (items.Any(miscFallback.FitsFilter))
+            filters.Add(miscFallback);
+
+        return filters;
     }
 
     private void OnItemSelected(int index, Item item)
     {
-        if (index >= 0 && index < availableRecipes.Count)
-            OnRecipeClicked?.Invoke(availableRecipes[index]);
+        if (index >= 0 && index < availableResults.Count && recipesByResultType.TryGetValue(item.type, out var recipes))
+            OnResultClicked?.Invoke(item, recipes);
     }
 }

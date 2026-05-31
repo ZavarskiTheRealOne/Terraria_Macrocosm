@@ -1,11 +1,13 @@
 ﻿using Macrocosm.Common.Sets;
 using Macrocosm.Common.Storage;
+using Macrocosm.Common.DataStructures;
 using Macrocosm.Common.Systems.Power;
 using Macrocosm.Common.Utils;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -123,7 +125,8 @@ public class BurnerGeneratorTE : GeneratorTE
                 {
                     burnTimer = 0;
                     fuelData.OnConsumed(ConsumedItem.Clone(), Position.ToWorldCoordinates());
-                    ConsumedItem = new(0);
+                    ReturnEmptyContainer(ConsumedItem.type);
+                    ConsumedItem.TurnToAir(fullReset: true);
                 }
                 else
                 {
@@ -166,5 +169,16 @@ public class BurnerGeneratorTE : GeneratorTE
 
         if (tag.ContainsKey(nameof(hullHeatProgress)))
             hullHeatProgress = tag.GetFloat(nameof(hullHeatProgress));
+    }
+
+    private void ReturnEmptyContainer(int filledContainerType)
+    {
+        int emptyType = LiquidContainerData.GetEmptyType(ItemSets.LiquidContainerData, filledContainerType);
+        if (emptyType <= ItemID.None)
+            return;
+
+        Item emptyContainer = new(emptyType);
+        if (!Inventory.TryPlacingItem(ref emptyContainer, sound: false, serverSync: true, ignoreReserved: true) && emptyContainer.stack > 0)
+            Item.NewItem(new EntitySource_TileEntity(this), InventoryPosition, emptyContainer);
     }
 }

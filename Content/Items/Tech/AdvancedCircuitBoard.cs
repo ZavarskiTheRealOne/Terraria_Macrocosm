@@ -1,4 +1,3 @@
-using Macrocosm.Common.Sets;
 using Macrocosm.Content.Items.Ores;
 using Macrocosm.Content.Items.Refined;
 using Terraria;
@@ -12,7 +11,6 @@ public class AdvancedCircuitBoard : ModItem
     public override void SetStaticDefaults()
     {
         Item.ResearchUnlockCount = 5;
-        ItemSets.UnobtainableItem[Type] = true;
     }
 
     public override void SetDefaults()

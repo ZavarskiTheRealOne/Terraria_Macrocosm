@@ -70,6 +70,31 @@ public partial class Trashnado : ModNPC
     {
     }
 
+    public override void HitEffect(NPC.HitInfo hit)
+    {
+        if (NPC.life > 0)
+            return;
+
+        for (int i = 0; i < 10; i++)
+        {
+            Particle.Create<Smoke>((p) =>
+            {
+                p.Position = NPC.Center + Main.rand.NextVector2Circular(NPC.width * 0.4f, NPC.height * 0.4f);
+                p.Scale = new(Main.rand.NextFloat(0.25f, 0.55f));
+                p.Velocity = Main.rand.NextVector2Circular(1.6f, 1.1f) + NPC.velocity * 0.15f;
+                p.Rotation = Main.rand.NextFloat(MathHelper.TwoPi);
+                p.Color = (new Color(135, 135, 135) * Main.rand.NextFloat(0.45f, 0.9f)).WithAlpha(215);
+                p.DrawLayer = ParticleDrawLayer.BeforeNPCs;
+                p.VanillaUpdate = true;
+                p.Opacity = NPC.Opacity;
+                p.TimeToLive = Main.rand.Next(30, 50);
+                p.FadeOutNormalizedTime = 0.35f;
+                p.ScaleVelocity = new(Main.rand.NextFloat(0.01f, 0.025f));
+                p.WindFactor = Main.windSpeedCurrent > 0 ? 0.035f : 0.01f;
+            });
+        }
+    }
+
     private bool spawned;
 
     public override void AI()

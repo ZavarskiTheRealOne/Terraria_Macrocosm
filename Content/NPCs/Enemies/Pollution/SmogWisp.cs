@@ -131,6 +131,9 @@ public class SmogWisp : ModNPC
 
     public override void HitEffect(NPC.HitInfo hit)
     {
+        if (NPC.life <= 0)
+            SpawnDeathSmoke();
+
         for (int i = 0; i < 5; i++)
         {
             int dustIndex = Dust.NewDust(NPC.position, NPC.width, NPC.height, ModContent.DustType<CoalDust>());
@@ -138,6 +141,27 @@ public class SmogWisp : ModNPC
             dust.velocity.X *= dust.velocity.X * 1.25f * hit.HitDirection + Main.rand.Next(0, 100) * 0.015f;
             dust.velocity.Y *= dust.velocity.Y * 0.25f + Main.rand.Next(-50, 51) * 0.01f;
             dust.scale *= 1f + Main.rand.Next(-30, 31) * 0.01f;
+        }
+    }
+
+    private void SpawnDeathSmoke()
+    {
+        for (int i = 0; i < 5; i++)
+        {
+            Particle.Create<Smoke>((p) =>
+            {
+                p.Position = NPC.Center + Main.rand.NextVector2Circular(NPC.width * 0.35f, NPC.height * 0.35f);
+                p.Velocity = Main.rand.NextVector2Circular(1.2f, 1.2f) + NPC.velocity * 0.1f;
+                p.Scale = new(Main.rand.NextFloat(0.18f, 0.35f));
+                p.Rotation = Main.rand.NextFloat(MathHelper.TwoPi);
+                p.Color = (new Color(80, 80, 80) * Main.rand.NextFloat(0.65f, 1f)).WithAlpha(215);
+                p.VanillaUpdate = true;
+                p.Opacity = NPC.Opacity;
+                p.ScaleVelocity = new(Main.rand.NextFloat(0.0025f, 0.0075f));
+                p.TimeToLive = Main.rand.Next(25, 40);
+                p.FadeOutNormalizedTime = 0.35f;
+                p.WindFactor = Main.windSpeedCurrent > 0 ? 0.035f : 0.01f;
+            });
         }
     }
 

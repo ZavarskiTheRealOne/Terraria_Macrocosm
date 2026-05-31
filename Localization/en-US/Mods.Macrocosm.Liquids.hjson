@@ -4,6 +4,6 @@ Oil: {
 }
 
 RocketFuel: {
-	$parentVal: Rocket Fuel
-	MapEntry: Rocket Fuel
+	$parentVal: Kerosene
+	MapEntry: Kerosene
 }

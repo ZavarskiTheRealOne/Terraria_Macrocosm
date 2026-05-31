@@ -327,7 +327,7 @@ public partial class Inventory : IEnumerable<Item>
     public Color? GetReservedColor(int index) => index >= 0 && index < reservedColors.Length ? reservedColors[index] : null;
     public int GetReservedStack(int index) => index >= 0 && index < reservedStacks.Length ? reservedStacks[index] : 1;
 
-    public bool TryPlacingItem(ref Item item, bool justCheck = false, bool fromPlayer = false, bool sound = true, bool serverSync = true, int startIndex = 0, int? endIndex = null)
+    public bool TryPlacingItem(ref Item item, bool justCheck = false, bool fromPlayer = false, bool sound = true, bool serverSync = true, int startIndex = 0, int? endIndex = null, bool ignoreReserved = false)
     {
         if (ChestUI.IsBlockedFromTransferIntoChest(item, items))
             return false;
@@ -346,7 +346,7 @@ public partial class Inventory : IEnumerable<Item>
                 if (fromPlayer && GetSlotRole(i) == InventorySlotRole.OutputLocked)
                     continue;
 
-                if (!ReservedCheck(i, item))
+                if (!ignoreReserved && !ReservedCheck(i, item))
                     continue;
 
                 if (items[i].stack >= items[i].maxStack || item.type != items[i].type)
@@ -402,7 +402,7 @@ public partial class Inventory : IEnumerable<Item>
                 if (!uiItemSlots[j].CanInteractWithItem)
                     continue;
 
-                if (!ReservedCheck(j, item))
+                if (!ignoreReserved && !ReservedCheck(j, item))
                     continue;
 
                 if (items[j].stack != 0)
@@ -432,8 +432,8 @@ public partial class Inventory : IEnumerable<Item>
         return result;
     }
 
-    public bool TryPlacingItemInSlot(ref Item item, int slot, bool justCheck = false, bool fromPlayer = false, bool sound = true, bool serverSync = true)
-        => TryPlacingItem(ref item, justCheck, fromPlayer, sound, serverSync, slot, slot);
+    public bool TryPlacingItemInSlot(ref Item item, int slot, bool justCheck = false, bool fromPlayer = false, bool sound = true, bool serverSync = true, bool ignoreReserved = false)
+        => TryPlacingItem(ref item, justCheck, fromPlayer, sound, serverSync, slot, slot, ignoreReserved);
 
     /// <summary> Loot all items from this inventory, to the player's </summary>
     public void LootAll()

@@ -1279,7 +1279,6 @@ OreExcavator: {
 		'''
 		Automatically extracts ores and resources from underground
 		Does not damage terrain
-		Multiple excavators deployed on the same planet will yield diminishing results
 		'''
 }
 
@@ -2148,7 +2147,7 @@ Canister: {
 }
 
 RocketFuelCanister: {
-	DisplayName: Rocket Fuel Canister
+	DisplayName: Kerosene Canister
 	Tooltip: ""
 }
 
@@ -2807,7 +2806,7 @@ Conveyor: {
 
 KeroseneGenerator: {
 	DisplayName: Kerosene Generator
-	Tooltip: Consumes rocket fuel to produce electricity
+	Tooltip: Consumes kerosene to produce electricity
 }
 
 SteamEngine: {
@@ -3040,7 +3039,7 @@ OilCanister: {
 }
 
 RocketFuelBucket: {
-	DisplayName: Rocket Fuel Bucket
+	DisplayName: Kerosene Bucket
 	Tooltip: ""
 }
 
@@ -3310,7 +3309,6 @@ OreDrill: {
 		'''
 		Automatically extracts ores and resources from underground
 		Does not damage terrain
-		Multiple drills deployed on the same planet will yield diminishing results
 		'''
 }
 

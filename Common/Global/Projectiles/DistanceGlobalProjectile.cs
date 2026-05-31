@@ -24,21 +24,21 @@ public class DistanceGlobalProjectile : GlobalProjectile
         if (projectile.DamageType == DamageClass.Ranged)
         {
             bool pointBlank = player.GetModPlayer<ProjectileDistancePlayer>().PointBlank;
-            if (pointBlank)
-            {
-                float mult = Vector2.Distance(initialPosition, projectile.Center) / 300f;
-                if (mult > 1f)
-                    mult = 1f;
-                projectile.damage = (int)(InitalDamage * (1.5f - mult));
-            }
-
             bool zoning = player.GetModPlayer<ProjectileDistancePlayer>().Zoning;
-            if (zoning)
+            if (pointBlank || zoning)
             {
                 float mult = Vector2.Distance(initialPosition, projectile.Center) / 300f;
                 if (mult > 1f)
                     mult = 1f;
-                projectile.damage = (int)(InitalDamage * (mult + 0.5f));
+
+                float damageMultiplier = 1f;
+                if (pointBlank)
+                    damageMultiplier = 1.5f - mult;
+
+                if (zoning)
+                    damageMultiplier = MathHelper.Max(damageMultiplier, mult + 0.5f);
+
+                projectile.damage = (int)(InitalDamage * damageMultiplier);
             }
         }
 

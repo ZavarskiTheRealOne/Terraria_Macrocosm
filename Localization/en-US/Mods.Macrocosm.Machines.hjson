@@ -1,6 +1,12 @@
 OilRefinery.DisplayName: Oil Refinery
 OreExcavator.DisplayName: Ore Excavator
 SteamEngine.DisplayName: Steam Engine
+AutocrafterT1.DisplayName: Tier 1 Assembler
+AutocrafterT2.DisplayName: Tier 2 Assembler
+AutocrafterT3.DisplayName: Tier 3 Assembler
+AutosmelterT1.DisplayName: Tier 1 Smelter
+AutosmelterT2.DisplayName: Tier 2 Smelter
+AutosmelterT3.DisplayName: Tier 3 Smelter
 
 BurnerGenerator: {
 	DisplayName: Burner Generator

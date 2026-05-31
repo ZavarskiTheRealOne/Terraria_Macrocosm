@@ -74,8 +74,7 @@ public abstract class AutocrafterTEBase : ConsumerTE
         if (recipe is null)
             return false;
 
-        if (SelectedRecipes == null || SelectedRecipes.Length != OutputSlots)
-            SelectedRecipes = new Recipe[OutputSlots];
+        EnsureSelectedRecipes();
 
         int outputSlot = -1;
         for (int i = 0; i < OutputSlots; i++)
@@ -95,8 +94,10 @@ public abstract class AutocrafterTEBase : ConsumerTE
 
     public bool SelectRecipeInSlot(int outputSlot, Recipe recipe)
     {
-        if (SelectedRecipes == null || SelectedRecipes.Length != OutputSlots)
-            SelectedRecipes = new Recipe[OutputSlots];
+        if (recipe is null)
+            return ClearRecipeSlot(outputSlot);
+
+        EnsureSelectedRecipes();
 
         if (!CanOverwriteRecipeAt(outputSlot))
             return false;
@@ -104,17 +105,9 @@ public abstract class AutocrafterTEBase : ConsumerTE
         if (outputSlot < 0 || outputSlot >= OutputSlots)
             return false;
 
-        Inventory.ClearReserved(outputSlot);
-        if (InputSlotAllocation.TryGetValue(outputSlot, out var oldInputSlots))
-            foreach (var slot in oldInputSlots)
-                Inventory.ClearReserved(slot);
+        ClearRecipeSlotReservations(outputSlot);
 
         SelectedRecipes[outputSlot] = recipe;
-        if (recipe is null)
-        {
-            InputSlotAllocation.Remove(outputSlot);
-            return false;
-        }
 
         Inventory.SetReserved(
             outputSlot,
@@ -154,6 +147,42 @@ public abstract class AutocrafterTEBase : ConsumerTE
         InputSlotAllocation[outputSlot] = allocatedInputs;
         SyncRecipeSelection();
         return true;
+    }
+
+    public bool ClearRecipeSlot(int outputSlot)
+    {
+        EnsureSelectedRecipes();
+
+        if (outputSlot < 0 || outputSlot >= OutputSlots)
+            return false;
+
+        if (SelectedRecipes[outputSlot] is null)
+            return false;
+
+        if (!CanOverwriteRecipeAt(outputSlot))
+            return false;
+
+        ClearRecipeSlotReservations(outputSlot);
+        SelectedRecipes[outputSlot] = null;
+        InputSlotAllocation.Remove(outputSlot);
+        SyncRecipeSelection();
+        return true;
+    }
+
+    private void EnsureSelectedRecipes()
+    {
+        if (SelectedRecipes == null || SelectedRecipes.Length != OutputSlots)
+            SelectedRecipes = new Recipe[OutputSlots];
+    }
+
+    private void ClearRecipeSlotReservations(int outputSlot)
+    {
+        Inventory.ClearReserved(outputSlot);
+        if (InputSlotAllocation.TryGetValue(outputSlot, out var oldInputSlots))
+            foreach (var slot in oldInputSlots)
+                Inventory.ClearReserved(slot);
+
+        InputSlotAllocation.Remove(outputSlot);
     }
 
     private void SyncRecipeSelection()

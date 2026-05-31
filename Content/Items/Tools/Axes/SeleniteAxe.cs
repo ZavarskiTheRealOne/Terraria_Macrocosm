@@ -1,4 +1,5 @@
 ﻿using Macrocosm.Content.Dusts;
+using Macrocosm.Content.Items.Bars;
 using Macrocosm.Content.Rarities;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -50,5 +51,12 @@ public class SeleniteAxe : ModItem
         #region Lighting
         Lighting.AddLight(player.position, 1 * lightMultiplier, 1 * lightMultiplier, 1 * lightMultiplier);
         #endregion
+    }
+    public override void AddRecipes()
+    {
+        CreateRecipe()
+        .AddIngredient<SeleniteBar>(12)
+        .AddTile(TileID.LunarCraftingStation)
+        .Register();
     }
 }

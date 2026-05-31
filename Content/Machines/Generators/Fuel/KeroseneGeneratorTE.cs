@@ -178,23 +178,13 @@ public class KeroseneGeneratorTE : GeneratorTE
             rpmProgress = tag.GetFloat(nameof(rpmProgress));
     }
 
-    private bool CanConsumeRocketFuel(Item item)
-        => CanUseAsRocketFuel(item) && CanStoreEmptyContainer(item.type);
+    private static bool CanConsumeRocketFuel(Item item)
+        => CanUseAsRocketFuel(item);
 
     private static bool CanUseAsRocketFuel(Item item)
     {
         LiquidContainerData data = ItemSets.LiquidContainerData[item.type];
         return !item.IsAir && data.Valid && !data.Empty && !data.Infinite && data.LiquidType == LiquidLoader.LiquidType<RocketFuel>();
-    }
-
-    private bool CanStoreEmptyContainer(int filledContainerType)
-    {
-        int emptyType = LiquidContainerData.GetEmptyType(ItemSets.LiquidContainerData, filledContainerType);
-        if (emptyType <= ItemID.None)
-            return false;
-
-        Item emptyContainer = new(emptyType);
-        return Inventory.TryPlacingItem(ref emptyContainer, justCheck: true, sound: false, serverSync: false, startIndex: OutputSlotStart, endIndex: InventorySize - 1);
     }
 
     private void ReturnEmptyContainer(int filledContainerType)
