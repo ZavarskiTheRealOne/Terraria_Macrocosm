@@ -55,7 +55,6 @@ ClientConfig: {
 
 ServerConfig: {
 	DisplayName: Server Configuration
-	WorldGenHeader: World Generation
 
 	DisableSilicaSandGeneration: {
 		Label: Disable Silica Sand Generation
@@ -66,8 +65,6 @@ ServerConfig: {
 		Label: Disable Oil Shale Generation
 		Tooltip: Disable the generation of Oil Shale in the Underground Desert, to avoid breaking other mods' biomes.
 	}
-
-	Updates: Updates
 
 	CircuitSearchUpdateRate: {
 		Label: Circuit Search Update Frequency
@@ -90,8 +87,8 @@ ServerConfig: {
 	}
 
 	Headers: {
-		WorldGenHeader: World Gen Header Header
-		UpdatesHeader: Updates Header Header
+		WorldGenHeader: World Generation
+		UpdatesHeader: Updates
 	}
 }
 
