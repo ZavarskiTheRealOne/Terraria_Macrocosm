@@ -1,0 +1,46 @@
+OilRefinery.DisplayName: Нефтеперерабатывающая машина
+OreDrill.DisplayName: Добытчик руды
+OreExcavator.DisplayName: Добытчик руды
+Pumpjack.DisplayName: Станок-качалка
+SteamEngine.DisplayName: Парогенератор
+AutocrafterT1.DisplayName: Автосборщик, ур. 1
+AutocrafterT2.DisplayName: Автосборщик, ур. 2
+AutocrafterT3.DisplayName: Автосборщик, ур. 3
+AutosmelterT1.DisplayName: Плавильня, ур. 1
+AutosmelterT2.DisplayName: Плавильня, ур. 2
+AutosmelterT3.DisplayName: Плавильня, ур. 3
+
+BurnerGenerator: {
+	DisplayName: Тепловой генератор
+	HullHeatMetric: Температура каркаса: {0}°C
+	HullHeatImperial: Температура каркаса: {0}°F
+}
+
+KeroseneGenerator: {
+	DisplayName: Керосиновый генератор
+	RPM: "{0} об/мин"
+}
+
+Common: {
+	ConsumedPower: Потребляет: {0}кВ
+	GeneratedPower: Вырабатывает: {0}кВ
+	StoredEnergy: Хранится: {0}кДж
+	LiquidExtract: Извлекаемое
+	LiquidContainer: Контейнер жидкости
+	BurnFuel: Горючее
+	TemperatureMetric: "{0}°C"
+	TemperatureImperial: "{0}°F"
+	AirQualityIndex: "{0} AQI"
+
+	PowerInfo: {
+		Simple: "{0}кВт"
+		Energy: "{0}кДж"
+		Common: "{0} / {1}кВт"
+		Consumer: Получено: {0}кВт / Необходимо: {1}кВт / Макс.: {2}кВт
+		ConsumerIdle: Покой / Макс.: {0}кВт
+		Generator: Выработано: {0}кВт / Макс.: {1}кВт
+		Battery: Хранится: {0}кДж / Макс.: {1}кДж
+		Circuit: Цепь: Выработано {0}кВт / Требует {1}кВт / Батареи {2}кДж/{3}кДж ({4}кВт)
+		Controller: ""
+	}
+}

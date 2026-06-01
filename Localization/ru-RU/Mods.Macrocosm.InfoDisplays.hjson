@@ -1,0 +1,4 @@
+BarometerInfoDisplay.DisplayName: Барометр
+GeigerMullerInfoDisplay.DisplayName: Счётчик Гейгера-Мюллера
+NephelometerInfoDisplay.DisplayName: Нефелометр
+ThermometerInfoDisplay.DisplayName: Термометр

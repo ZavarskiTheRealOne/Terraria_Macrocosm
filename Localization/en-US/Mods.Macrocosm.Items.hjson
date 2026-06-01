@@ -394,7 +394,7 @@ TitaniumLoom: {
 
 SolarPanelLarge: {
 	DisplayName: Medium Solar Panel
-	Tooltip: Coverts solar energy into electricity
+	Tooltip: Converts solar energy into electricity
 }
 
 BloodSunRising: {
@@ -603,7 +603,7 @@ AluminumShortsword: {
 
 SeleniteGreatsword: {
 	DisplayName: Selenite Greatsword
-	Tooltip: Hold <right> for a charged up swing
+	Tooltip: Hold <right> for a charged-up swing
 }
 
 SeleniteSpear: {
@@ -709,7 +709,7 @@ ChandriumStaff: {
 
 ChandriumWhip: {
 	DisplayName: Chandrium Whip
-	Tooltip: Dealas extra damage every third strike
+	Tooltip: Deals extra damage every third strike
 }
 
 HandheldEngine: {
@@ -816,7 +816,7 @@ SteelPickaxe: {
 
 SteelZweihander: {
 	DisplayName: Steel Zweihander
-	Tooltip: Hold <right> for a charged up swing
+	Tooltip: Hold <right> for a charged-up swing
 }
 
 SteelCrossbow: {
@@ -1234,7 +1234,7 @@ OsmiumBoots: {
 	Tooltip:
 		'''
 		Increases player's fall speed
-		Double tab down to further increase fall speed
+		Double tap down to further increase fall speed
 		'''
 }
 
@@ -1556,7 +1556,7 @@ DisplayScreen: {
 
 BurnerGenerator: {
 	DisplayName: Burner Generator
-	Tooltip: Converts combustable fuel into electricity
+	Tooltip: Converts combustible fuel into electricity
 }
 
 IndustrialServer: {
@@ -2188,7 +2188,7 @@ Ilmenite: {
 
 StalwartTowerShield: {
 	DisplayName: Stalwart Tower Shield
-	Tooltip: Repeatedly getting hit will increase defence by +3 up to +12
+	Tooltip: Repeatedly getting hit will increase defense by +3 up to +12
 }
 
 ThaumaturgicWard: {
@@ -3123,7 +3123,7 @@ MoonBeastFishingRod: {
 }
 
 ACUnit: {
-	DisplayName: A C Unit
+	DisplayName: AC Unit
 	Tooltip: ""
 }
 

@@ -1,0 +1,39 @@
+BuildRocket: {
+	Description: Постройте свою первую ракету.
+	FriendlyName: Ракетостроение
+}
+
+CraftSpaceSuit: {
+	Description: Создайте свой первый скафандр.
+	FriendlyName: Кислород не предусмотрен
+}
+
+DefeatCraterDemon: {
+	Description: Победите Демона кратера — неуловимого духа, который преследует жителей Луны.
+	FriendlyName: Столкновение с луной
+}
+
+SurviveMoon: {
+	Description: Переживите полный суточный цикл на Луне, от восхода до восхода.
+	FriendlyName: С луны свалился
+}
+
+SurviveDemonSun: {
+	Description: Переживите демоническое солнце — непостоянное космическое явление, которое приносит легионы искажённых восставших трупов.
+	FriendlyName: 1 против 1,000,000
+}
+
+TravelToMoon: {
+	Description: Достигните Луны — единственного естественного спутника Земли. Надеемся, вы к нам не без скафандра!
+	FriendlyName: Гигантский скачок
+}
+
+PlantFlag: {
+	Description: Поставьте флаг в любом мире.
+	FriendlyName: Пометить территорию
+}
+
+FindApolloLander: {
+	Description: Найдите обломки посадки Аполлона-11.
+	FriendlyName: Орёл сел!
+}

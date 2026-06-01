@@ -1,0 +1,3731 @@
+SetBonuses: {
+	SpaceProtection_1: Герметичный скафандр позволяет исследовать другие небесные тела.
+	SpaceProtection_2: Освинцованный скафандр позволяет безопасно исследовать области высокой радиации.
+}
+
+CelestialBulwark: {
+	DisplayName: Небесная твердыня
+	Tooltip:
+		'''
+		Позволяет делать рывок во врага
+		Даёт возможность совершать и горизонтальные, и вертикальные рывки
+		Для этого дважды нажмите в нужном направлении
+		'''
+}
+
+AluminumGreaves: {
+	DisplayName: Алюминиевые поножи
+	Tooltip: ""
+}
+
+AluminumBreastplate: {
+	DisplayName: Алюминиевый нагрудник
+	Tooltip: ""
+}
+
+AluminumHelmet: {
+	DisplayName: Алюминиевый шлем
+	Tooltip: ""
+}
+
+SeleniteBreastplate: {
+	DisplayName: Селенитовый нагрудник
+	Tooltip: Увеличивает шанс критического ближнего удара на 6%
+}
+
+SeleniteHelmet: {
+	DisplayName: Селенитовый шлем
+	Tooltip: Увеличивает ближний урон на 18%
+}
+
+SeleniteLeggings: {
+	DisplayName: Селенитовые поножи
+	Tooltip: Увеличивают скорость ближней атаки и передвижения на 15%
+}
+
+AstronautHelmet: {
+	DisplayName: Гермошлем
+	Tooltip: ""
+}
+
+AstronautLeggings: {
+	DisplayName: Штанины скафандра
+	Tooltip: ""
+}
+
+AstronautSuit: {
+	DisplayName: Корпус скафандра
+	Tooltip: ""
+}
+
+ChandriumBreastplate: {
+	DisplayName: Чандриевый нагрудник
+	Tooltip:
+		'''
+		Увеличивает максимальное число миньонов на 1
+		Увеличивает дальность и скорость атаки хлыстов на 15%
+		'''
+}
+
+ChandriumHelm: {
+	DisplayName: Чандриевый шлем
+	Tooltip:
+		'''
+		Увеличивает максимальное число миньонов на 1
+		Увеличивает призывательный урон на 25% 
+		'''
+}
+
+ChandriumLeggings: {
+	DisplayName: Чандриевые поножи
+	Tooltip:
+		'''
+		Увеличивают максимальное число миньонов на 1
+		Увеличивают скорость передвижения на 10%
+		'''
+}
+
+DianiteBreastplate: {
+	DisplayName: Дианитовый нагрудник
+	Tooltip: Увеличивает шанс критического магического удара на 12%
+}
+
+DianiteLeggings: {
+	DisplayName: Дианитовые поножи
+	Tooltip:
+		'''
+		Увеличивают магический урон на 5%
+		Увеличивают скорость передвижения на 10%
+		'''
+}
+
+DianiteVisor: {
+	DisplayName: Дианитовый визор
+	Tooltip:
+		'''
+		Увеличивает максимальный запас маны на 50
+		Увеличивает магический урон на 10%
+		'''
+}
+
+ArtemiteBreastplate: {
+	DisplayName: Артемитовый нагрудник
+	Tooltip: Увеличивает шанс критического стрелкового удара на 12%
+}
+
+ArtemiteHeadgear: {
+	DisplayName: Артемитовый шлем
+	Tooltip:
+		'''
+		Увеличивает стрелковый урон на 10%
+		Шанс 15% не потратить боеприпасы
+		'''
+}
+
+ArtemiteLeggings: {
+	DisplayName: Артемитовые поножи
+	Tooltip:
+		'''
+		Увеличивают стрелковый урон на 5%
+		Увеличивают скорость передвижения на 20%
+		'''
+}
+
+CraterDemonBossBag: {
+	DisplayName: Мешок с сокровищами (Демон кратера)
+	Tooltip: "{$CommonItemTooltip.RightClickToOpen}"
+}
+
+CraterDemonSummon: {
+	DisplayName: Демоническая табличка
+	Tooltip:
+		'''
+		Призывает Демона кратера
+		Должна быть использована на Луне
+		'''
+}
+
+Moonstone: {
+	DisplayName: Лунный камень
+	TooltipNoChampion: Является валютой для торговли с чемпионом Луны, но он, к сожалению, пока не с вами
+	TooltipChampion: Является валютой для торговли с чемпионом Луны по имени {0}
+	Tooltip: ""
+}
+
+BanHammer: {
+	DisplayName: Банхаммер
+	Tooltip: ИЗЫДИ
+}
+
+DevPick: {
+	DisplayName: Кирка разработчика
+	Tooltip: Вообще-то неплоха в качестве оружия
+}
+
+RocketPlacer: {
+	DisplayName: Установщик ракет
+	Tooltip: Устанавливает ракету. <right>, чтобы убрать все ракеты в Солнечной системе
+}
+
+Rocket: {
+	DisplayName: Ракета
+	Tooltip: ""
+}
+
+Teleporter: {
+	DisplayName: Телепорт
+	Tooltip: Телепортирует пользователя на Луну и обратно
+}
+
+AluminumBar: {
+	DisplayName: Алюминиевый слиток
+	Tooltip: ""
+}
+
+AluminumOre: {
+	DisplayName: Алюминиевая руда
+	Tooltip: ""
+}
+
+SeleniteBar: {
+	DisplayName: Селенитовый слиток
+	Tooltip: ""
+}
+
+SeleniteOre: {
+	DisplayName: Селенитовая руда
+	Tooltip: ""
+}
+
+BrokenHeroShield: {
+	DisplayName: Сломанный щит героя
+	Tooltip: ""
+}
+
+ChandriumBar: {
+	DisplayName: Чандриевый слиток
+	Tooltip: ""
+}
+
+ChandriumOre: {
+	DisplayName: Чандриевая руда
+	Tooltip: ""
+}
+
+CortexFragment: {
+	DisplayName: Кусок коры головного мозга
+	Tooltip: ""
+}
+
+CosmicDust: {
+	DisplayName: Космическая пыль
+	Tooltip: ""
+}
+
+CosmicEssence: {
+	DisplayName: Душа космоса
+	Tooltip: ""
+}
+
+DeliriumPlating: {
+	DisplayName: Делириевая пластина
+	Tooltip: ""
+}
+
+DianiteBar: {
+	DisplayName: Дианитовый слиток
+	Tooltip: ""
+}
+
+DianiteOre: {
+	DisplayName: Дианитовая руда
+	Tooltip: ""
+}
+
+LithiumOre: {
+	DisplayName: Литий
+	Tooltip: ""
+}
+
+LuminiteCrystal: {
+	DisplayName: Люминитовый кристалл
+	Tooltip: ""
+}
+
+OilShale: {
+	DisplayName: Нефтяной сланец
+	Tooltip: ""
+}
+
+OxygenTank: {
+	DisplayName: Баллон с кислородом
+	Tooltip: ""
+}
+
+PrintedCircuitBoard: {
+	DisplayName: Печатная плата
+	Tooltip: ""
+}
+
+ArtemiteBar: {
+	DisplayName: Артемитовый слиток
+	Tooltip: ""
+}
+
+ArtemiteOre: {
+	DisplayName: Артемитовая руда
+	Tooltip: ""
+}
+
+SiliconOre: {
+	DisplayName: Неочищенный кремний
+	Tooltip: ""
+}
+
+Silicon: {
+	DisplayName: Кремний
+	Tooltip: ""
+}
+
+MeteoricChunk: {
+	DisplayName: Кусок метеорита
+	Tooltip: Нажмите <right>, чтобы расколоть его!
+}
+
+NebulaChunk: {
+	DisplayName: Жеода туманности
+	Tooltip: Нажмите <right>, чтобы расколоть её!
+}
+
+SolarChunk: {
+	DisplayName: Жеода солнца
+	Tooltip: Нажмите <right>, чтобы расколоть её!
+}
+
+StardustChunk: {
+	DisplayName: Жеода звёздной пыли
+	Tooltip: Нажмите <right>, чтобы расколоть её!
+}
+
+VortexChunk: {
+	DisplayName: Жеода визря
+	Tooltip: Нажмите <right>, чтобы расколоть её!
+}
+
+IronChunk: {
+	DisplayName: Кусок железистого метеорита
+	Tooltip: Нажмите <right>, чтобы расколоть его!
+}
+
+TitaniumChunk: {
+	DisplayName: Кусок ильменитового метеорита
+	Tooltip: Нажмите <right>, чтобы расколоть его!
+}
+
+SpaceShuttle: {
+	DisplayName: Космический шаттл
+	Tooltip: В память о STS-51-L и STS-107
+}
+
+IrradiatedBrick: {
+	DisplayName: Облучённый кирпич
+	Tooltip: ""
+}
+
+IrradiatedBrickWall: {
+	DisplayName: Стена из облучённого кирпича
+	Tooltip: ""
+}
+
+IrradiatedRock: {
+	DisplayName: Облучённый камень
+	Tooltip: ""
+}
+
+IrradiatedRockWall: {
+	DisplayName: Стена из облучённого камня
+	Tooltip: ""
+}
+
+Basalt: {
+	DisplayName: Базальт
+	// Tooltip: ""
+}
+
+Protolith: {
+	DisplayName: Протолит
+	Tooltip: ""
+}
+
+ProtolithWall: {
+	DisplayName: Протолитовая стена
+	Tooltip: ""
+}
+
+Regolith: {
+	DisplayName: Реголит
+	Tooltip: ""
+}
+
+RegolithBrick: {
+	DisplayName: Реголитовый кирпич
+	Tooltip: ""
+}
+
+RegolithBrickWall: {
+	DisplayName: Стена из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithWall: {
+	DisplayName: Стена из реголита
+	Tooltip: ""
+}
+
+AdamantiteLoom: {
+	DisplayName: Адамантиевый ткацкий станок
+	Tooltip: Используется для изготовления ткани для скафандра
+}
+
+TitaniumLoom: {
+	DisplayName: Титановый ткацкий станок
+	Tooltip: Используется для изготовления ткани для скафандра
+}
+
+SolarPanelLarge: {
+	DisplayName: Средняя солнечная панель
+	Tooltip: Преобразует солнечный свет в электроэнергию
+}
+
+BloodSunRising: {
+	DisplayName: «Восход кровавого солнца»
+	Tooltip: «L. Reda»
+}
+
+DarkFortress: {
+	DisplayName: «Тёмная крепость»
+	Tooltip: «L. Reda»
+}
+
+Empress: {
+	DisplayName: «Императрица»
+	Tooltip: «L. Reda»
+}
+
+Overlord: {
+	DisplayName: «Повелитель»
+	Tooltip: «L. Reda»
+}
+
+Retributor: {
+	DisplayName: «Воздаятель»
+	Tooltip: «L. Reda»
+}
+
+WhenDayBreaks: {
+	DisplayName: «Когда наступил рассвет»
+	Tooltip: «L. Reda»
+}
+
+InANutshell: {
+	DisplayName: «Короче говоря»
+	Tooltip: «L. Reda»
+}
+
+Apollo115: {
+	DisplayName: «Аполлон-115»
+	Tooltip: «N. Cauvin»
+}
+
+Freedomfaller: {
+	DisplayName: «Свободопадший»
+	Tooltip: «T. Williams»
+}
+
+ShoresOfOblivion: {
+	DisplayName: «Брега забвения»
+	Tooltip: «E. Bracht»
+}
+
+SakuraRuckenfigur: {
+	DisplayName: «Сакура, вид сзади»
+	Tooltip: «U. C. Arts»
+}
+
+CraterDemonRelic: {
+	DisplayName: Реликвия Демона кратера
+	Tooltip: ""
+}
+
+MoonGoldTombstone: {
+	DisplayName: Золотая лунная надгробная плита
+	Tooltip: ""
+}
+
+MoonTombstone: {
+	DisplayName: Лунная надгробная плита
+	Tooltip: ""
+}
+
+CraterDemonTrophy: {
+	DisplayName: Трофей Демона кратера
+	Tooltip: ""
+}
+
+AluminumAxe: {
+	DisplayName: Алюминиевый топор
+	Tooltip: ""
+}
+
+AluminumHammer: {
+	DisplayName: Алюминиевый молот
+	Tooltip: ""
+}
+
+AluminumPickaxe: {
+	DisplayName: Алюминиевая кирка
+	Tooltip: ""
+}
+
+SeleniteAxe: {
+	DisplayName: Селенитовый топор
+	Tooltip: ""
+}
+
+SeleniteDrill: {
+	DisplayName: Селенитовая дрель
+	Tooltip: ""
+}
+
+SeleniteHammer: {
+	DisplayName: Селенитовый молот
+	Tooltip: ""
+}
+
+SelenitePickaxe: {
+	DisplayName: Селенитовая кирка
+	Tooltip: ""
+}
+
+ChandriumAxe: {
+	DisplayName: Чандриевый топор
+	Tooltip: ""
+}
+
+ChandriumDrill: {
+	DisplayName: Чандриевая дрель
+	Tooltip: ""
+}
+
+ChandriumHammer: {
+	DisplayName: Чандриевый молот
+	Tooltip: ""
+}
+
+ChandriumPickaxe: {
+	DisplayName: Чандриевая кирка
+	Tooltip: ""
+}
+
+DianiteAxe: {
+	DisplayName: Дианитовый топор
+	Tooltip: ""
+}
+
+DianiteDrill: {
+	DisplayName: Дианитовая дрель
+	Tooltip: ""
+}
+
+DianiteHammer: {
+	DisplayName: Дианитовый молот
+	Tooltip: ""
+}
+
+DianitePickaxe: {
+	DisplayName: Дианитовая кирка
+	Tooltip: ""
+}
+
+ArtemiteAxe: {
+	DisplayName: Артемитовый топор
+	Tooltip: ""
+}
+
+ArtemiteDrill: {
+	DisplayName: Артемитовая дрель
+	Tooltip: ""
+}
+
+ArtemiteHammer: {
+	DisplayName: Артемитовый молот
+	Tooltip: ""
+}
+
+ArtemitePickaxe: {
+	DisplayName: Артемитовая кирка
+	Tooltip: ""
+}
+
+CraterDemonMask: {
+	DisplayName: Маска Демона кратера
+	Tooltip: ""
+}
+
+DianiteFork: {
+	DisplayName: Дианитовые вилы
+	Tooltip: Выпускают вьющиеся потоки магии во врагов
+}
+
+DianiteTome: {
+	DisplayName: Дианитовый том
+	Tooltip:
+		'''
+		Вызывает портал, выпускающий град
+		огненных метеоров, обрушивающихся на ваших врагов 
+		'''
+}
+
+ImbriumJewel: {
+	DisplayName: Самоцвет Дождей
+	Tooltip: В нём сокрыта непонятная магия
+}
+
+AluminumBroadsword: {
+	DisplayName: Алюминиевый меч
+	Tooltip: ""
+}
+
+AluminumShortsword: {
+	DisplayName: Алюминиевый короткий меч
+	Tooltip: ""
+}
+
+SeleniteGreatsword: {
+	DisplayName: Селенитовый фальшион
+	Tooltip: Зажмите <right>, чтобы нанести заряженный удар
+}
+
+SeleniteSpear: {
+	DisplayName: Селенитовое копьё
+	Tooltip: <right>, чтобы кинуть копьё
+}
+
+SeleniteSword: {
+	DisplayName: Селенитовый прямой меч
+	Tooltip: Выпускает ускоряющиеся энергетические волны
+}
+
+ClawWrench: {
+	DisplayName: Гаечный ключ
+	Tooltip: <right>, чтобы кинуть ключ
+}
+
+Crucible: {
+	DisplayName: Горнило
+	Tooltip:
+		'''
+		Меч, выкованный пламенем самого Ада
+		«Они боятся лишь тебя»
+		'''
+}
+
+MoonSword: {
+	DisplayName: Лунный меч
+	Tooltip:
+		'''
+		Выпускает лунные волны при взмахе меча
+		«Мой путеводный лунный свет»
+		'''
+}
+
+Noxsaber: {
+	DisplayName: Ноксабля
+	Tooltip: Древний клинок чёрной энергии, найденный в храме уже давно мёртвого культа
+}
+
+AluminumBow: {
+	DisplayName: Алюминиевый лук
+	Tooltip: ""
+}
+
+ArchersLine: {
+	DisplayName: Линия лучника
+	Tooltip: Пули отскакивают от одного врага к другому
+}
+
+Copernicus: {
+	DisplayName: Коперник
+	Tooltip: Выпускает ракету на каждый пятый выстрел
+}
+
+Cruithne: {
+	DisplayName: Круитни-3753
+	Tooltip:
+		'''
+		Превращает мушкетные пули в зелёные сгустки
+		Стреляет взрывным делириевым снарядом
+		'''
+}
+
+LHBMinigun: {
+	DisplayName: LHB-59
+	Tooltip:
+		'''
+		«Что эффективнее, чем пули?
+		Очень МНОГО пуль»
+		'''
+}
+
+NWARocketLauncher: {
+	DisplayName: NWA-5000
+	Tooltip: <right>, чтобы навестись на врага
+}
+
+ArtemiteBow: {
+	DisplayName: Артемитовый лук
+	Tooltip: Выпускает 2 стрелы за раз
+}
+
+ArtemiteMagnum: {
+	DisplayName: Артемитовый магнум
+	Tooltip: <right>, чтобы выпустить веер из шести пуль
+}
+
+CalcicCane: {
+	DisplayName: Кальциевая трость
+	Tooltip: Призывает беса кратера сражаться за вас
+}
+
+CrudePhaser: {
+	DisplayName: Грубый фазовик
+	Tooltip: Стреляет очередью из трёх выстрелов; первый выстрел прошивает врагов
+}
+
+ChandriumStaff: {
+	DisplayName: Чандриевый посох
+	Tooltip: Призывает упыря полумесяца сражаться за вас
+}
+
+ChandriumWhip: {
+	DisplayName: Чандриевый кнут
+	Tooltip: Каждый третий удар наносит дополнительный урон
+}
+
+HandheldEngine: {
+	DisplayName: Переносной движок
+	Tooltip:
+		'''
+		Использует ману в качестве охладителя
+		Движок начнёт перегреваться, если слишком долго не снабжается маной
+		«Ракетостроение рулит!»
+		'''
+}
+
+HazardWall: {
+	DisplayName: Предупредительная стена
+	Tooltip: ""
+}
+
+SpaceDust: {
+	DisplayName: Космическая пыль
+	Tooltip: ""
+}
+
+MoonPhaseGlobe: {
+	DisplayName: Сфера лунной фазы
+	Tooltip: ""
+}
+
+TychoDesertEagle: {
+	DisplayName: Tycho .50
+	Tooltip: ""
+}
+
+ChampionsBladeBroken: {
+	DisplayName: Клинок чемпиона
+	Tooltip:
+		'''
+		Повторные удары клинком усиливают его
+		Данный эффект спадает, если вы какое-то время не атаковали клинком
+		'''
+}
+
+ChampionsBladeRepaired: {
+	DisplayName: Клинок чемпиона
+	Tooltip:
+		'''
+		Повторные удары клинком усиливают его
+		Данный эффект спадает, если вы какое-то время не атаковали клинком
+		'''
+}
+
+ChampionsBlade: {
+	DisplayName: Клинок чемпиона
+	Tooltip:
+		'''
+		Повторные удары клинком усиливают его
+		Данный эффект спадает, если вы какое-то время не атаковали клинком
+		'''
+}
+
+SilicaCrimsand: {
+	DisplayName: Багряный кварцевый песок
+	Tooltip: ""
+}
+
+SilicaEbonsand: {
+	DisplayName: Эбонитовый кварцевый песок
+	Tooltip: ""
+}
+
+SilicaPearlsand: {
+	DisplayName: Жемчужный кварцевый песок
+	Tooltip: ""
+}
+
+Bitumen: {
+	DisplayName: Битум
+	// Tooltip: ""
+}
+
+SilicaSand: {
+	DisplayName: Кварцевый песок
+	Tooltip: ""
+}
+
+LaunchPadMarker: {
+	DisplayName: Метка пусковой платформы
+	Tooltip: Создаёт пусковую платформу ракеты
+}
+
+SteelBar: {
+	DisplayName: Стальной слиток
+	Tooltip: ""
+}
+
+SteelHamaxe: {
+	DisplayName: Стальной молотопор
+	Tooltip: ""
+}
+
+SteelPickaxe: {
+	DisplayName: Стальная кирка
+	Tooltip: ""
+}
+
+SteelZweihander: {
+	DisplayName: Стальной цвайхендер
+	Tooltip: Зажмите <right>, чтобы нанести заряженный удар
+}
+
+SteelCrossbow: {
+	DisplayName: Стальной арбалет
+	Tooltip: ""
+}
+
+SteelRifle: {
+	DisplayName: Стальная винтовка
+	Tooltip: ""
+}
+
+IndustrialPlating: {
+	DisplayName: Индустриальная пластина
+	Tooltip: ""
+}
+
+IndustrialPlatform: {
+	DisplayName: Индустриальная платформа
+	Tooltip: ""
+}
+
+IndustrialHazardWall: {
+	DisplayName: Индустриальная предупредительная стена
+	Tooltip: ""
+}
+
+IndustrialHazardWallUnsafe: {
+	DisplayName: Небезопасная индустриальная предупредительная стена
+	Tooltip: ""
+}
+
+IndustrialPlatingWall: {
+	DisplayName: Индустриальное покрытие
+	Tooltip: ""
+}
+
+IndustrialPlatingWallUnsafe: {
+	DisplayName: Небезопасное индустриальное покрытие
+	Tooltip: ""
+}
+
+IndustrialSquarePaneledWall: {
+	DisplayName: Индустриальная плиточная стена
+	Tooltip: ""
+}
+
+IndustrialSquarePaneledWallUnsafe: {
+	DisplayName: Небезопасная индустриальная плиточная стена
+	Tooltip: ""
+}
+
+IndustrialTrimmingWall: {
+	DisplayName: Индустриальная вытесанная стена
+	Tooltip: ""
+}
+
+IndustrialTrimmingWallUnsafe: {
+	DisplayName: Небезопасная индустриальная вытесанная стена
+	Tooltip: ""
+}
+
+IndustrialCandle: {
+	DisplayName: Индустриальная свеча
+	Tooltip: ""
+}
+
+IndustrialLamp: {
+	DisplayName: Индустриальная лампа
+	Tooltip: ""
+}
+
+IndustrialLantern: {
+	DisplayName: Индустриальный светильник
+	Tooltip: ""
+}
+
+IndustrialNeonTube: {
+	DisplayName: Индустриальная неоновая труба
+	Tooltip: ""
+}
+
+IndustrialCrate: {
+	DisplayName: Индустриальный ящик
+	Tooltip: ""
+}
+
+IndustrialGurney: {
+	DisplayName: Индустриальная каталка
+	Tooltip: ""
+}
+
+IndustrialTable: {
+	DisplayName: Индустриальный стол
+	Tooltip: ""
+}
+
+IndustrialWorkbench: {
+	DisplayName: Индустриальный верстак
+	Tooltip: ""
+}
+
+IndustrialBed: {
+	DisplayName: Индустриальная кровать
+	Tooltip: ""
+}
+
+IndustrialChair: {
+	DisplayName: Индустриальный стул для ресепшена
+	Tooltip: ""
+}
+
+IndustrialChairSleek: {
+	DisplayName: Индустриальный изящный стул
+	Tooltip: ""
+}
+
+IndustrialDeskLamp: {
+	DisplayName: Индустриальная настольная лампа
+	Tooltip: ""
+}
+
+IndustrialSofa: {
+	DisplayName: Индустриальный диван
+	Tooltip: ""
+}
+
+IndustrialChest: {
+	DisplayName: Индустриальная ячейка хранения
+	Tooltip: ""
+}
+
+IndustrialChestElectronic: {
+	DisplayName: Индустриальная электронная ячейка хранения
+	Tooltip: ""
+}
+
+IndustrialLocker: {
+	DisplayName: Индустриальный шкафчик
+	Tooltip: ""
+}
+
+IndustrialDoor: {
+	DisplayName: Индустриальная дверь
+	Tooltip: ""
+}
+
+IndustrialBulkhead: {
+	DisplayName: Индустриальная переборка
+	Tooltip: ""
+}
+
+IndustrialBathtub: {
+	DisplayName: Индустриальная ванна
+	Tooltip: ""
+}
+
+IndustrialControlPanel: {
+	DisplayName: Индустриальная панель управления
+	Tooltip: ""
+}
+
+IndustrialControlStation: {
+	DisplayName: Индустриальная станция управления
+	Tooltip: ""
+}
+
+IndustrialDeskClock: {
+	DisplayName: Индустриальные настольные часы
+	Tooltip: ""
+}
+
+IndustrialPiano: {
+	DisplayName: Индустриальное пианино
+	Tooltip: ""
+}
+
+IndustrialSink: {
+	DisplayName: Индустриальная раковина
+	Tooltip: ""
+}
+
+IndustrialBookcase: {
+	DisplayName: Индустриальный книжный шкаф
+	Tooltip: ""
+}
+
+IndustrialCeilingMonitor: {
+	DisplayName: Индустриальный потолочный монитор
+	Tooltip: ""
+}
+
+IndustrialDeskMonitor: {
+	DisplayName: Индустриальный настольный монитор
+	Tooltip: ""
+}
+
+IndustrialWallMonitor: {
+	DisplayName: Индустриальный настенный монитор
+	Tooltip: ""
+}
+
+IndustrialDresser: {
+	DisplayName: Индустриальный комод
+	Tooltip: ""
+}
+
+IndustrialToilet: {
+	DisplayName: Индустриальный унитаз
+	Tooltip: ""
+}
+
+OilRefinery: {
+	DisplayName: Нефтеперерабатывающая машина
+	Tooltip: Перерабатывает нефть и другие жидкости
+}
+
+SolarPanelSmall: {
+	DisplayName: Малая солнечная панель
+	Tooltip: Преобразует солнечный свет в электроэнергию
+}
+
+Procellarum: {
+	DisplayName: Океан Бурь
+	Tooltip:
+		'''
+		Нажмите <left>, чтобы нанести удар, накладывающий метку Молнии и придающий оружию заряд
+		Нажмите <right>, чтобы кинуть оружие, при достаточном заряде на врагов обрушится 5 небесных молниеносных ударов
+		Молниеносные удары в первую очередь атакуют помеченных врагов, наводясь на них и нанося на 50% больше урона
+		'''
+}
+
+LexanGlass: {
+	DisplayName: Лексановое стекло
+	Tooltip: ""
+}
+
+QuestionMark: {
+	DisplayName: Вопросительный знак
+	Tooltip: ""
+}
+
+ZombieFinger: {
+	DisplayName: Палец зомби
+	Tooltip: ""
+}
+
+XFLR6: {
+	DisplayName: XFLR-6
+	Tooltip:
+		'''
+		«Ну, что ты скажешь об этом?
+		Смотри, что создал величайший»
+		'''
+}
+
+InvarArrow: {
+	DisplayName: Инваровая стрела
+	Tooltip: Высокоскоростная стрела, пробивающая врагов насквозь
+}
+
+InvarBullet: {
+	DisplayName: Инваровая пуля
+	Tooltip: Может рикошетить между врагами
+}
+
+SpaceTeddy: {
+	DisplayName: Космический мишка
+	Tooltip: ""
+}
+
+TeddyBear: {
+	DisplayName: Плюшевый медведь
+	Tooltip: ""
+}
+
+SteelChestplate: {
+	DisplayName: Стальной нагрудник
+	Tooltip: ""
+}
+
+SteelHelmet: {
+	DisplayName: Стальной шлем
+	Tooltip: ""
+}
+
+SteelLeggings: {
+	DisplayName: Стальные поножи
+	Tooltip: ""
+}
+
+RapaciousBrand: {
+	DisplayName: Хищное клеймо
+	Tooltip: Выпускает кровавую циркулярную пилу
+}
+
+Motor: {
+	DisplayName: Мотор
+	Tooltip: ""
+}
+
+CraterDemonPet: {
+	DisplayName: Игрушечная ракета
+	Tooltip:
+		'''
+		Призывает беса кратера
+		«Fly me to the Moon!»
+		'''
+}
+
+MoonGoldCrescent: {
+	DisplayName: Золотой полумесяц
+	Tooltip: ""
+}
+
+MoonGoldLunarCross: {
+	DisplayName: Золотой лунный крест
+	Tooltip: ""
+}
+
+MoonHeadstone: {
+	DisplayName: Лунное надгробие
+	Tooltip: ""
+}
+
+Coal: {
+	DisplayName: Уголь
+	Tooltip: ""
+}
+
+OxygenSystem: {
+	DisplayName: Кислородная система
+	Tooltip: ""
+}
+
+MercurianBanner: {
+	DisplayName: Знамя Меркурия
+	Tooltip: ""
+}
+
+MoonDayMusicBox: {
+	DisplayName: Музыкальная шкатулка (Луна, день)
+	Tooltip: Проигрывает «Deadworld» от Lincoln Ennis
+}
+
+MoonNightMusicBox: {
+	DisplayName: Музыкальная шкатулка (Луна, ночь)
+	Tooltip: Проигрывает «Requiem» от Lincoln Ennis
+}
+
+CraterDemonMusicBox: {
+	DisplayName: Музыкальная шкатулка (Демон кратера)
+	Tooltip: Проигрывает «Space Invader» от Lincoln Ennis
+}
+
+UndergroundMoonMusicBox: {
+	DisplayName: Музыкальная шкатулка (Подземная Луна)
+	Tooltip: Проигрывает «Stygia» от Lincoln Ennis
+}
+
+MenuMusicBox: {
+	DisplayName: Музыкальная шкатулка (Меню)
+	Tooltip: Проигрывает «Into The Unknown» от Lincoln Ennis
+}
+
+PollutionMusicBox: {
+	DisplayName: Музыкальная шкатулка (Загрязнение)
+	Tooltip: Проигрывает «Impurity» от Thanatos
+}
+
+UndergroundPollutionMusicBox: {
+	DisplayName: Музыкальная шкатулка (Подземное загрязнение)
+	Tooltip: Проигрывает «Disposal» от Super (SMZ)
+}
+
+MeteorStormMusicBox: {
+	DisplayName: Музыкальная шкатулка (Метеоритный шторм)
+	Tooltip: Проигрывает «Collision Course» от Super (SMZ)
+}
+
+OsmiumBoots: {
+	DisplayName: Осмиевые ботинки
+	Tooltip:
+		'''
+		Увеличивает скорость падения игрока
+		Дважды нажмите вниз, чтобы ускорить падение ещё сильнее
+		'''
+}
+
+EarthGlobe: {
+	DisplayName: Земной шар
+	Tooltip: «Дом, милый дом!»
+}
+
+PowerJunction: {
+	DisplayName: Силовой узел
+	Tooltip: ""
+}
+
+Computer: {
+	DisplayName: Компьютер
+	Tooltip: ""
+}
+
+HelixPatternDesign: {
+	DisplayName: Дизайн спирального узора
+	Tooltip: ""
+}
+
+Gear: {
+	DisplayName: Шестерёнка
+	Tooltip: ""
+}
+
+SpacesuitFabric: {
+	DisplayName: Ткань скафандра
+	Tooltip: ""
+}
+
+ConstructionLight: {
+	DisplayName: Строительный светильник
+	Tooltip: ""
+}
+
+OreExcavator: {
+	DisplayName: Добытчик руды, ур. 2
+	Tooltip:
+		'''
+		Автоматически извлекает руды и ресурсы из земли
+		Не разрушает ландшафт
+		'''
+}
+
+AlienResidue: {
+	DisplayName: Инопланетные останки
+	Tooltip: ""
+}
+
+Plastic: {
+	DisplayName: Пластик
+	Tooltip: ""
+}
+
+ReactorComponent: {
+	DisplayName: Компонент реактора
+	Tooltip: ""
+}
+
+ReactorHousing: {
+	DisplayName: Корпус реактора
+	Tooltip: ""
+}
+
+Fabricator: {
+	DisplayName: Фабрикатор
+	Tooltip: Используется для создания машин и ракетных компонентов
+}
+
+Battery: {
+	DisplayName: Батарея
+	Tooltip: ""
+}
+
+CompactDisk: {
+	DisplayName: Компакт-диск
+	Tooltip: ""
+}
+
+ElasticFiber: {
+	DisplayName: Эластичное волокно
+	Tooltip: ""
+}
+
+RocketLandingLeg: {
+	DisplayName: Посадочная площадка ракеты
+	Tooltip: ""
+}
+
+RocketPlating: {
+	DisplayName: Ракетное покрытие
+	Tooltip: ""
+}
+
+CoalBrick: {
+	DisplayName: Угольный кирпич
+	Tooltip: ""
+}
+
+LandingGear: {
+	DisplayName: Посадочная стойка
+	Tooltip: ""
+}
+
+FuelCanister: {
+	DisplayName: Канистра для топлива
+	Tooltip: ""
+	CapacityTooltip: Вмещает {0} {1} топлива
+	AmountTooltip: "{0}/{1} {2}"
+}
+
+EngineComponent: {
+	DisplayName: Компонент двигателя
+	Tooltip: ""
+}
+
+CopperWire: {
+	DisplayName: Медный провод
+	Tooltip: ""
+}
+
+GothicCoalBrick: {
+	DisplayName: Готический угольный кирпич
+	Tooltip: ""
+}
+
+SpookyDookie: {
+	DisplayName: Пугалка-какалка
+	Tooltip: «Давай же...»
+}
+
+CheeseBlock: {
+	DisplayName: Сырный блок
+	Tooltip: ""
+}
+
+Cheese: {
+	DisplayName: Сыр
+	Tooltip: "{$CommonItemTooltip.MajorStats}"
+}
+
+CapstoneRush: {
+	DisplayName: Турбинный прилив
+	Tooltip: "{$CommonItemTooltip.MajorStats}"
+}
+
+CheeseBathtub: {
+	DisplayName: Сырная ванна
+	Tooltip: ""
+}
+
+CheeseBed: {
+	DisplayName: Сырная кровать
+	Tooltip: ""
+}
+
+CheeseBookcase: {
+	DisplayName: Сырный книжный шкаф
+	Tooltip: ""
+}
+
+CheeseCandelabra: {
+	DisplayName: Сырный канделябр
+	Tooltip: ""
+}
+
+CheeseCandle: {
+	DisplayName: Сырная свеча
+	Tooltip: ""
+}
+
+CheeseChair: {
+	DisplayName: Сырный стул
+	Tooltip: ""
+}
+
+CheeseChandelier: {
+	DisplayName: Сырная люстра
+	Tooltip: ""
+}
+
+CheeseChest: {
+	DisplayName: Сырный сундук
+	Tooltip: ""
+}
+
+CheeseClock: {
+	DisplayName: Сырные напольные часы
+	Tooltip: ""
+}
+
+CheeseDoor: {
+	DisplayName: Сырная дверь
+	Tooltip: ""
+}
+
+CheeseDresser: {
+	DisplayName: Сырный комод
+	Tooltip: ""
+}
+
+CheeseLamp: {
+	DisplayName: Сырная лампа
+	Tooltip: ""
+}
+
+CheeseLantern: {
+	DisplayName: Сырный светильник
+	Tooltip: ""
+}
+
+CheesePiano: {
+	DisplayName: Сырное пианино
+	Tooltip: ""
+}
+
+CheeseSink: {
+	DisplayName: Сырная раковина
+	Tooltip: ""
+}
+
+CheeseSofa: {
+	DisplayName: Сырный диван
+	Tooltip: ""
+}
+
+CheeseTable: {
+	DisplayName: Сырный стол
+	Tooltip: ""
+}
+
+CheeseToilet: {
+	DisplayName: Сырный унитаз
+	Tooltip: «Это ужасная идея»
+}
+
+CheeseWorkbench: {
+	DisplayName: Сырный верстак
+	Tooltip: ""
+}
+
+LuminiteBookcase: {
+	DisplayName: Книжный шкаф из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteChair: {
+	DisplayName: Стул из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteClock: {
+	DisplayName: Напольные часы из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteToilet: {
+	DisplayName: Унитаз из люминитового кирпича
+	Tooltip: ""
+}
+
+WindTurbine: {
+	DisplayName: Ветротурбина
+	Tooltip: ""
+}
+
+EmployeeBoots: {
+	DisplayName: Ботинки сотрудника
+	Tooltip: ""
+}
+
+EmployeeSuit: {
+	DisplayName: Костюм сотрудника
+	Tooltip: ""
+}
+
+EmployeeVisor: {
+	DisplayName: Визор сотрудника
+	Tooltip: ""
+}
+
+Boombox: {
+	DisplayName: Бумбокс
+	Tooltip: ""
+}
+
+StopSign: {
+	DisplayName: Знак «Стоп»
+	Tooltip: «Стой, где стоишь!»
+}
+
+WindTurbineLarge: {
+	DisplayName: Большая ветротурбина
+	Tooltip: Преобразует энергию ветра в электроэнергию
+}
+
+WindTurbineSmall: {
+	DisplayName: Средняя ветротурбина
+	Tooltip: Преобразует энергию ветра в электроэнергию
+}
+
+WeCanDoItBlue: {
+	DisplayName: «We Can Do It!»
+	Tooltip: Теперь в синем!
+}
+
+WeCanDoItYellow: {
+	DisplayName: «We Can Do It!»
+	Tooltip: Теперь в жёлтом!
+}
+
+DisplayScreen: {
+	DisplayName: Дисплей
+	Tooltip: ""
+}
+
+BurnerGenerator: {
+	DisplayName: Тепловой генератор
+	Tooltip: Преобразует горючее в электричество
+}
+
+IndustrialServer: {
+	DisplayName: Индустриальный сервер
+	Tooltip: ""
+}
+
+Medkit: {
+	DisplayName: Аптечка
+	Tooltip: ""
+	RestoreLifeText: "{0} в течение {1} {^1:секунды;секунд}"
+}
+
+FrigorianGaze: {
+	DisplayName: Хладный взор
+	Tooltip: Вихрь морозящих осколков поглотит ваших врагов
+}
+
+StarDestroyer: {
+	DisplayName: Звёздный разрушитель
+	Tooltip: Выстреливает очередями звёзд в ваших врагов
+}
+
+WaveGunBlue: {
+	DisplayName: Синяя электропушка
+	Tooltip: ""
+}
+
+WaveGunRed: {
+	DisplayName: Красная электропушка
+	Tooltip: ""
+}
+
+WaveGunDual: {
+	DisplayName: Волновая пушка
+	Tooltip: Нажмите ПКМ, чтобы переключить режим стрельбы
+	DisplayNameDual: Электропушки акимбо
+	DisplayNameRifle: Волновая пушка
+}
+
+Cynthalith: {
+	DisplayName: Синталит
+	Tooltip: ""
+}
+
+Chalcedony: {
+	DisplayName: Хальцедон
+	// Tooltip: ""
+}
+
+AstraBookcase: {
+	DisplayName: Книжный шкаф из кирпича астры
+	Tooltip: ""
+}
+
+AstraChair: {
+	DisplayName: Стул из кирпича астры
+	Tooltip: ""
+}
+
+AstraChest: {
+	DisplayName: Сундук из кирпича астры
+	Tooltip: ""
+}
+
+AstraClock: {
+	DisplayName: Напольные часы из кирпича астры
+	Tooltip: ""
+}
+
+AstraToilet: {
+	DisplayName: Унитаз из кирпича астры
+	Tooltip: ""
+}
+
+CosmicEmberBookcase: {
+	DisplayName: Книжный шкаф из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberChair: {
+	DisplayName: Стул из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberChest: {
+	DisplayName: Сундук из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberClock: {
+	DisplayName: Напольные часы из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberToilet: {
+	DisplayName: Унитаз из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CryocoreBookcase: {
+	DisplayName: Книжный шкаф из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreChair: {
+	DisplayName: Стул из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreChest: {
+	DisplayName: Сундук из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreClock: {
+	DisplayName: Напольные часы из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreToilet: {
+	DisplayName: Унитаз из кирпича криоядра
+	Tooltip: ""
+}
+
+DarkCelestialBookcase: {
+	DisplayName: Книжный шкаф из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialChair: {
+	DisplayName: Стул из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialChest: {
+	DisplayName: Сундук из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialClock: {
+	DisplayName: Напольные часы из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialToilet: {
+	DisplayName: Унитаз из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+HeavenforgeBookcase: {
+	DisplayName: Книжный шкаф из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeChair: {
+	DisplayName: Стул из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeChest: {
+	DisplayName: Сундук из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeClock: {
+	DisplayName: Часы из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeToilet: {
+	DisplayName: Унитаз из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+LuminiteChest: {
+	DisplayName: Сундук из люминитового кирпича
+	Tooltip: ""
+}
+
+LunarRustBookcase: {
+	DisplayName: Книжный шкаф из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustChair: {
+	DisplayName: Стул из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustChest: {
+	DisplayName: Сундук из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustClock: {
+	DisplayName: Часы из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustToilet: {
+	DisplayName: Унитаз из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+MercuryBookcase: {
+	DisplayName: Книжный шкаф из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryChair: {
+	DisplayName: Стул из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryChest: {
+	DisplayName: Сундук из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryClock: {
+	DisplayName: Напольные часы из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryToilet: {
+	DisplayName: Унитаз из кирпича меркурия
+	Tooltip: ""
+}
+
+StarRoyaleBookcase: {
+	DisplayName: Книжный шкаф из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleChair: {
+	DisplayName: Стул из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleChest: {
+	DisplayName: Сундук из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleClock: {
+	DisplayName: Напольные часы из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleToilet: {
+	DisplayName: Унитаз из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+XaocKey: {
+	DisplayName: Ключ хаоса
+	Tooltip: Открывает все люминитовые сундуки
+}
+
+AstraCandelabra: {
+	DisplayName: Канделябр из кирпича астры
+	Tooltip: ""
+}
+
+AstraCandle: {
+	DisplayName: Свеча из кирпича астры
+	Tooltip: ""
+}
+
+AstraLantern: {
+	DisplayName: Светильник из кирпича астры
+	Tooltip: ""
+}
+
+CosmicEmberCandelabra: {
+	DisplayName: Канделябр из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberCandle: {
+	DisplayName: Свеча из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberLantern: {
+	DisplayName: Светильник из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CryocoreCandelabra: {
+	DisplayName: Канделябр из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreCandle: {
+	DisplayName: Свеча из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreLantern: {
+	DisplayName: Светильник из кирпича криоядра
+	Tooltip: ""
+}
+
+DarkCelestialCandelabra: {
+	DisplayName: Канделябр из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialCandle: {
+	DisplayName: Свеча из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialLantern: {
+	DisplayName: Светильник из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+HeavenforgeCandelabra: {
+	DisplayName: Канделябр из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeCandle: {
+	DisplayName: Свеча из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeLantern: {
+	DisplayName: Светильник из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+LuminiteCandelabra: {
+	DisplayName: Канделябр из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteCandle: {
+	DisplayName: Свеча из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteLantern: {
+	DisplayName: Светильник из люминитового кирпича
+	Tooltip: ""
+}
+
+LunarRustCandelabra: {
+	DisplayName: Канделябр из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustCandle: {
+	DisplayName: Свеча из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustLantern: {
+	DisplayName: Светильник из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+MercuryCandelabra: {
+	DisplayName: Канделябр из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryCandle: {
+	DisplayName: Свеча из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryLantern: {
+	DisplayName: Светильник из кирпича меркурия
+	Tooltip: ""
+}
+
+StarRoyaleCandelabra: {
+	DisplayName: Канделябр из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleCandle: {
+	DisplayName: Свеча из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleLantern: {
+	DisplayName: Светильник из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+AntiRadiationPills: {
+	DisplayName: Таблетки от радиации
+	Tooltip: ""
+}
+
+AirVent: {
+	DisplayName: Вентиляция
+	Tooltip: ""
+}
+
+Sledgehammer: {
+	DisplayName: Кувалда
+	Tooltip: Ломает больше стен, чем обычный молот
+}
+
+IrradiatedAltar: {
+	DisplayName: Заражённый алтарь
+	Tooltip: ""
+}
+
+IrradiatedBrickWallUnsafe: {
+	DisplayName: Небезопасная заражённая кирпичная стена
+	Tooltip: ""
+}
+
+IrradiatedRockWallUnsafe: {
+	DisplayName: Небезопасная заражённая каменная стена
+	Tooltip: ""
+}
+
+ProtolithWallUnsafe: {
+	DisplayName: Небезопасная стена из протолита
+	Tooltip: ""
+}
+
+RegolithBrickWallUnsafe: {
+	DisplayName: Небезопасная стена из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithWallUnsafe: {
+	DisplayName: Небезопасная стена из реголита
+	Tooltip: ""
+}
+
+Micronova: {
+	DisplayName: Микроновая
+	Tooltip: Создаёт два портала, выпускающих лучи в сторону вашего курсора
+}
+
+LexanGlassWall: {
+	DisplayName: Стена из лексанового стекла
+	Tooltip: ""
+}
+
+KyaniteScarabCritter: {
+	DisplayName: Кианитовый скарабей
+	Tooltip: ""
+}
+
+Fridge: {
+	DisplayName: Холодильник
+	Tooltip: ""
+}
+
+IVPole: {
+	DisplayName: Капельница
+	Tooltip: ""
+}
+
+DevOmnitool: {
+	DisplayName: Всемогущий инструмент разработчика
+	Tooltip: ""
+}
+
+LunarCrystal: {
+	DisplayName: Лунный кристалл
+	Tooltip: ""
+}
+
+CrescentMoon: {
+	DisplayName: Полумесяц
+	Tooltip: ""
+}
+
+RocheChakram: {
+	DisplayName: Рош
+	Tooltip: ""
+}
+
+CrescentScripture: {
+	DisplayName: Лунное писание
+	Tooltip: «На нём выгравированы древние символы давно забытых лунных текстов»
+}
+
+Totality: {
+	DisplayName: Полное затмение
+	Tooltip: Атаки создают разломы теневой магии
+}
+
+AstraWorkbench: {
+	DisplayName: Верстак из кирпича астры
+	Tooltip: ""
+}
+
+CosmicEmberWorkbench: {
+	DisplayName: Верстак из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CryocoreWorkbench: {
+	DisplayName: Верстак из кирпича криоядра
+	Tooltip: ""
+}
+
+DarkCelestialWorkbench: {
+	DisplayName: Верстак из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+HeavenforgeWorkbench: {
+	DisplayName: Верстак из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+LuminiteWorkbench: {
+	DisplayName: Верстак из люминитового кирпича
+	Tooltip: ""
+}
+
+LunarRustWorkbench: {
+	DisplayName: Верстак из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+MercuryWorkbench: {
+	DisplayName: Верстак из кирпича меркурия
+	Tooltip: ""
+}
+
+StarRoyaleWorkbench: {
+	DisplayName: Верстак из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+InvarBar: {
+	DisplayName: Инваровый слиток
+	Tooltip: ""
+}
+
+NickelOre: {
+	DisplayName: Никелевая руда
+	Tooltip: ""
+}
+
+QuartzFragment: {
+	DisplayName: Осколок кварца
+	Tooltip: ""
+}
+
+ManisolBlades: {
+	DisplayName: Клинки МаниСоль
+	Tooltip:
+		'''
+		Кидает клинки в ваших врагов
+		Клинки Соль втыкаются во врагов и взрываются, возвращаясь к вам
+		Клинки Мани пробивают врагов насквозь
+		'''
+}
+
+ArmstrongGauntlets: {
+	DisplayName: Перчатки Армстронга
+	Tooltip:
+		'''
+		Наносят шквал ударов
+		Каждые несколько ударов вы будете совершать рывок вперёд
+		«Хотите, чтобы я сбежал?»
+		'''
+}
+
+WornLunarianDagger: {
+	DisplayName: Поношенный кинжал лунарианца
+	Tooltip:
+		'''
+		«Поношенный кинжал, однажды имевший множество применений. 
+		Но сохранились лишь его магические способности»
+		'''
+}
+
+Canister: {
+	DisplayName: Канистра
+	Tooltip: ""
+}
+
+RocketFuelCanister: {
+	DisplayName: Канистра с керосином
+	Tooltip: ""
+}
+
+TempestuousBand: {
+	DisplayName: Браслет бури
+	Tooltip:
+		'''
+		Критические удары наносят на 20% больше урона
+		Обычные атаки наносят на 20% меньше урона
+		Увеличивает шанс критического удара на 15%
+		'''
+}
+
+ArcaneBarnacle: {
+	DisplayName: Загадочная ракушка
+	Tooltip:
+		'''
+		Увеличивает магический урон на 10%
+		Увеличивает затрату маны на 70%
+		При попадании по врагу восстанавливает ману в размере 2% от нанесённого урона 
+		Отключает предметы, мгновенно восстанавливающие ману
+		'''
+}
+
+MomentumLash: {
+	DisplayName: Импульсная плеть
+	Tooltip: При непрерывном нанесении урона кнутом увеличивает призывательный урон и скорость атаки хлыстов вплоть до +18%
+}
+
+Ilmenite: {
+	DisplayName: Ильменит
+	Tooltip:
+		'''
+		Нажмите <left>, чтобы выстрелить стрелой света
+		Зажмите <right>, чтобы зарядить взрывной вихрь света
+		'''
+}
+
+StalwartTowerShield: {
+	DisplayName: Крепкий башенный щит
+	Tooltip: При непрерывном получении урона увеличивает защиту на 3 единицы, вплоть до +12
+}
+
+ThaumaturgicWard: {
+	DisplayName: Чудотворный оберег
+	Tooltip:
+		'''
+		Когда ваше здоровье падает ниже 30%, 50% получаемого урона вычитается из маны
+		Переизбыток урона по мане накладывается на ваше здоровье
+		Вы не наносите никакой тип урона кроме магического
+		Не может быть экипировано вместе с магическими наручниками
+		'''
+}
+
+HummingbirdDroneRemote: {
+	DisplayName: Пульт управления ПЗБД
+	Tooltip:
+		'''
+		Призывает дрон «Колибри» сражаться за вас
+		При низком уровне здоровья, дроны окружат вас в защитной позиции
+		'''
+}
+
+GreatstaffOfHorus: {
+	DisplayName: Посох Гора
+	Tooltip: Призывает меньшую гранулу сражаться за вас
+}
+
+LuminiteTorch: {
+	DisplayName: Люминитовый факел
+	Tooltip: Может быть использован в безвоздушных пространствах
+}
+
+RyuguStaff: {
+	DisplayName: Посох мортиры
+	Tooltip: Призывает Рюгу сражаться за вас
+}
+
+AstraDoor: {
+	DisplayName: Дверь из кирпича астры
+	Tooltip: ""
+}
+
+CosmicEmberDoor: {
+	DisplayName: Дверь из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CryocoreDoor: {
+	DisplayName: Дверь из кирпича криоядра
+	Tooltip: ""
+}
+
+DarkCelestialDoor: {
+	DisplayName: Дверь из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+HeavenforgeDoor: {
+	DisplayName: Дверь из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+LuminiteDoor: {
+	DisplayName: Дверь из люминитового кирпича
+	Tooltip: ""
+}
+
+LunarRustDoor: {
+	DisplayName: Дверь из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+MercuryDoor: {
+	DisplayName: Дверь из кирпича меркурия
+	Tooltip: ""
+}
+
+StarRoyaleDoor: {
+	DisplayName: Дверь из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+SolarCell: {
+	DisplayName: Солнечная ячейка
+	Tooltip: ""
+}
+
+LaserSight: {
+	DisplayName: Лазерный прицел
+	Tooltip: Снижает разброс дальнего оружия на 30%
+}
+
+ProtolithBrick: {
+	DisplayName: Протолитовый кирпич
+	Tooltip: ""
+}
+
+ProtolithBrickWall: {
+	DisplayName: Стена из протолитового кирпича
+	Tooltip: ""
+}
+
+ProtolithBrickWallUnsafe: {
+	DisplayName: Небезопасная стена из протолитового кирпича
+	Tooltip: ""
+}
+
+AstraBathtub: {
+	DisplayName: Ванна из кирпича астры
+	Tooltip: ""
+}
+
+AstraBed: {
+	DisplayName: Кровать из кирпича астры
+	Tooltip: ""
+}
+
+AstraChandelier: {
+	DisplayName: Люстра из кирпича астры
+	Tooltip: ""
+}
+
+AstraDresser: {
+	DisplayName: Комод из кирпича астры
+	Tooltip: ""
+}
+
+AstraLamp: {
+	DisplayName: Лампа из кирпича астры
+	Tooltip: ""
+}
+
+AstraPiano: {
+	DisplayName: Пианино из кирпича астры
+	Tooltip: ""
+}
+
+AstraSink: {
+	DisplayName: Раковина из кирпича астры
+	Tooltip: ""
+}
+
+AstraSofa: {
+	DisplayName: Диван из кирпича астры
+	Tooltip: ""
+}
+
+AstraTable: {
+	DisplayName: Стол из кирпича астры
+	Tooltip: ""
+}
+
+CosmicEmberBathtub: {
+	DisplayName: Ванна из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberBed: {
+	DisplayName: Кровать из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberChandelier: {
+	DisplayName: Люстра из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberDresser: {
+	DisplayName: Комод из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberLamp: {
+	DisplayName: Лампа из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberPiano: {
+	DisplayName: Пианино из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberSink: {
+	DisplayName: Раковина из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberSofa: {
+	DisplayName: Диван из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CosmicEmberTable: {
+	DisplayName: Стол из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CryocoreBathtub: {
+	DisplayName: Ванна из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreBed: {
+	DisplayName: Кровать из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreChandelier: {
+	DisplayName: Люстра из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreDresser: {
+	DisplayName: Комод из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreLamp: {
+	DisplayName: Лампа из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocorePiano: {
+	DisplayName: Пианино из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreSink: {
+	DisplayName: Раковина из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreSofa: {
+	DisplayName: Диван из кирпича криоядра
+	Tooltip: ""
+}
+
+CryocoreTable: {
+	DisplayName: Стол из кирпича криоядра
+	Tooltip: ""
+}
+
+DarkCelestialBathtub: {
+	DisplayName: Ванна из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialBed: {
+	DisplayName: Кровать из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialChandelier: {
+	DisplayName: Люстра из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialDresser: {
+	DisplayName: Комод из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialLamp: {
+	DisplayName: Лампа из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialPiano: {
+	DisplayName: Пианино из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialSink: {
+	DisplayName: Раковина из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialSofa: {
+	DisplayName: Диван из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+DarkCelestialTable: {
+	DisplayName: Стол из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+HeavenforgeBathtub: {
+	DisplayName: Ванна из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeBed: {
+	DisplayName: Кровать из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeChandelier: {
+	DisplayName: Люстра из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeDresser: {
+	DisplayName: Комод из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeLamp: {
+	DisplayName: Лампа из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgePiano: {
+	DisplayName: Пианино из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeSink: {
+	DisplayName: Раковина из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeSofa: {
+	DisplayName: Диван из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+HeavenforgeTable: {
+	DisplayName: Стол из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+LuminiteBathtub: {
+	DisplayName: Ванна из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteBed: {
+	DisplayName: Кровать из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteChandelier: {
+	DisplayName: Люстра из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteDresser: {
+	DisplayName: Комод из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteLamp: {
+	DisplayName: Лампа из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminitePiano: {
+	DisplayName: Пианино из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteSink: {
+	DisplayName: Раковина из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteSofa: {
+	DisplayName: Диван из люминитового кирпича
+	Tooltip: ""
+}
+
+LuminiteTable: {
+	DisplayName: Стол из люминитового кирпича
+	Tooltip: ""
+}
+
+LunarRustBathtub: {
+	DisplayName: Ванна из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustBed: {
+	DisplayName: Кровать из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustChandelier: {
+	DisplayName: Люстра из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustDresser: {
+	DisplayName: Комод из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustLamp: {
+	DisplayName: Лампа из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustPiano: {
+	DisplayName: Пианино из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustSink: {
+	DisplayName: Раковина из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustSofa: {
+	DisplayName: Диван из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+LunarRustTable: {
+	DisplayName: Стол из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+MercuryBathtub: {
+	DisplayName: Ванна из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryBed: {
+	DisplayName: Кровать из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryChandelier: {
+	DisplayName: Люстра из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryDresser: {
+	DisplayName: Комод из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryLamp: {
+	DisplayName: Лампа из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryPiano: {
+	DisplayName: Пианино из кирпича меркурия
+	Tooltip: ""
+}
+
+MercurySink: {
+	DisplayName: Раковина из кирпича меркурия
+	Tooltip: ""
+}
+
+MercurySofa: {
+	DisplayName: Диван из кирпича меркурия
+	Tooltip: ""
+}
+
+MercuryTable: {
+	DisplayName: Стол из кирпича меркурия
+	Tooltip: ""
+}
+
+StarRoyaleBathtub: {
+	DisplayName: Ванна из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleBed: {
+	DisplayName: Кровать из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleChandelier: {
+	DisplayName: Люстра из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleDresser: {
+	DisplayName: Комод из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleLamp: {
+	DisplayName: Лампа из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyalePiano: {
+	DisplayName: Пианино из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleSink: {
+	DisplayName: Раковина из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleSofa: {
+	DisplayName: Диван из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+StarRoyaleTable: {
+	DisplayName: Стол из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+AstraPlatform: {
+	DisplayName: Платформа из кирпича астры
+	Tooltip: ""
+}
+
+CosmicEmberPlatform: {
+	DisplayName: Платформа из космического тлеющего кирпича
+	Tooltip: ""
+}
+
+CryocorePlatform: {
+	DisplayName: Платформа из кирпича криоядра
+	Tooltip: ""
+}
+
+DarkCelestialPlatform: {
+	DisplayName: Платформа из тёмного небесного кирпича
+	Tooltip: ""
+}
+
+HeavenforgePlatform: {
+	DisplayName: Платформа из кирпича небесной кузницы
+	Tooltip: ""
+}
+
+LuminitePlatform: {
+	DisplayName: Платформа из люминитового кирпича
+	Tooltip: ""
+}
+
+LunarRustPlatform: {
+	DisplayName: Платформа из кирпича лунной ржавчины
+	Tooltip: ""
+}
+
+MercuryPlatform: {
+	DisplayName: Платформа из кирпича меркурия
+	Tooltip: ""
+}
+
+StarRoyalePlatform: {
+	DisplayName: Платформа из звёздного королевского кирпича
+	Tooltip: ""
+}
+
+CheesePlatform: {
+	DisplayName: Сырная платформа
+	Tooltip: ""
+}
+
+CheeseWall: {
+	DisplayName: Сырная стена
+	Tooltip: ""
+}
+
+CircuitProbe: {
+	DisplayName: Устройство тестирования схем
+	Tooltip: Используется для диагностики схем
+}
+
+IndustrialBattery: {
+	DisplayName: Индустриальная батарея
+	Tooltip:
+		'''
+		Хранит избыточную электроэнергию в электросети
+		Используется, когда потребляемая энергия превышает вырабатываемую
+		'''
+}
+
+AdvancedCircuitBoard: {
+	DisplayName: Усовершенствованная печатная плата
+	Tooltip: ""
+}
+
+ClydersHood: {
+	DisplayName: Капюшон Клайдера
+	Tooltip: ""
+}
+
+ClydersRobe: {
+	DisplayName: Накидка Клайдера
+	Tooltip: ""
+}
+
+ClydersWings: {
+	DisplayName: Крылья Клайдера
+	Tooltip: ""
+}
+
+Schroteri: {
+	DisplayName: Шрётер
+	Tooltip:
+		'''
+		Повторяющиеся удары мечом увеличивают дальность его атаки
+		Этот эффект спадает со временем пока меч не используется
+		'''
+}
+
+Conveyor: {
+	DisplayName: Конвейер
+	Tooltip: Соединяет контейнеры, перемещая предметы из одного в другой
+}
+
+KeroseneGenerator: {
+	DisplayName: Керосиновый генератор
+	Tooltip: Преобразует керосин в электроэнергию
+}
+
+SteamEngine: {
+	DisplayName: Парогенератор
+	Tooltip: ""
+}
+
+Flag: {
+	DisplayName: Флаг
+	Tooltip: ""
+}
+
+Barometer: {
+	DisplayName: Барометр
+	Tooltip:
+		'''
+		Отображает атмосферное давление вокруг вас
+		Берёт за основу атмосферное давление Земли
+		'''
+}
+
+GeigerMuller: {
+	DisplayName: Счётчик Гейгера-Мюллера
+	Tooltip: Отображает радиацию и предупреждает о её высоких уровнях
+}
+
+Nephelometer: {
+	DisplayName: Нефелометр
+	Tooltip: Отображает качество окружающего вас воздуха
+}
+
+SolarPanelTile: {
+	DisplayName: Блок солнечной панели
+	Tooltip: Преобразует солнечный свет в электроэнергию
+}
+
+TrailScepter: {
+	Tooltip: Выпускает поток из рунических звёзд
+	DisplayName: Скипетр путей
+}
+
+HaemonovaBrick: {
+	DisplayName: Кровоновый кирпич
+	Tooltip: ""
+}
+
+HaemonovaBathtub: {
+	DisplayName: Ванна из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaBed: {
+	DisplayName: Кровать из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaBookcase: {
+	DisplayName: Книжный шкаф из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaCandelabra: {
+	DisplayName: Канделябр из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaCandle: {
+	DisplayName: Свеча из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaChair: {
+	DisplayName: Стул из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaChandelier: {
+	DisplayName: Люстра из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaChest: {
+	DisplayName: Сундук из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaClock: {
+	DisplayName: Напольные часы из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaDoor: {
+	DisplayName: Дверь из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaDresser: {
+	DisplayName: Комод из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaLamp: {
+	DisplayName: Лампа из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaLantern: {
+	DisplayName: Светильник из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaPiano: {
+	DisplayName: Пианино из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaPlatform: {
+	DisplayName: Платформа из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaSink: {
+	DisplayName: Раковина из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaSofa: {
+	DisplayName: Диван из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaTable: {
+	DisplayName: Стол из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaToilet: {
+	DisplayName: Унитаз из кровонового кирпича
+	Tooltip: ""
+}
+
+HaemonovaWorkbench: {
+	DisplayName: Верстак из кровонового кирпича
+	Tooltip: ""
+}
+
+Rubber: {
+	DisplayName: Резина
+	Tooltip: ""
+}
+
+PhantasmalSkullTome: {
+	DisplayName: Призрачный череп
+	Tooltip: Выпускает призрачные черепа вокруг вас
+}
+
+ConveyorInlet: {
+	DisplayName: Ввод конвейера
+	Tooltip: Подключается к конвейеру и кладёт предметы в сундуки и машины
+}
+
+ConveyorOutlet: {
+	DisplayName: Вывод конвейера
+	Tooltip: Подключается к конвейеру и берёт предметы из сундуков и машин
+}
+
+ConveyorAttachmentTool: {
+	DisplayName: Инструмент для конвейерных креплений
+	Tooltip:
+		'''
+		Использует загрузчики и разгрузчики из вашего инвентаря
+		Нажмите <right>, чтобы поворачивать их
+		'''
+}
+
+ConveyorWrenchRed: {
+	DisplayName: Конвейерный ключ
+	Tooltip: Ставит красные конвейеры из вашего инвентаря
+}
+
+ConveyorWrenchGreen: {
+	DisplayName: Зелёный конвейерный ключ
+	Tooltip: Ставит зелёные конвейеры из вашего инвентаря
+}
+
+ConveyorWrenchBlue: {
+	DisplayName: Синий конвейерный ключ
+	Tooltip: Ставит синие конвейеры из вашего инвентаря
+}
+
+ConveyorWrenchYellow: {
+	DisplayName: Жёлтый конвейерный ключ
+	Tooltip: Ставит жёлтые конвейеры из вашего инвентаря
+}
+
+PipeCutter: {
+	DisplayName: Конвейерный лобзик
+	Tooltip: Убирает поставленные конвейеры и крепления
+}
+
+CrudeWireCutter: {
+	DisplayName: Грубые кусачки
+	Tooltip: Убирают провода
+}
+
+HoneyCanister: {
+	DisplayName: Канистра с мёдом
+	// Tooltip: ""
+}
+
+LavaCanister: {
+	DisplayName: Канистра с лавой
+	// Tooltip: ""
+}
+
+OilBucket: {
+	DisplayName: Ведро с нефтью
+	// Tooltip: ""
+}
+
+OilCanister: {
+	DisplayName: Канистра с нефтью
+	// Tooltip: ""
+}
+
+RocketFuelBucket: {
+	DisplayName: Ведро с керосином
+	// Tooltip: ""
+}
+
+ShimmerCanister: {
+	DisplayName: Канистра с мерцанием
+	// Tooltip: ""
+}
+
+WaterCanister: {
+	DisplayName: Канистра с водой
+	// Tooltip: ""
+}
+
+EngineComponentMk1: {
+	DisplayName: Детали двигателя, MK1
+	Tooltip: ""
+}
+
+EngineComponentMk2: {
+	DisplayName: Детали двигателя, MK2
+	Tooltip: ""
+}
+
+MannedManeuveringUnit: {
+	DisplayName: Пилотируемый летательный блок
+	Tooltip:
+		'''
+		Позволяет летать и медленно парить
+		Предоставляет отличную манёвренность в условиях нулевой гравитации
+		'''
+}
+
+MoonChampionHelmet: {
+	DisplayName: Шлем чемпиона Луны
+	Tooltip: ""
+}
+
+MoonChampionLeggings: {
+	DisplayName: Штаны чемпиона Луны
+	Tooltip: ""
+}
+
+MoonChampionSuit: {
+	DisplayName: Скафандр чемпиона Луны
+	Tooltip: ""
+}
+
+Craterfish: {
+	DisplayName: Кратерная рыба
+	Tooltip: ""
+}
+
+DunceCraterfish: {
+	DisplayName: Глупая кратерная рыба
+	Tooltip: ""
+}
+
+HermitCan: {
+	DisplayName: Банка-отшельник
+	Tooltip: ""
+}
+
+MutatedGoldfish: {
+	DisplayName: Золотая рыбка-мутант
+	Tooltip: ""
+}
+
+SmogWispfish: {
+	DisplayName: Блуждающая рыба-смог
+	Tooltip: ""
+}
+
+RadioactiveSlimeBannerItem: {
+	DisplayName: Знамя радиоактивного слизня
+	Tooltip: ""
+}
+
+RegolithSlimeBannerItem: {
+	DisplayName: Знамя реголитового слизня
+	Tooltip: ""
+}
+
+IndustrialFishingRod: {
+	DisplayName: Индустриальная удочка
+	Tooltip: ""
+}
+
+MoonBeastFishingRod: {
+	DisplayName: Удочка лунного зверя
+	Tooltip: ""
+}
+
+ACUnit: {
+	DisplayName: Кондиционер
+	Tooltip: ""
+}
+
+MoonChampionSentry: {
+	DisplayName: Самодельный пульт вызова турели
+	Tooltip: Призывает самодельную ракетную установку
+}
+
+RegolithBathtub: {
+	DisplayName: Ванна из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithBed: {
+	DisplayName: Кровать из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithBookcase: {
+	DisplayName: Книжный шкаф из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithCandelabra: {
+	DisplayName: Канделябр из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithCandle: {
+	DisplayName: Свеча из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithChair: {
+	DisplayName: Стул из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithChandelier: {
+	DisplayName: Люстра из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithChest: {
+	DisplayName: Сундук из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithClock: {
+	DisplayName: Напольные часы из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithDoor: {
+	DisplayName: Дверь из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithDresser: {
+	DisplayName: Комод из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithLamp: {
+	DisplayName: Лампа из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithLantern: {
+	DisplayName: Светильник из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithPiano: {
+	DisplayName: Пианино из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithSink: {
+	DisplayName: Раковина из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithSofa: {
+	DisplayName: Диван из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithTable: {
+	DisplayName: Стол из реголитового кирпича
+	Tooltip: ""
+}
+
+RegolithWorkbench: {
+	DisplayName: Верстак из реголитового кирпича
+	Tooltip: ""
+}
+
+Thermometer: {
+	DisplayName: Термометр
+	Tooltip: Отображает температуру вокруг вас
+}
+
+CorrugatedSteelBrick: {
+	DisplayName: Гофрированный стальной кирпич
+	Tooltip: ""
+}
+
+CorrugatedSteelWall: {
+	DisplayName: Стена из гофрированного стального кирпича
+	// Tooltip: ""
+}
+
+CorrugatedSteelWallUnsafe: {
+	DisplayName: Небезопасная стена из гофрированного стального кирпича
+	// Tooltip: ""
+}
+
+SteelCage: {
+	DisplayName: Стальная решётка
+	Tooltip: ""
+}
+
+BLPAsterix: {
+	DisplayName: Булл-пап «Астерикс»
+	Tooltip: ""
+}
+
+StasisGrenade: {
+	DisplayName: Граната стазиса
+	Tooltip: Значительно замедляет врагов, попавших под взрыв
+}
+
+AutocrafterT1: {
+	DisplayName: Автосборщик, ур. 1
+	Tooltip:
+		'''
+		Автоматически создаёт предметы
+		Может создавать большинство предметов ранней игры
+		'''
+}
+
+AutocrafterT2Cobalt: {
+	DisplayName: Автосборщик, ур. 2
+	Tooltip:
+		'''
+		Автоматически создаёт предметы
+		Может создавать большинство предметов на мифриловой наковальне
+		'''
+}
+
+AutocrafterT2Palladium: {
+	DisplayName: Автосборщик, ур. 2
+	Tooltip:
+		'''
+		Автоматически создаёт предметы
+		Может создавать большинство предметов на мифриловой наковальне
+		'''
+}
+
+AutocrafterT3: {
+	DisplayName: Автосборщик, ур. 3
+	Tooltip:
+		'''
+		Автоматически создаёт предметы
+		Может создавать большинство предметов на древнем манипуляторе
+		'''
+}
+
+OreDrill: {
+	DisplayName: Добытчик руды, ур. 1
+	Tooltip:
+		'''
+		Автоматически извлекает руды и ресурсы из земли
+		Не разрушает ландшафт
+		'''
+}
+
+Pumpjack: {
+	DisplayName: Станок-качалка
+	Tooltip: Качает нефть из земли
+}
+
+Astrolith: {
+	DisplayName: Астролит
+	Tooltip: ""
+}
+
+AstrolithWall: {
+	DisplayName: Стена из астролита
+	// Tooltip: ""
+}
+
+AstrolithWallUnsafe: {
+	DisplayName: Небезопасная стена из астролита
+	// Tooltip: ""
+}
+
+BrittleHollow: {
+	DisplayName: «Пустотная Сфера»
+	Tooltip: ""
+}
+
+CacoLisa: {
+	DisplayName: «Како-Лиза»
+	Tooltip: ""
+}
+
+ChillingInSpace: {
+	DisplayName: «Космический отпуск»
+	Tooltip: ""
+}
+
+ElegyForTheRings: {
+	DisplayName: «Элегия о кольцах»
+	Tooltip: ""
+}
+
+GiantsDeep: {
+	DisplayName: «Пучина Гиганта»
+	Tooltip: ""
+}
+
+HourglassTwins: {
+	DisplayName: «Песочные часы»
+	Tooltip: ""
+}
+
+IsleOfTheDead: {
+	DisplayName: «Остров мёртвых»
+	Tooltip: ""
+}
+
+PaleBluePixel: {
+	DisplayName: «Бледно-синий пиксель»
+	Tooltip: ""
+}
+
+TheEye: {
+	DisplayName: «Глаз»
+	Tooltip: ""
+}
+
+TheInterloper: {
+	DisplayName: «Чужак»
+	Tooltip: ""
+}
+
+TimberHearth: {
+	DisplayName: «Камелёк»
+	Tooltip: ""
+}
+
+CelestialMeteorStaff: {
+	DisplayName: Лунная вспышка
+	Tooltip: Вызывает дождь из метеоритов с разными смертельными эффектами
+}
+
+LockOnStaff: {
+	DisplayName: Посох наведения
+	Tooltip:
+		'''
+		Нацеливается на до 4 врагов, прежде чем выстрелить взрывным лучом
+		«Пора вдарить по ним со всей силы и заставить их пожалеть!»
+		'''
+}
+
+MegaBlade: {
+	DisplayName: Мега-клинок
+	Tooltip:
+		'''
+		Огромный меч, сделанный из корпуса ракеты
+		«На удивление легче, чем кажется»
+		'''
+}
+
+Choronzon: {
+	DisplayName: Коронзон
+	Tooltip: ""
+}
+
+AtomicWavePotion: {
+	DisplayName: Зелье атомной волны
+	Tooltip: Вы периодически выпускаете атомную волну, наносящую урон врагам поблизости
+}
+
+BoosterPotion: {
+	DisplayName: Зелье усилителей
+	Tooltip: Периодически появляются более слабые версии усилителей туманности
+}
+
+DensityPotion: {
+	DisplayName: Зелье плотности
+	Tooltip: Увеличивает гравитацию
+}
+
+LifelinePotion: {
+	DisplayName: Зелье жизнеобеспечения
+	Tooltip: С врагов с небольшим шансом выпадают сердца при попадании
+}
+
+ManiaPotion: {
+	DisplayName: Зелье мании
+	Tooltip: Увеличивает скорость атаки
+}
+
+PointBlankPotion: {
+	DisplayName: Зелье выстрелов в упор
+	Tooltip: Увеличивает стрелковый урон по врагам вблизи, уменьшает по врагам вдали
+}
+
+SafeguardPotion: {
+	DisplayName: Зелье защитного барьера
+	Tooltip: Защищает от следующего удара, после чего требует перезарядки
+}
+
+ZoningPotion: {
+	DisplayName: Зелье расфокусировки
+	Tooltip: Увеличивает стрелковый урон по врагам вдали, уменьшает по врагам вблизи
+}
+
+RegolithToilet: {
+	DisplayName: Унитаз из реголитового кирпича
+	Tooltip: ""
+}
+
+ArmorPiercingRound: {
+	DisplayName: Бронебойный патрон
+	Tooltip: ""
+}
+
+RailgunBolt: {
+	DisplayName: Стрела рельсотрона
+	Tooltip: ""
+}
+
+ShredderBullet: {
+	DisplayName: Пуля-резак
+	Tooltip: ""
+}
+
+IndustrialBeam: {
+	DisplayName: Индустриальная балка
+	Tooltip: ""
+}
+
+AutosmelterT1: {
+	DisplayName: Плавильня, ур. 1
+	Tooltip:
+		'''
+		Автоматически переплавляет руды
+		Может создавать предметы на каменной печи
+		'''
+}
+
+AutosmelterT2Adamantite: {
+	DisplayName: Плавильня, ур. 2
+	Tooltip:
+		'''
+		Автоматически переплавляет руды
+		Может создавать предметы на адамантиевой печи
+		'''
+}
+
+AutosmelterT2Titanium: {
+	DisplayName: Плавильня, ур. 2
+	Tooltip:
+		'''
+		Автоматически переплавляет руды
+		Может создавать предметы на титановой печи
+		'''
+}
+
+AutosmelterT3: {
+	DisplayName: Плавильня, ур. 3
+	Tooltip:
+		'''
+		Автоматически переплавляет руды
+		Может переплавлять люминит и лунные руды
+		'''
+}
+
+OilBarrel: {
+	DisplayName: Бочка нефти
+	// Tooltip: ""
+}
+
+SolarPanelExtraLarge: {
+	DisplayName: Большая солнечная панель
+	Tooltip: Преобразует солнечный свет в электроэнергию
+}
+
+Dropper: {
+	DisplayName: Разгрузчик
+	Tooltip: Выбрасывает предметы из сундуков и машин
+}
+
+ScrapshotBow: {
+	DisplayName: Лук-ломострел
+	Tooltip:
+		'''
+		Стреляет очередью из стрел и железного лома
+		«Иногда заклинивает!»
+		'''
+}
+
+LegacyDianiteBreastplate: {
+	DisplayName: Древний дианитовый нагрудник
+	// Tooltip: ""
+}
+
+LegacyDianiteLeggings: {
+	DisplayName: Древние дианитовые поножи
+	// Tooltip: ""
+}
+
+LegacyDianiteVisor: {
+	DisplayName: Древний дианитовый визор
+	// Tooltip: ""
+}
+
+SeleniteBrick: {
+	DisplayName: Селенитовый кирпич
+	// Tooltip: ""
+}
+
+DianiteBrick: {
+	DisplayName: Дианитовый кирпич
+	// Tooltip: ""
+}
+
+MineralizedProtolith: {
+	DisplayName: Минерализованный протолит
+	// Tooltip: ""
+}
+
+HeveaSapling: {
+	DisplayName: Саженец каучукового дерева
+	// Tooltip: ""
+}
+
+RubberSap: {
+	DisplayName: Каучук
+	// Tooltip: ""
+}
+
+HeveaWood: {
+	DisplayName: Каучуковая древесина
+	// Tooltip: ""
+}
+
+HeveaHammer: {
+	DisplayName: Молот из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaWall: {
+	DisplayName: Стена из каучуковой древесины
+	// Tooltip: ""
+}
+
+SeleniteBrickWall: {
+	DisplayName: Стена из селенитового кирпича
+	// Tooltip: ""
+}
+
+LightningSpear: {
+	DisplayName: Копьё молний
+	Tooltip: Бросает копьё молний
+}
+
+HeveaSword: {
+	DisplayName: Меч из каучуковой древесины
+	// Tooltip: ""
+}
+
+MetalCutter: {
+	DisplayName: Металлический резак
+	Tooltip: Стреляет энергетическим пламенем, контролируемым курсором
+}
+
+HeveaBow: {
+	DisplayName: Лук из каучуковой древесины
+	// Tooltip: ""
+}
+
+ProtoRailgun: {
+	DisplayName: Прото-рельсотрон
+	Tooltip:
+		'''
+		Стреляет болтом с огромным прошиванием
+		«Небольшой взгляд на будущее оружестроения!»
+		'''
+}
+
+Hopper: {
+	DisplayName: Загрузчик
+	Tooltip: Подбирает предметы и складывает их в сундуки и машины
+}
+
+SteelPipe: {
+	DisplayName: Стальная труба
+	// Tooltip: ""
+}
+
+IndustrialBatteryLarge: {
+	DisplayName: Большая индустриальная батарея
+	Tooltip:
+		'''
+		Хранит избыточную электроэнергию в электросети
+		Используется, когда потребляемая энергия превышает вырабатываемую
+		'''
+}
+
+WindTurbineTiny: {
+	DisplayName: Маленькая ветротурбина
+	Tooltip: Преобразует энергию ветра в электроэнергию
+}
+
+RegolithPlatform: {
+	DisplayName: Платформа из реголитового кирпича
+	// Tooltip: ""
+}
+
+CrudeWireWrenchBlue: {
+	DisplayName: Грубый синий гаечный ключ
+	Tooltip: Помещает синие провода
+}
+
+CrudeWireWrenchRed: {
+	DisplayName: Грубый красный гаечный ключ
+	Tooltip: Помещает красные провода
+}
+
+HeveaBathtub: {
+	DisplayName: Ванна из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaBed: {
+	DisplayName: Кровать из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaBookcase: {
+	DisplayName: Книжный шкаф из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaCandelabra: {
+	DisplayName: Канделябр из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaCandle: {
+	DisplayName: Свеча из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaChair: {
+	DisplayName: Стул из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaChandelier: {
+	DisplayName: Люстра из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaChest: {
+	DisplayName: Сундук из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaClock: {
+	DisplayName: Напольные часы из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaDoor: {
+	DisplayName: Дверь из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaDresser: {
+	DisplayName: Комод из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaLamp: {
+	DisplayName: Лампа из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaLantern: {
+	DisplayName: Светильник из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaPiano: {
+	DisplayName: Пианино из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaSink: {
+	DisplayName: Раковина из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaSofa: {
+	DisplayName: Диван из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaTable: {
+	DisplayName: Ванна из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaToilet: {
+	DisplayName: Унитаз из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaWorkbench: {
+	DisplayName: Верстак из каучуковой древесины
+	// Tooltip: ""
+}
+
+HeveaFence: {
+	DisplayName: Забор из каучуковой древесины
+	// Tooltip: ""
+}

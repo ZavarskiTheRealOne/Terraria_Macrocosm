@@ -1,0 +1,130 @@
+LuminiteChest: {
+	MapEntry0: Сундук из люминитового кирпича
+	MapEntry1: Запертый сундук из люминитового кирпича
+	MapEntry2: Сундук из кирпича небесной кузницы
+	MapEntry3: Запертый сундук из кирпича небесной кузницы
+	MapEntry4: Сундук из кирпича лунной пыли
+	MapEntry5: Запертый сундук из кирпича лунной пыли
+	MapEntry6: Сундук из кирпича астры
+	MapEntry7: Запертый сундук из кирпича астры
+	MapEntry8: Сундук из тёмного небесного кирпича
+	MapEntry9: Запертый сундук из тёмного небесного кирпича
+	MapEntry10: Сундук из кирпича меркурия
+	MapEntry11: Запертый сундук из кирпича меркурия
+	MapEntry12: Сундук из звёздного королевского кирпича
+	MapEntry13: Запертый сундук из звёздного королевского кирпича
+	MapEntry14: Сундук из кирпича криоядра
+	MapEntry15: Запертый сундук из кирпича криоядра
+	MapEntry16: Сундук из космического тлеющего кирпича
+	MapEntry17: Запертый сундук из космического тлеющего кирпича
+	MapEntry18: Сундук из реголитового кирпича
+	MapEntry19: Запертый сундук из реголитового кирпича
+}
+
+IndustrialChest: {
+	MapEntryNormal: Индустриальная ячейка хранения
+	MapEntryUnlocked: Индустриальная электронная ячейка хранения
+	MapEntryLocked: Запертая индустриальная электронная ячейка хранения
+}
+
+LaunchPadMarker.MapEntry: Метка пусковой платформы
+IndustrialLoom.MapEntry: Индустриальный ткацкий станок
+AluminumOre.MapEntry: Алюминий
+SeleniteOre.MapEntry: Селенит
+ChandriumOre.MapEntry: Чандрий
+DianiteOre.MapEntry: Дианит
+LithiumOre.MapEntry: Литий
+ArtemiteOre.MapEntry: Артемит
+OilShale.MapEntry: Нефтяной сланец
+Coal.MapEntry: Уголь
+Bitumen.MapEntry: Битум
+SeleniteBar.MapEntry: Селенитовый слиток
+ChandriumBar.MapEntry: Чандриевый слиток
+DianiteBar.MapEntry: Дианитовый слиток
+AluminumBar.MapEntry: Алюминиевый слиток
+ArtemiteBar.MapEntry: Артемитовый слиток
+SteelBar.MapEntry: Стальной слиток
+SolarPanelLarge.MapEntry: Солнечная панель
+SolarPanelSmall.MapEntry: Солнечная панель
+OilRefinery.MapEntry: Нефтеперерабатывающая машина
+SilicaCrimsand.MapEntry: Кварцевый багрянцевый песок
+SilicaEbonsand.MapEntry: Кварцевый эбонитовый песок
+SilicaPearlsand.MapEntry: Кварцевый жемчужный песок
+SilicaSand.MapEntry: Кварцевый песок
+IndustrialNeonTube.MapEntry: Неоновая трубка
+IndustrialDeskLamp.MapEntry: Настольная лампа
+LexanGlass.MapEntry: Лексановое стекло
+XFLR6.MapEntry: XFLR-6
+TeddyBear.MapEntry: Плюшевый медведь
+Motor.MapEntry: Мотор
+PrintedCircuitBoard.MapEntry: Печатная плата
+IndustrialLocker.MapEntry: Индустриальный шкафчик
+OxygenSystem.MapEntry: Кислородная система
+MercurianBanner.MapEntry: Знамя Меркурия
+MoonDayMusicBox.MapEntry: Музыкальная шкатулка
+MoonNightMusicBox.MapEntry: Музыкальная шкатулка
+CraterDemonMusicBox.MapEntry: Музыкальная шкатулка
+UndergroundMoonMusicBox.MapEntry: Музыкальная шкатулка
+MenuMusicBox.MapEntry: Музыкальная шкатулка
+PollutionMusicBox.MapEntry: Музыкальная шкатулка
+UndergroundPollutionMusicBox.MapEntry: Музыкальная шкатулка
+MeteorStormMusicBox.MapEntry: Музыкальная шкатулка
+EarthGlobe.MapEntry: Земной шар
+PowerJunction.MapEntry: Силовой узел
+Computer.MapEntry: Компьютер
+IndustrialCrate.MapEntry: Индустриальный ящик
+ConstructionLight.MapEntry: Строительский светильник
+OreExcavator.MapEntry: Добытчик руд
+Fabricator.MapEntry: Фабрикатор
+IndustrialGurney.MapEntry: Каталка
+CheeseBlock.MapEntry: Сырный блок
+CheeseChest.MapEntry: Сырный сундук
+IndustrialCeilingMonitor.MapEntry: Потолочный монитор
+IndustrialDeskMonitor.MapEntry: Настольный монитор
+IndustrialWallMonitor.MapEntry: Настенный монитор
+Boombox.MapEntry: Бумбокс
+WindTurbineLarge.MapEntry: Ветротурбина
+WindTurbineSmall.MapEntry: Ветротурбина
+IndustrialControlPanel.MapEntry: Панель управления
+IndustrialControlStation.MapEntry: Станция управления
+IndustrialDeskClock.MapEntry: Настольные часы
+BurnerGenerator.MapEntry: Газогенератор
+IndustrialServer.MapEntry: Сервер
+Medkit.MapEntry: Аптечка
+IndustrialBulkheadClosed.MapEntry: Переборка
+IndustrialBulkheadOpen.MapEntry: Переборка
+IrradiatedAltar.MapEntry: Заражённый алтарь
+AntiRadiationPills.MapEntry: Таблетки от радиации
+KyaniteNest.MapEntry: Кианитовое гнездо
+Fridge.MapEntry: Холодильник
+IVPole.MapEntry: Капельница
+InvarBar.MapEntry: Инваровый слиток
+IndustrialBattery.MapEntry: Индустриальная батарея
+KeroseneGenerator.MapEntry: Керосиновый генератор
+SteamEngine.MapEntry: Парогенератор
+SolarPanelTile.MapEntry: Солнечная панель
+Flag.MapEntry: Флаг
+ApolloLander.MapEntry: Посадочная ступень Аполлона
+ACUnit.MapEntry: Кондиционер
+AirVent.MapEntry: Вентиляция
+RegolithChest.MapEntry: Сундук из реголитового кирпича
+AutocrafterT1.MapEntry: Автосборщик
+AutocrafterT2.MapEntry: Автосборщик
+AutocrafterT3.MapEntry: Автосборщик
+OreDrill.MapEntry: Добытчик руды
+Pumpjack.MapEntry: Станок-качалка
+AutosmelterT1.MapEntry: Плавильня
+AutosmelterT2.MapEntry: Плавильня
+AutosmelterT3.MapEntry: Плавильня
+SolarPanelExtraLarge.MapEntry: Солнечная панель
+OilBarrel.MapEntry: Бочка нефти
+SteelPipe.MapEntry: Стальная труба
+IndustrialBatteryLarge.MapEntry: Индустриальная батарея
+WindTurbineTiny.MapEntry: Ветротурбина
+NickelOre.MapEntry: Никелевая руда
+LuminiteCrystalFake.MapEntry: Люминитовый кристалл
+LuminiteCrystalNatural.MapEntry: Люминитовый кристалл
+QuartzCrystalFake.MapEntry: Кварцевый кристалл
+QuartzCrystalNatural.MapEntry: Кварцевый кристалл
+HeveaChest.MapEntry: Сундук из каучуковой древесины
+HeveaDresser.MapEntry: Комод

@@ -1,0 +1,207 @@
+GreatswordHeldProjectile.DisplayName: Двуручный меч
+GunHeldProjectile.DisplayName: Пистолет
+NebulaMeteor.DisplayName: Метеор туманности
+SolarMeteor.DisplayName: Метеор солнечной вспышки
+StardustMeteor.DisplayName: Метеор звёздной пыли
+VortexMeteor.DisplayName: Метеор вихря
+DianiteTomeProjectile.DisplayName: Дианитовый метеор
+DianiteTomeProjectileSmall.DisplayName: Дианитовый метеор
+AluminumShortswordProjectile.DisplayName: Алюминиевый короткий меч
+SeleniteSwordSwing.DisplayName: Селенитовый меч
+SeleniteSpearProjectile.DisplayName: Селенитовое копье
+SeleniteSpearProjectileShoot.DisplayName: Селенитовое копье
+SeleniteSwordProjectile.DisplayName: Селенитовый прямой меч
+ClawWrenchProjectile.DisplayName: Гаечный ключ
+MoonSwordProjectile.DisplayName: Лунный меч
+MoonSwordSwing.DisplayName: Лунный меч
+ArchersLineProjectile.DisplayName: Линия лучника
+CruithneGreenSlug.DisplayName: Зеленый слизняк
+DeliriumShell.DisplayName: Делириевый заряд
+LHBMinigunProjectile.DisplayName: LHB-59
+NWAMissile.DisplayName: NWA-5000
+PlasmaGrenade.DisplayName: Плазменная граната
+CalcicCaneMinion.DisplayName: Бес кратера
+ChandriumStaffMinion.DisplayName: Полуночный голем
+ChandriumWhipProjectile.DisplayName: Чандриумский хлыст
+MoonTombstone.DisplayName: Лунное надгробие
+SeleniteDrillProjectile.DisplayName: Селенитовая дрель
+ChandriumDrillProjectile.DisplayName: Чандриевая дрель
+DianiteDrillProjectile.DisplayName: Дианитовая дрель
+ArtemiteDrillProjectile.DisplayName: Артемитовая дрель
+FlamingMeteor.DisplayName: Горящий метеор
+MeteorPortal.DisplayName: Портал метеора
+ImbriumJewelProjectile.DisplayName: Имбриумовый самоцвет
+ImbriumJewelMeteor.DisplayName: Имбриумовый самоцвет
+HandheldEngineProjectile.DisplayName: Переносной двигатель
+HandheldEngineHitbox.DisplayName: Переносной двигатель
+ZombieSecurityBullet.DisplayName: Зомби-охранник
+ArtemiteMagnumProjectile.DisplayName: Артемитовый магнум
+TychoBullet.DisplayName: Tycho .50
+DianiteMeteor.DisplayName: Дианитовый метеор
+DianiteMeteorSmall.DisplayName: Дианитовый метеор
+PhantasmalImp.DisplayName: Фантазмальный имп
+PhantasmalImpSmall.DisplayName: Фантазмальный имп
+PhantasmalPortal.DisplayName: Фантазмальный портал
+MoonPhaseGlobeProjectile.DisplayName: Сфера лунной фазы
+DianiteForkCoreProjectile.DisplayName: Дианитовые вилы
+DianiteForkProjectile.DisplayName: Дианитовые вилы
+RegolithDebris.DisplayName: Обломки реголита
+Procellarum_HalberdProjectile.DisplayName: Буря
+Procellarum_LightBolt.DisplayName: Буря
+InvarArrow.DisplayName: Инваровая стрела
+InvarBullet.DisplayName: Инваровая пуля
+RapaciousBrandProjectile.DisplayName: Хищное клеймо
+RapaciousBrandSwing.DisplayName: Хищное клеймо
+ArtemiteBolt.DisplayName: Артемитовая стрела
+ArtemiteBowHeld.DisplayName: Артемитовый лук
+LuminiteExplosion.DisplayName: Люминитовый взрыв
+LuminiteShard.DisplayName: Люминитовый осколок
+LuminiteStar.DisplayName: Люминитовая звезда
+PhantasmalBolt.DisplayName: Фантазмальный болт
+CraterDemonPet.DisplayName: Мини-Демон кратера
+SeleniteGreatswordSwing.DisplayName: Селенитовый фальшион
+MoonGoldTombstone.DisplayName: Золотое лунное надгробие
+DianitePortal.DisplayName: Дианитовый портал
+SeleniteBoomerang.DisplayName: Селенитовый бумеранг
+SeleniteGreatswordSwing2.DisplayName: Селенитовый фальшион
+SeleniteSpearProjectileThrown.DisplayName: Селенитовое копье
+SeleniteSlash.DisplayName: Селенитовый разрез
+SeleniteSpike.DisplayName: Селенитовый шип
+SilicaCrimsandBall.DisplayName: Багрянцевый кварцевый песок
+SilicaCrimsandFalling.DisplayName: Багрянцевый кварцевый песок
+SilicaEbonsandBall.DisplayName: Эбонитовый кварцевый песок
+SilicaEbonsandFalling.DisplayName: Эбонитовый кварцевый песок
+SilicaPearlsandBall.DisplayName: Жемчужный кварцевый песок
+SilicaPearlsandFalling.DisplayName: Жемчужный кварцевый песок
+SilicaSandBall.DisplayName: Кварцевый песок
+SilicaSandFalling.DisplayName: Кварцевый песок
+MoonWormDust.DisplayName: Пыль лунного червя
+FrigorianGazeProjectile.DisplayName: Взгляд Фригорианца
+FrigorianIceSpike.DisplayName: Ледяной шип Фригорианца
+FrigorianIceCrystal.DisplayName: Ледяной кристалл Фригорианца
+StarDestroyerBeam.DisplayName: Луч звёздного разрушителя
+StarDestroyerStarBlue.DisplayName: Синяя звезда звёздного разрушителя
+StarDestroyerStarYellow.DisplayName: Желтая звезда звёздного разрушителя
+MoonRubble.DisplayName: Лунные обломки
+MoonLichNPCSummon.DisplayName: Лунный лич
+WaveGunBlueBolt.DisplayName: Электропушка
+WaveGunRedBolt.DisplayName: Электропушка
+WaveRifleHeld.DisplayName: Волновая пушка
+WaveRiflePurpleBolt.DisplayName: Волновая пушка
+WaveGunDualHeld.DisplayName: Электропушки акимбо
+WaveGunBlueHeld.DisplayName: Синяя электропушка
+WaveGunRedHeld.DisplayName: Красная электропушка
+WaveGunRifleHeld.DisplayName: Волновая пушка
+LichBolt.DisplayName: Выстрел лича
+GreenLaser.DisplayName: Зеленый лазер
+LunarBarf.DisplayName: Лунная рвота
+FrigorianIceShard.DisplayName: Ледяной осколок Фригорианца
+MicronovaBeam.DisplayName: Луч Микроновы
+MicronovaPortal.DisplayName: Портал Микроновы
+WaveStar.DisplayName: Волновая звезда
+CrescentMoonProjectile.DisplayName: Полумесяц
+LunarCrystalProjectile.DisplayName: Лунный кристалл
+ImbriumJewelPhantasmalSkull.DisplayName: Фантазмальный череп
+ChampionsBladeSwing.DisplayName: Клинок чемпиона
+ChampionsBladeSwingEmpowered.DisplayName: Клинок чемпиона
+StarDestroyerStar_Blue.DisplayName: Синяя звезда звёздного разрушителя
+StarDestroyerStar_Yellow.DisplayName: Желтая звезда звёздного разрушителя
+StarDestroyerStar.DisplayName: Звезда звёздного разрушителя
+SeleniteGreatswordSwingEmpowered.DisplayName: Селенитовый фальшион
+RocheChakramProjectile.DisplayName: Рош
+RocheSpike.DisplayName: Шип Роша
+SeleniteSwordShoot.DisplayName: Выстрел селенитового меча
+BlueEnergyBolt.DisplayName: Синий энергетический выстрел
+BlueGunHeld.DisplayName: Синяя пушка
+PurpleEnergyBolt.DisplayName: Фиолетовый энергетический выстрел
+RedEnergyBolt.DisplayName: Красный энергетический выстрел
+RedGunHeld.DisplayName: Красная пушка
+ChampionsBladeSlash.DisplayName: Клинок чемпиона
+CrescentScriptureProjectile.DisplayName: Лунное писание
+LuminiteWave.DisplayName: Люминитовая волна
+LunarBlood.DisplayName: Лунная кровь
+TotalityProjectile.DisplayName: Снаряд полного затмения
+Explosion.DisplayName: Взрыв
+ZombieEngineerExplosion.DisplayName: Взрыв зомби-инженера
+SeleniteSwordSlash.DisplayName: Селенитовый меч
+ManisolBladeMoon.DisplayName: Клинок Соль
+ManisolBladeSol.DisplayName: Клинок Мани
+ManisolBladeSolExplosion.DisplayName: Взрыв клинка Мани
+ManisolBladeShadow.DisplayName: Теневой клинок Мани
+LuminiteRune.DisplayName: Люминитовая руна
+ChampionsBladeHeldProjectile.DisplayName: Клинок чемпиона
+ChampionsBladeBoltProjectile.DisplayName: Болт клинка чемпиона
+ArmstrongGauntletProjectile.DisplayName: Рукавица Армстронга
+LuminiteBolt.DisplayName: Люминитовый выстрел
+WornLunarianDaggerHeld.DisplayName: Поношенный кинжал лунарианца
+DroneLaser.DisplayName: ПЗКД «Колибри»
+DroneMinion.DisplayName: ПЗКД «Колибри»
+ExsanguinatorProjectile.DisplayName: Снаряд обескровителя
+IlmeniteHeld.DisplayName: Ильменит
+IlmeniteExplosion.DisplayName: Ильменит
+IlmeniteProjectile.DisplayName: Ильменит
+IlmeniteProjectileDeflected.DisplayName: Ильменит
+IlmeniteProjectileDouble.DisplayName: Ильменит
+HummingbirdBullet.DisplayName: ПЗКД «Колибри»
+HummingbirdDrone.DisplayName: ПЗКД «Колибри»
+CalcicCaneBolt.DisplayName: Кальциевая трость
+GreatstaffOfHorusMinion.DisplayName: Посох Гора
+HorusExplosion.DisplayName: Взрыв Гора
+RyuguMinion.DisplayName: Рюгу
+RyuguShell.DisplayName: Выстрел Рюгу
+CrescentScriptureSlash.DisplayName: Лунное писание
+TotalitySlashProjectile.DisplayName: Полное затмение
+TotalitySmallSlashProjectile.DisplayName: Лунное затмение
+SchroteriProjectile.DisplayName: Долина Шрётера
+MoonMeteorLarge.DisplayName: Лунный метеор
+MoonMeteorMedium.DisplayName: Лунный метеор
+MoonMeteorSmall.DisplayName: Лунный метеор
+IronMeteorLarge.DisplayName: Железистый метеор
+IronMeteorMedium.DisplayName: Железистый метеор
+IronMeteorSmall.DisplayName: Железистый метеор
+TitaniumMeteorLarge.DisplayName: Ильменитовый метеор
+TitaniumMeteorMedium.DisplayName: Ильменитовый метеор
+TitaniumMeteorSmall.DisplayName: Ильменитовый метеор
+TrailStar.DisplayName: Звезда путей
+ProcellarumHalberdProjectile.DisplayName: Буря
+ProcellarumLightBolt.DisplayName: Буря
+ProcellarumExplosion.DisplayName: Буря
+LaserTurretProjectile.DisplayName: Лазерная турель
+TurretTaserProjectile.DisplayName: Шоковая турель
+PhantasmalSkullTomeProjectile.DisplayName: Призрачный череп
+TrashnadoProjectile.DisplayName: Мусор мусорнадо
+WyrmwoodProjectile.DisplayName: Смола
+IndustrialBobber.DisplayName: Индустриальный поплавок
+MoonBeastBobber.DisplayName: Поплавок лунного зверя
+LuminitePebble.DisplayName: Люминитовый камушек
+MoonChampionSentry.DisplayName: Турель чемпиона Луны
+MoonChampionSentryRocket.DisplayName: Ракета чемпиона Луны
+LightningBolt.DisplayName: Молния
+BLPShot.DisplayName: Булл-пап «Астерикс»
+StasisGrenade.DisplayName: Граната стазиса
+CelestialMeteorStaffProjectileNebula.DisplayName: Небесный метеор туманности
+CelestialMeteorStaffProjectileSolar.DisplayName: Небесный метеор солнечной вспышки
+CelestialMeteorStaffProjectileStardust.DisplayName: Небесный метеор звёздной пыли
+CelestialMeteorStaffProjectileVortex.DisplayName: Небесный метеор вихря
+EMGunBolt.DisplayName: Выстрел электромагнитной пушки
+LockOnStaffBolt.DisplayName: Ракета с самонаведением
+LockOnStaffProjectile.DisplayName: Посох с самонаведением
+NebulaRemnantProjectile.DisplayName: Остаток туманности
+SolarGlob.DisplayName: Солнечная капля
+StardustWormProjectile.DisplayName: Червь звёздной пыли
+VortexPortal.DisplayName: Вихревой портал
+MegaBladeProjectile.DisplayName: Мега-клинок
+AtomicWaveProjectile.DisplayName: Атомная волна
+MageBoosterProjectile.DisplayName: Усилитель магии
+NebulaStaffMeteor.DisplayName: Небесный метеор туманности
+SolarStaffMeteor.DisplayName: Небесный метеор солнечной вспышки
+StardustStaffMeteor.DisplayName: Небесный метеор звёздной пыли
+VortexStaffMeteor.DisplayName: Небесный метеор вихря
+ArmorPiercingBullet.DisplayName: Бронебойный патрон
+RailgunBolt.DisplayName: Стрела рельсотрона
+ShredderBullet.DisplayName: Пуля-резак
+ScrapShrapnel.DisplayName: Шрапнель из лома
+LightningSpearProjectile.DisplayName: Копьё молний
+MetalCutterProjectile.DisplayName: Металлический резак
+CrudePhaserBolt.DisplayName: Фазовый выстрел
+CrudePhaserHeld.DisplayName: Грубый фазовик
