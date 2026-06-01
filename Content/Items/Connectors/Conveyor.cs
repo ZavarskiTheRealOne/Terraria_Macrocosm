@@ -19,6 +19,5 @@ public class Conveyor : ModItem
         Item.consumable = true;
         Item.mech = true;
         Item.ammo = Type;
-        Item.notAmmo = true;
     }
 }

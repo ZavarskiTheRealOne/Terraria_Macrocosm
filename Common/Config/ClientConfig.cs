@@ -38,7 +38,7 @@ public class ClientConfig : ModConfig
     public bool DisplayGravityInGs { get; set; }
 
     [Header("VisualsHeader")]
-    [DefaultValue(true)]
+    [DefaultValue(false)]
     public bool Use3DCelestialBodies { get; set; }
 
     /// <summary> Things can subscribe to this event for notification when the configuration has been changed </summary>

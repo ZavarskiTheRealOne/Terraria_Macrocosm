@@ -442,6 +442,9 @@ public partial class ConveyorSystem
 
         for (int slot = 0; slot < inventory.Size; slot++)
         {
+            if (!CanExtractFromInventorySlot(inventory, slot))
+                continue;
+
             Item item = inventory[slot];
             if (item is null || item.IsAir)
                 continue;
@@ -529,6 +532,9 @@ public partial class ConveyorSystem
         // Try stack first
         for (int slot = 0; slot < inventory.Size; slot++)
         {
+            if (!CanDepositIntoInventorySlot(inventory, slot, worldItem))
+                continue;
+
             Item invItem = inventory[slot];
             if (invItem is null || invItem.IsAir)
                 continue;
@@ -550,6 +556,9 @@ public partial class ConveyorSystem
         // Try empty slot
         for (int slot = 0; slot < inventory.Size; slot++)
         {
+            if (!CanDepositIntoInventorySlot(inventory, slot, worldItem))
+                continue;
+
             Item invItem = inventory[slot];
             if (invItem is null || invItem.IsAir)
             {
@@ -561,6 +570,19 @@ public partial class ConveyorSystem
         }
 
         return false;
+    }
+
+    private static bool CanDepositIntoInventorySlot(Inventory inventory, int slot, Item item)
+    {
+        InventorySlotRole role = inventory.GetSlotRole(slot);
+        return role is InventorySlotRole.General or InventorySlotRole.Input
+            && inventory.ReservedCheck(slot, item);
+    }
+
+    private static bool CanExtractFromInventorySlot(Inventory inventory, int slot)
+    {
+        InventorySlotRole role = inventory.GetSlotRole(slot);
+        return role is InventorySlotRole.General or InventorySlotRole.Output;
     }
 
     private static bool TryPickupWorldItem(Point16 pos, out int itemIndex)

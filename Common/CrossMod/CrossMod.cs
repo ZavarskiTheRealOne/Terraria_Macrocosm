@@ -117,6 +117,8 @@ public partial class CrossMod : ModSystem
             AddMusic("UndergroundMoon", "\"Stygia\" - Theme of the Moon (Underground)", "Lincoln Ennis");
             AddMusic("CraterDemon", "\"Space Invader\" - Theme of Crater Demon", "Lincoln Ennis");
             AddMusic("Menu", "\"Into The Unknown\" - Macrocosm Title Theme", "Lincoln Ennis");
+            AddMusic("OrbitDay", "\"Exosphere\" - Theme of Space Station (Day)", "Thanatos");
+            AddMusic("OrbitNight", "\"Asterism\" - Theme of Space Station (Night)", "Thanatos");
             AddMusic("Pollution", "\"Impurity\" - Theme of Pollution", "Thanatos");
             AddMusic("UndergroundPollution", "\"Disposal\" - Theme of Underground Pollution", "Super (SMZ)");
             AddMusic("MeteorStorm", "\"Collision Course\" - Theme of Meteor Storm", "Super (SMZ)");

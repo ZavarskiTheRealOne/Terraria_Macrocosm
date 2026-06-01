@@ -38,10 +38,12 @@ public partial class ConveyorSystem : ModSystem, IOnPlayerJoining
     {
         conveyorTexture = ModContent.Request<Texture2D>(Macrocosm.TexturesPath + "Conveyors");
         attachmentTexture = ModContent.Request<Texture2D>(Macrocosm.TexturesPath + "HopperDropper");
+        On_Main.DrawWires += On_Main_DrawWires;
     }
 
     public override void Unload()
     {
+        On_Main.DrawWires -= On_Main_DrawWires;
         attachmentTexture = null;
         attachmentStates.Clear();
     }
@@ -324,21 +326,28 @@ public partial class ConveyorSystem : ModSystem, IOnPlayerJoining
             circuit.Solve(solveMax);
     }
 
-    public override void PostDrawTiles()
+    private void On_Main_DrawWires(On_Main.orig_DrawWires orig, Main self)
+    {
+        orig(self);
+        DrawConveyors(Main.spriteBatch);
+    }
+
+    private static void DrawConveyors(SpriteBatch spriteBatch)
     {
         if (!ShouldDraw)
             return;
 
-        SpriteBatch spriteBatch = Main.spriteBatch;
-        spriteBatch.Begin(SpriteSortMode.Deferred, BlendState.AlphaBlend, SamplerState.PointClamp, default, default, null, Main.GameViewMatrix.TransformationMatrix);
-
         Vector2 zero = Vector2.Zero;
+        Vector2 zero2 = Vector2.Zero;
+        if (Main.drawToScreen)
+            zero2 = Vector2.Zero;
+
         Point screenOverdrawOffset = Main.GetScreenOverdrawOffset();
 
-        int startX = (int)((Main.screenPosition.X - zero.X) / 16f - 1f);
-        int endX = (int)((Main.screenPosition.X + Main.screenWidth + zero.X) / 16f) + 2;
-        int startY = (int)((Main.screenPosition.Y - zero.Y) / 16f - 1f);
-        int endY = (int)((Main.screenPosition.Y + Main.screenHeight + zero.Y) / 16f) + 5;
+        int startX = (int)((Main.screenPosition.X - zero2.X) / 16f - 1f);
+        int endX = (int)((Main.screenPosition.X + Main.screenWidth + zero2.X) / 16f) + 2;
+        int startY = (int)((Main.screenPosition.Y - zero2.Y) / 16f - 1f);
+        int endY = (int)((Main.screenPosition.Y + Main.screenHeight + zero2.Y) / 16f) + 5;
 
         if (startX < 0)
             startX = 0;
@@ -358,7 +367,7 @@ public partial class ConveyorSystem : ModSystem, IOnPlayerJoining
             {
                 ref var data = ref Main.tile[i, j].Get<ConveyorData>();
 
-                Vector2 position = new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero;
+                Vector2 position = new Vector2(i * 16 - (int)Main.screenPosition.X, j * 16 - (int)Main.screenPosition.Y) + zero2;
                 float visiblePipeCount = 0f;
                 for (int t = 0; t < (int)ConveyorPipeType.Count; t++)
                 {
@@ -407,11 +416,9 @@ public partial class ConveyorSystem : ModSystem, IOnPlayerJoining
                 }
 
                 if (data.Attachment)
-                    DrawAttachment(spriteBatch, new Point16(i, j), zero);
+                    DrawAttachment(spriteBatch, new Point16(i, j), zero2);
             }
         }
-
-        spriteBatch.End();
     }
 
     private static Color GetColor(int i, int j, ConveyorVisibility visibilty)

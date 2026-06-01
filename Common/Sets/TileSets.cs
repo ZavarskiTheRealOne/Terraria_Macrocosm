@@ -56,16 +56,16 @@ internal class TileSets
         // Biome stone
         TileID.MarbleBlock,  new DrillDropData(ItemID.Marble),
         TileID.GraniteBlock, new DrillDropData(ItemID.Granite),
-        // Hardmode ores — require hardmode
-        TileID.Cobalt,       new DrillDropData(ItemID.CobaltOre,     Condition.Hardmode),
-        TileID.Palladium,    new DrillDropData(ItemID.PalladiumOre,  Condition.Hardmode),
-        TileID.Mythril,      new DrillDropData(ItemID.MythrilOre,    Condition.Hardmode),
-        TileID.Orichalcum,   new DrillDropData(ItemID.OrichalcumOre, Condition.Hardmode),
-        TileID.Adamantite,   new DrillDropData(ItemID.AdamantiteOre, Condition.Hardmode),
-        TileID.Titanium,     new DrillDropData(ItemID.TitaniumOre,   Condition.Hardmode),
+        // Hardmode ores
+        TileID.Cobalt,       new DrillDropData(ItemID.CobaltOre),
+        TileID.Palladium,    new DrillDropData(ItemID.PalladiumOre),
+        TileID.Mythril,      new DrillDropData(ItemID.MythrilOre),
+        TileID.Orichalcum,   new DrillDropData(ItemID.OrichalcumOre),
+        TileID.Adamantite,   new DrillDropData(ItemID.AdamantiteOre),
+        TileID.Titanium,     new DrillDropData(ItemID.TitaniumOre),
         // Chlorophyte — post-Plantera only
         TileID.Chlorophyte,  new DrillDropData(ItemID.ChlorophyteOre, Condition.DownedPlantera),
-        // LunarOre — post-Moon Lord only
-        TileID.LunarOre,     new DrillDropData(ItemID.LunarOre,       Condition.DownedMoonLord)
+        // LunarOre
+        TileID.LunarOre,     new DrillDropData(ItemID.LunarOre)
     );
 }

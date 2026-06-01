@@ -42,8 +42,8 @@ ClientConfig: {
 	}
 
 	Use3DCelestialBodies: {
-		Label: 3D Planets
-		Tooltip: Enables high resolution planet/moon textures.
+		Label: 3D Planets (Experimental)
+		Tooltip: Enables experimental high fidelity planet/moon textures.
 	}
 
 	Headers: {

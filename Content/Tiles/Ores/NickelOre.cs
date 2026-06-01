@@ -35,7 +35,7 @@ public class NickelOre : ModTile
         MinPick = 225;
         MineResist = 3f;
 
-        TileSets.DrillDrop[Type] = new DrillDropData(ModContent.ItemType<Items.Ores.NickelOre>(), Condition.DownedMoonLord);
+        TileSets.DrillDrop[Type] = new DrillDropData(ModContent.ItemType<Items.Ores.NickelOre>());
     }
 
     public override void ModifyFrameMerge(int i, int j, ref int up, ref int down, ref int left, ref int right, ref int upLeft, ref int upRight, ref int downLeft, ref int downRight)
