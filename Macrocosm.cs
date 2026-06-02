@@ -1,11 +1,15 @@
 using Macrocosm.Common.Netcode;
 using Macrocosm.Common.Systems;
+using Macrocosm.Content.RGB;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using ReLogic.Peripherals.RGB;
 using System;
 using System.IO;
 using Terraria;
 using Terraria.GameContent;
+using Terraria.GameContent.RGB;
 using Terraria.GameContent.Shaders;
 using Terraria.Graphics.Effects;
 using Terraria.Graphics.Shaders;
@@ -36,6 +40,18 @@ public class Macrocosm : Mod
     public static Type[] GetTypes() => AssemblyManager.GetLoadableTypes(Instance.Code);
     public static Effect GetShader(string name) => GameShaders.Misc[$"{Instance.Name}:{name}"].Shader;
 
+    private static ChromaShader earthOrbitShader = new OrbitShader(new Color(116, 133, 35), new Color(30, 72, 159));
+    private static ChromaShader moonOrbitShader = new OrbitShader(new Color(177, 177, 177), new Color(33, 33, 33));
+    private static ChromaShader moonShader = new MoonSubworldShader(new Color(177, 177, 177), new Color(33, 33, 33));
+    private static ChromaShader pollutionShader = new PollutionShader(new Color[]
+    {
+        new(198, 239, 126),
+        new(211, 211, 82),
+        new(207, 166, 49),
+        new(194, 45, 3),
+        new(24, 0, 63)
+    }, 0, 0.15f);
+
     public override void Load()
     {
         CurrencySystem.Load();
@@ -45,6 +61,7 @@ public class Macrocosm : Mod
             EmptyTex = ModContent.Request<Texture2D>(EmptyTexPath);
             LoadResprites();
             LoadEffects();
+            LoadRGB();
         }
     }
 
@@ -52,6 +69,7 @@ public class Macrocosm : Mod
     {
         UnloadResprites();
         UnloadEffects();
+        UnloadRGB();
     }
 
     public override void PostSetupContent()
@@ -100,7 +118,21 @@ public class Macrocosm : Mod
     {
         // What goes here?
     }
+    private static void LoadRGB()
+    {
+        Main.Chroma.RegisterShader(earthOrbitShader, new EarthOrbitShaderCondition(), ShaderLayer.Biome);
+        Main.Chroma.RegisterShader(moonOrbitShader, new MoonOrbitShaderCondition(), ShaderLayer.Biome);
+        Main.Chroma.RegisterShader(moonShader, new MoonShaderCondition(), ShaderLayer.Biome);
+        Main.Chroma.RegisterShader(pollutionShader, new PollutionShaderCondition(), ShaderLayer.BiomeModifier);
+    }
 
+    private static void UnloadRGB()
+    {
+        Main.Chroma.UnregisterShader(earthOrbitShader);
+        Main.Chroma.UnregisterShader(moonOrbitShader);
+        Main.Chroma.UnregisterShader(moonShader);
+        Main.Chroma.UnregisterShader(pollutionShader);
+    }
     public override void HandlePacket(BinaryReader reader, int whoAmI)
     {
         PacketHandler.HandlePacket(reader, whoAmI);

@@ -21,7 +21,7 @@ public class DemonSunEvent : MacrocosmEvent
     public override void Update(MacrocosmEventContext context, MacrocosmEventState state)
     {
         DemonSunEventState demonSunState = (DemonSunEventState)state;
-        Main.bloodMoon = state.Active;
+        Main.bloodMoon = state.Active; //Prevents blood moons from happening altogether, even on the overworld, since the bloody tear and the natural event never activate the event's state.
 
         demonSunState.TargetVisualIntensity = state.Active && AppliesVisuals(context.CurrentSubworld) ? 1f : 0f;
 
