@@ -51,8 +51,7 @@ public class ShimmerSystem : ModSystem
                     return;
                 }
             }
-
-            orig(self);
         }
+        orig(self);
     }
 }

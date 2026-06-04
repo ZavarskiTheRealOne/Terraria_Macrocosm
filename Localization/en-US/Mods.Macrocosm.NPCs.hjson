@@ -74,6 +74,8 @@ MoonChampion: {
 		SolarStorm3: The Sun appears angry, human! Beware, sometimes frightening monsters ride the solar winds here, and they are not to be trifled with!
 		SolarStorm4: Do you taste metal, human?
 	}
+
+	Census.SpawnCondition: Conditions unknown
 }
 
 Clavite: {

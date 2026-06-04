@@ -32,11 +32,11 @@ public class MacrocosmGlobalLiquid : GlobalLiquid
                     tilesIgnoreWater.Add(type);
         }
 
-    foreach (int type in tilesIgnoreWater)
-        Main.tileSolid[type] = !ignoreSolids;
+        foreach (int type in tilesIgnoreWater)
+            Main.tileSolid[type] = !ignoreSolids;
 
-    orig(ignoreSolids);
-}
+        orig(ignoreSolids);
+    }
 
     public override bool UpdateLiquid(int i, int j, int type, Liquid liquid)
     {
