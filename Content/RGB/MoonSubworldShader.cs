@@ -17,7 +17,7 @@ public class MoonSubworldShader(Color main1, Color main2) : ChromaShader
     private float starVisibility;
     public override void Update(float elapsedTime)
     {
-        //normally, Main.colorOfTheSkies would be used here: however, it does have a problem where theres a small period where its more purple ish, which doesnt fit in a place like the moon, which has no atmosphere. so this acts like a 
+        //normally, Main.colorOfTheSkies would be used here: however, it does have a problem where theres a small period where its more purple ish, which doesnt fit in a place like the moon, which has no atmosphere. so this acts like a substitute
         if (Main.dayTime)
         {
             float num = (float)(Main.time / 54000.0);
