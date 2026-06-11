@@ -1,0 +1,9 @@
+Oil: {
+	$parentVal: Нефть
+	MapEntry: Нефть
+}
+
+RocketFuel: {
+	$parentVal: Керосин
+	MapEntry: Керосин
+}

@@ -1,0 +1,239 @@
+Fear: {
+	DisplayName: Страх
+	Description: О БОЖЕ ЧТО ЭТО?!
+}
+
+SuitBreach: {
+	DisplayName: Брешь в скафандре
+	Description: Вы подвержены воздействию элементов!
+}
+
+Depressurized: {
+	DisplayName: Разгерметизация
+	Description: Ваша кровь кипит!
+}
+
+ChandriumWhipBuff: {
+	DisplayName: Усиление чандриума
+	Description: Следующий удар чандриевым кнутом нанесёт увеличенный урон!
+}
+
+CalcicCaneMinionBuff: {
+	DisplayName: Бес кратера
+	Description: Бес кратера сражается за вас
+}
+
+ChandriumStaffMinionBuff: {
+	DisplayName: Упырь полумесяца
+	Description: Упырь полумесяца сражается за вас
+}
+
+SpaceShuttle: {
+	DisplayName: Космический шаттл
+	Description: В память о STS-51-L и STS-107.
+}
+
+Procellarum_LightningMarkDebuff: {
+	DisplayName: Метка молнии Океана Бурь
+	Description: Вы получаете двойной урон от световых стрел Океана Бурь.
+}
+
+HandheldEngineOverheat: {
+	DisplayName: Перегрев ручного движка
+	Description: Ваше оружие перегрелось!
+}
+
+CraterDemonPet: {
+	DisplayName: Демонёнок кратера
+	Description: Он что-то задумал...
+}
+
+MedkitHigh: {
+	DisplayName: Аптечка
+	Description: Вы лечитесь
+}
+
+MedkitLow: {
+	DisplayName: Аптечка
+	Description: Вы лечитесь
+}
+
+MedkitMedium: {
+	DisplayName: Аптечка
+	Description: Вы лечитесь
+}
+
+Irradiated: {
+	DisplayName: Облучённый
+	Description: У вас лучевая болезнь
+}
+
+Blindness: {
+	DisplayName: Слепота
+	Description: Ухудшенное зрение
+}
+
+MildNecrosis: {
+	DisplayName: Умеренный некроз
+	Description: Ваше тело гниёт
+}
+
+Necrosis: {
+	DisplayName: Некроз
+	Description: Ваше тело стремительно гниёт
+}
+
+OrganFailure: {
+	DisplayName: Отказ органов
+	Description: Ваши органы отказывают
+}
+
+Paralysis: {
+	DisplayName: Паралич
+	Description: Вы не можете пошевелиться!
+}
+
+WeakBones: {
+	DisplayName: Слабые кости
+	Description: Вы чувствуете слабость...
+}
+
+Fatigue: {
+	DisplayName: Утомление
+	Description: Вы чувствуете усталось...
+}
+
+AntiRadiationPills: {
+	DisplayName: Таблетки от радиации
+	Description: Вы излечились от лучевой болезни
+}
+
+Melting: {
+	DisplayName: Плавление
+	Description: Вы плавитесь
+}
+
+HummingbirdDroneSummonBuff: {
+	DisplayName: ПЗБД «Колибри»
+	Description: Боевой дрон будет защищать вас
+}
+
+GreatstaffOfHorusMinionBuff: {
+	DisplayName: Посох Гора
+	Description: Солнечная гранула сражается за вас
+}
+
+HorusBurn: {
+	DisplayName: Ожог Гора
+	Description: Обожжённый светом ярчайшей звезды
+}
+
+RyuguSummonBuff: {
+	DisplayName: Рюгу
+	Description: Рюгу сражается за вас
+}
+
+ProcellarumLightningMarkDebuff: {
+	DisplayName: Метка молнии Океана Бурь
+	Description: Mods.Macrocosm.Buffs.ProcellarumLightningMarkDebuff.Description
+}
+
+ProcellarumLightningMark: {
+	DisplayName: Метка молнии Океана Бурь
+	Description: Mods.Macrocosm.Buffs.ProcellarumLightningMark.Description
+}
+
+TotalitySlashed: {
+	DisplayName: Разрез полного затмения
+	Description: Mods.Macrocosm.Buffs.TotalitySlashed.Description
+}
+
+TotalityTag: {
+	DisplayName: Метка полного затмения
+	Description: Mods.Macrocosm.Buffs.TotalityTag.Description
+}
+
+Stasis: {
+	DisplayName: Стазис
+	Description: Mods.Macrocosm.Buffs.Stasis.Description
+}
+
+MageBoosterDamage1: {
+	DisplayName: Усилитель мага урон1
+	Description: Mods.Macrocosm.Buffs.MageBoosterDamage1.Description
+}
+
+MageBoosterDamage2: {
+	DisplayName: Усилитель мага урон2
+	Description: Mods.Macrocosm.Buffs.MageBoosterDamage2.Description
+}
+
+MageBoosterMana1: {
+	DisplayName: Усилитель мага мана1
+	Description: Mods.Macrocosm.Buffs.MageBoosterMana1.Description
+}
+
+MageBoosterMana2: {
+	DisplayName: Усилитель мага мана2
+	Description: Mods.Macrocosm.Buffs.MageBoosterMana2.Description
+}
+
+MageBoosterRegen1: {
+	DisplayName: Усилитель мага реген1
+	Description: Mods.Macrocosm.Buffs.MageBoosterRegen1.Description
+}
+
+MageBoosterRegen2: {
+	DisplayName: Усилитель мага реген2
+	Description: Mods.Macrocosm.Buffs.MageBoosterRegen2.Description
+}
+
+AntiRadiationPillsBuff: {
+	DisplayName: Таблетки от радиации
+	Description: Mods.Macrocosm.Buffs.AntiRadiationPillsBuff.Description
+}
+
+AtomicWaveBuff: {
+	DisplayName: Атомная волна
+	Description: Mods.Macrocosm.Buffs.AtomicWaveBuff.Description
+}
+
+DensityBuff: {
+	DisplayName: Плотность
+	Description: Mods.Macrocosm.Buffs.DensityBuff.Description
+}
+
+LifelineBuff: {
+	DisplayName: Жизнеобеспечение
+	Description: Mods.Macrocosm.Buffs.LifelineBuff.Description
+}
+
+MageBoosterPotionBuff: {
+	DisplayName: Зелье усилителей мага
+	Description: Mods.Macrocosm.Buffs.MageBoosterPotionBuff.Description
+}
+
+ManiaBuff: {
+	DisplayName: Мания
+	Description: Mods.Macrocosm.Buffs.ManiaBuff.Description
+}
+
+PointBlankBuff: {
+	DisplayName: Выстрел в упор
+	Description: Mods.Macrocosm.Buffs.PointBlankBuff.Description
+}
+
+SafeguardBuff: {
+	DisplayName: Защитный барьер
+	Description: Mods.Macrocosm.Buffs.SafeguardBuff.Description
+}
+
+SafeguardCooldown: {
+	DisplayName: Перезарядка защитного барьера
+	Description: Mods.Macrocosm.Buffs.SafeguardCooldown.Description
+}
+
+ZoningBuff: {
+	DisplayName: Расфокусировка
+	Description: Mods.Macrocosm.Buffs.ZoningBuff.Description
+}

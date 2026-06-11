@@ -1,0 +1,16 @@
+Moon: {
+	TerrainTask: Приземляемся на Луну
+	CraterTask: Ваяем Луну
+	CaveTask: Подправляем Луну
+	RegolithTask: Укладываем реголит
+	CynthalithTask: Укладываем цинталит
+	WallTask: Ставим стены
+	IrradiationTask: Облучаем Луну
+	OreTask: Наполняем Луну минералами
+	SmoothTask: Сглаживаем Луну
+	StructureTask: Расставляем древние руины
+	Horror: Расставляем древние ужасы
+	AmbientTask: Расставляем камушки на Луне
+	ChestLootTask: Прячем добычу
+	SpawnTask: Последние штрихи
+}

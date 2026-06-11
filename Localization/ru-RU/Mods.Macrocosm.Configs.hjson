@@ -1,0 +1,175 @@
+# Localization file for the configs
+
+ClientConfig: {
+	DisplayName: Конфигурация: сторона клиента
+	GameplayHeader: Геймплей
+	UIHeader: Пользовательский интерфейс
+	VisualsHeader: Графика
+
+	AlwaysDisplayTitleCards: {
+		Label: Всегда отображать заставки
+		Tooltip: Нужно ли отображать вступительную заставку, даже если вы уже посещали данное небесное тело ранее.
+	}
+
+	GunRecoilEffects: {
+		Label: Эффект отдачи оружия
+		Tooltip: Нужен ли эффект отдачи пушек.
+	}
+
+	UnitSystem: {
+		Label: Система единиц
+		Tooltip: Система измерения единиц, используемая для отображения числовых значений.
+	}
+
+	DisplayGravityInGs: {
+		Label: Отображать значения гравитации в G
+		Tooltip: Отображать значение гравитации в единицах гравитационного ускорения или в единицах СИ.
+	}
+
+	SelectedUITheme: {
+		Label: Тема ПИ
+		Tooltip: Тема отображения пользовательского интерфейса мода.
+	}
+
+	DisableSilicaSandGeneration: {
+		Label: Выключить генерацию кварцевого песка
+		Tooltip: Выключить генерацию кварцевого песка под океаном во избежание поломки биомов других модов.
+	}
+
+	DisableOilShaleGeneration: {
+		Label: Выключить генерацию нефтяного сланца
+		Tooltip: ""
+	}
+
+	Use3DCelestialBodies: {
+		Label: Объёмные планеты (Экспериментальная)
+		Tooltip: Меняет спрайты планет/лун на спрайты более высокого качества.
+	}
+
+	Headers: {
+		GameplayHeader: Геймплей
+		UIHeader: Пользовательский интерфейс
+		VisualsHeader: Графика
+	}
+}
+
+ServerConfig: {
+	DisplayName: Конфигурация: сторона сервера
+
+	DisableSilicaSandGeneration: {
+		Label: Выключить генерацию кварцевого песка
+		Tooltip: Выключить генерацию кварцевого песка под океаном во избежание поломки биомов других модов.
+	}
+
+	DisableOilShaleGeneration: {
+		Label: Выключить генерацию нефтяного сланца
+		Tooltip: Выключить генерацию нефтяного сланца в подземной пустыне во избежание поломки биомов других модов.
+	}
+
+	CircuitSearchUpdateRate: {
+		Label: Частота обновления поиска цепей
+		Tooltip: Настроить частоту обновления поиска цепей.
+	}
+
+	CircuitSolveUpdateRate: {
+		Label: Частота обновления решения цепей
+		Tooltip: Настроить частоту обновления решения цепей.
+	}
+
+	RoomPressureUpdateRate: {
+		Label: Частота обновления давления в комнате
+		Tooltip: ""
+	}
+
+	ClusterFindUpdateRate: {
+		Label: Частота обновления поиска кластеров
+		Tooltip: ""
+	}
+
+	Headers: {
+		WorldGenHeader: Генерация мира
+		UpdatesHeader: Обновления
+	}
+}
+
+UnitSystemType: {
+	Tooltip: ""
+
+	Metric: {
+		Label: Метрическая
+		// Tooltip: ""
+	}
+
+	Imperial: {
+		Label: Имперская
+		// Tooltip: ""
+	}
+}
+
+UpdateRate: {
+	Tooltip: ""
+
+	Realtime: {
+		Label: Реальное время (каждое обновление)
+		// Tooltip: ""
+	}
+
+	Fast: {
+		Label: Быстро (6 раз в секунду)
+		// Tooltip: ""
+	}
+
+	Medium: {
+		Label: Средне (дважды в секунду)
+		// Tooltip: ""
+	}
+
+	Slow: {
+		Label: Медленно (единожды в секунду)
+		// Tooltip: ""
+	}
+}
+
+DebugConfig: {
+	// DisplayName: Debug Config
+
+	RocketBounds: {
+		// Label: Rocket Bounds
+		// Tooltip: ""
+	}
+
+	RocketIndex: {
+		// Label: Rocket Index
+		// Tooltip: ""
+	}
+
+	RocketCount: {
+		// Label: Rocket Count
+		// Tooltip: ""
+	}
+
+	UIDebug: {
+		// Label: U I Debug
+		// Tooltip: ""
+	}
+
+	PacketDebug: {
+		// Label: Packet Debug
+		// Tooltip: ""
+	}
+
+	RoomOxygenDebug: {
+		// Label: Room Oxygen Debug
+		// Tooltip: ""
+	}
+
+	ShowCursorTileCoords: {
+		// Label: Show Cursor Tile Coords
+		// Tooltip: ""
+	}
+
+	ShowCursorWorldCoords: {
+		// Label: Show Cursor World Coords
+		// Tooltip: ""
+	}
+}
