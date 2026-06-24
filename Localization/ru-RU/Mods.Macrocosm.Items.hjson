@@ -694,7 +694,7 @@ ArtemiteMagnum: {
 
 CalcicCane: {
 	DisplayName: Кальциевая трость
-	Tooltip: Призывает беса кратера сражаться за вас
+	Tooltip: Призывает кратерного беса сражаться за вас
 }
 
 CrudePhaser: {
@@ -1122,7 +1122,7 @@ CraterDemonPet: {
 	DisplayName: Игрушечная ракета
 	Tooltip:
 		'''
-		Призывает беса кратера
+		Призывает кратерного беса
 		«Fly me to the Moon!»
 		'''
 }
